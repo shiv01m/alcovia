@@ -1,0 +1,21 @@
+student_id,name,grade,board,advisor,plan_type,joined_on,quarter_theme
+S01,Aarav Mehta,9,CBSE,Riya (Advisor),trial_3m,2026-06-12,social_work
+S02,Diya Kapoor,9,CBSE,Kunal (Advisor),full_program,2026-04-07,social_work
+S03,Kabir Sethi,8,CBSE,Simran (Advisor),full_program,2026-07-21,entrepreneurship
+S04,Myra Bansal,9,CBSE,Riya (Advisor),trial_3m,2026-05-20,entrepreneurship
+S05,Vihaan Khanna,10,CBSE,Kunal (Advisor),full_program,2026-06-25,entrepreneurship
+S06,Anaya Malhotra,9,CBSE,Simran (Advisor),full_program,2026-07-19,social_work
+S07,Reyansh Arora,8,CBSE,Riya (Advisor),trial_3m,2026-05-14,social_work
+S08,Ira Gupta,9,IB,Kunal (Advisor),full_program,2026-05-19,entrepreneurship
+S09,Arjun Chawla,9,CBSE,Simran (Advisor),full_program,2026-07-22,entrepreneurship
+S10,Saanvi Oberoi,11,IB,Riya (Advisor),trial_3m,2026-06-26,social_work
+S11,Ishaan Jain,9,CBSE,Kunal (Advisor),full_program,2026-04-04,entrepreneurship
+S12,Kiara Bhatia,8,ICSE,Simran (Advisor),full_program,2026-06-19,entrepreneurship
+S13,Advait Suri,10,CBSE,Riya (Advisor),trial_3m,2026-04-16,social_work
+S14,Meher Verma,11,CBSE,Kunal (Advisor),full_program,2026-07-25,entrepreneurship
+S15,Dhruv Nanda,10,ICSE,Simran (Advisor),full_program,2026-05-02,entrepreneurship
+S16,Tara Gill,10,ICSE,Riya (Advisor),trial_3m,2026-07-11,social_work
+S17,Rohan Sood,9,CBSE,Kunal (Advisor),full_program,2026-04-29,social_work
+S18,Zoya Ahuja,10,CBSE,Simran (Advisor),full_program,2026-07-11,entrepreneurship
+S19,Neil Rao,9,IB,Riya (Advisor),trial_3m,2026-04-13,entrepreneurship
+S20,Aditi Dutta,11,IB,Kunal (Advisor),full_program,2026-07-03,social_work

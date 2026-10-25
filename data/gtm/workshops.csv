@@ -1,0 +1,15 @@
+workshop_id,workshop_date,title,seat_price_inr,campaign_id
+W01,2026-05-02,A day as a pilot,3999,C06
+W02,2026-05-16,Inside a startup,3999,C08
+W03,2026-05-30,Doctor's emergency room sim,3999,C06
+W04,2026-06-13,Brand manager crisis,3999,C08
+W05,2026-06-27,Journalist on deadline,3999,C06
+W06,2026-07-11,Architect's city challenge,3999,C06
+W07,2026-07-25,Lawyer's courtroom sim,3999,C07
+W08,2026-08-08,Game designer sprint,3999,C06
+W09,2026-08-22,Chef's kitchen rush,3999,C07
+W10,2026-09-05,Diplomat's negotiation,3999,C06
+W11,2026-09-19,Data detective,3999,C07
+W12,2026-10-03,Film director's set,3999,C06
+W13,2026-10-17,Climate scientist mission,3999,C07
+W14,2026-10-31,A day as a pilot,3999,C06

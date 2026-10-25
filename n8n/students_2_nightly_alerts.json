@@ -1,0 +1,235 @@
+{
+  "name": "Students 2 \u00b7 Nightly alerts (syllabus deviation, deadlines, recovery)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "30 21 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Every day 21:30",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM v_student_alerts_today;"
+      },
+      "name": "Run alert rules",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        260,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$json.sent_to}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "advisor",
+              "output": 0
+            },
+            {
+              "value2": "parent",
+              "output": 1
+            },
+            {
+              "value2": "student",
+              "output": 2
+            }
+          ]
+        }
+      },
+      "name": "Route by recipient",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        520,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "list": "={{$env.CLICKUP_ADVISOR_LIST}}",
+        "name": "={{$json.student_name}}: {{$json.rule}}",
+        "additionalFields": {
+          "content": "={{$json.detail}}",
+          "assignees": [
+            "={{$json.advisor_clickup_id}}"
+          ]
+        }
+      },
+      "name": "ClickUp task for advisor",
+      "type": "n8n-nodes-base.clickUp",
+      "typeVersion": 1,
+      "position": [
+        780,
+        -120
+      ],
+      "credentials": {
+        "clickUpApi": {
+          "id": "2",
+          "name": "ClickUp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{$env.WA_PHONE_ID}}/messages",
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={ \"messaging_product\": \"whatsapp\", \"to\": \"{{$json.parent_phone}}\", \"type\": \"template\", \"template\": { \"name\": \"alcovia_progress_flag\", \"language\": {\"code\": \"en\"}, \"components\": [{\"type\": \"body\", \"parameters\": [{\"type\": \"text\", \"text\": \"{{$json.student_name}}\"}, {\"type\": \"text\", \"text\": \"{{$json.detail}}\"}]}] } }"
+      },
+      "name": "WhatsApp to parent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        780,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.APP_API_URL}}/notifications",
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={ \"student_id\": \"{{$json.student_id}}\", \"title\": \"{{$json.rule}}\", \"deep_link\": \"{{$json.deep_link}}\" }"
+      },
+      "name": "App push to student",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        780,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alerts (alert_id, student_id, rule, raised_on, sent_to)\nVALUES ('{{$json.student_id}}-{{$json.rule_code}}-{{$today.toFormat(\"yyyyMMdd\")}}', '{{$json.student_id}}', '{{$json.rule}}', CURRENT_DATE, '{{$json.sent_to}}')\nON CONFLICT (alert_id) DO NOTHING;"
+      },
+      "name": "Log alert",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1040,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every day 21:30": {
+      "main": [
+        [
+          {
+            "node": "Run alert rules",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run alert rules": {
+      "main": [
+        [
+          {
+            "node": "Route by recipient",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by recipient": {
+      "main": [
+        [
+          {
+            "node": "ClickUp task for advisor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp to parent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "App push to student",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ClickUp task for advisor": {
+      "main": [
+        [
+          {
+            "node": "Log alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp to parent": {
+      "main": [
+        [
+          {
+            "node": "Log alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "App push to student": {
+      "main": [
+        [
+          {
+            "node": "Log alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Kolkata"
+  },
+  "active": false
+}

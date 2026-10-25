@@ -1,0 +1,147 @@
+{
+  "name": "GTM 1 \u00b7 ClickUp lead stage changes to database",
+  "nodes": [
+    {
+      "parameters": {
+        "team": "={{$env.CLICKUP_TEAM_ID}}",
+        "events": [
+          "taskStatusUpdated",
+          "taskCreated"
+        ],
+        "filters": {
+          "listId": "={{$env.CLICKUP_LEADS_LIST}}"
+        }
+      },
+      "name": "ClickUp: task status changed",
+      "type": "n8n-nodes-base.clickUpTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "credentials": {
+        "clickUpApi": {
+          "id": "2",
+          "name": "ClickUp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ClickUp list statuses are the funnel. One mapping, kept in code so the dashboard never drifts.\nconst MAP = {\n  'qualified': 'qualified',\n  'discovery call booked': 'discovery_call_set',\n  'discovery call done': 'discovery_call_attended',\n  'ambition interview done': 'ambition_interview_done',\n  'architect session done': 'architect_session_done',\n  'won': 'converted',\n  'lost': 'dropped',\n};\nreturn $input.all().flatMap(item => {\n  const b = item.json;\n  const status = (b.history_items?.[0]?.after?.status || b.status?.status || '').toLowerCase();\n  const stage = MAP[status];\n  if (!stage) return [];                       // ignore statuses outside the funnel\n  return [{ json: {\n    event_id: `${b.task_id}-${b.history_items?.[0]?.id || Date.now()}`,\n    lead_id: b.task_id,\n    stage,\n    occurred_at: new Date(Number(b.history_items?.[0]?.date || Date.now())).toISOString(),\n    note: b.history_items?.[0]?.comment?.text_content || null,\n  }}];\n});"
+      },
+      "name": "Map status to funnel stage",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO lead_stage_events (event_id, lead_id, stage, occurred_at, note)\nVALUES ('{{$json.event_id}}', '{{$json.lead_id}}', '{{$json.stage}}', '{{$json.occurred_at}}', {{ $json.note ? \"'\" + $json.note.replace(/'/g, \"''\") + \"'\" : 'NULL' }})\nON CONFLICT (event_id) DO NOTHING;"
+      },
+      "name": "Insert stage event",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        520,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.stage}}",
+              "value2": "discovery_call_set"
+            }
+          ]
+        }
+      },
+      "name": "Stage = discovery call booked?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        780,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.SMALLEST_AI_URL}}/campaigns/discovery-reminder/calls",
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={ \"lead_id\": \"{{$json.lead_id}}\", \"offsets_minutes\": [-1440, -60] }"
+      },
+      "name": "Smallest.ai: schedule reminder calls (T-24h, T-1h)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        1040,
+        -80
+      ]
+    }
+  ],
+  "connections": {
+    "ClickUp: task status changed": {
+      "main": [
+        [
+          {
+            "node": "Map status to funnel stage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map status to funnel stage": {
+      "main": [
+        [
+          {
+            "node": "Insert stage event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert stage event": {
+      "main": [
+        [
+          {
+            "node": "Stage = discovery call booked?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stage = discovery call booked?": {
+      "main": [
+        [
+          {
+            "node": "Smallest.ai: schedule reminder calls (T-24h, T-1h)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Kolkata"
+  },
+  "active": false
+}

@@ -1,0 +1,620 @@
+<title>Alcovia GTM Tracker</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one filter row scopes four tabs; summary tiles first, then charts, then the tables you act on. */
+:root {
+  --page: #f6f6f3; --surface: #fcfcfb; --surface-2: #efeee9;
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #7a7873;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+  --good: #0ca30c; --good-ink: #006300; --warn: #fab219; --serious: #ec835a; --critical: #d03b3b;
+  --accent: #2a78d6; --accent-wash: #e3eefb;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0d0d0d; --surface: #1a1a19; --surface-2: #242422;
+    --ink: #f0efec; --ink-2: #c3c2b7; --muted: #8f8d86;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    --good-ink: #0ca30c; --accent: #3987e5; --accent-wash: #1b2b40;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --surface-2: #242422;
+  --ink: #f0efec; --ink-2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+  --good-ink: #0ca30c; --accent: #3987e5; --accent-wash: #1b2b40;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--page); color: var(--ink); font-family: var(--font-ui); font-size: 14px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.wrap { max-width: 1240px; margin: 0 auto; display: grid; gap: 16px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+h2 { font-size: 14px; font-weight: 600; }
+.sub { margin: 2px 0 0; color: var(--ink-2); font-size: 13px; }
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.badge { font-family: var(--font-data); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-2);
+  border: 1px solid var(--ring); border-radius: 999px; padding: 3px 9px; background: var(--surface); }
+
+/* filter row */
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.seg { display: inline-flex; flex-wrap: wrap; background: var(--surface-2); border-radius: 8px; padding: 3px; gap: 2px; }
+.seg button { font: inherit; font-size: 13px; border: 0; background: transparent; color: var(--ink-2); padding: 6px 11px; border-radius: 6px; cursor: pointer; }
+.seg button:hover { background: var(--surface); color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: 0 0 0 1px var(--ring); }
+.custom { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--ink-2); font-size: 13px; }
+.custom input { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 5px 8px; }
+.range { font-family: var(--font-data); font-size: 12px; color: var(--muted); }
+
+/* tabs */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--grid); overflow-x: auto; }
+.tabs button { font: inherit; font-size: 14px; border: 0; background: none; color: var(--ink-2); padding: 10px 12px; cursor: pointer;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.panel { display: grid; gap: 16px; }
+
+/* tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 14px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.tile .lab { font-size: 12px; color: var(--ink-2); letter-spacing: 0.02em; }
+.tile .val { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+.tile .note { font-size: 12px; color: var(--muted); }
+.meter { height: 6px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+.meter > i { display: block; height: 100%; background: var(--s1); border-radius: 999px; }
+
+/* cards */
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 14px 16px 16px; display: grid; gap: 10px; min-width: 0; align-content: start; }
+.card > header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.card .hint { font-size: 12px; color: var(--muted); margin: 0; }
+.tbtn { font: inherit; font-size: 12px; color: var(--ink-2); background: none; border: 1px solid var(--ring); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+.tbtn:hover { color: var(--ink); background: var(--surface-2); }
+.plot { position: relative; height: 280px; }
+.plot.tall { height: 330px; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.legend i.line { height: 2px; width: 14px; border-radius: 0; }
+
+/* tables */
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; font-weight: 500; color: var(--ink-2); font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+td { padding: 7px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--font-data); font-size: 12px; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.empty { color: var(--muted); font-size: 13px; padding: 10px 0; }
+
+/* status chips: icon + label, never colour alone */
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid; }
+.chip.good { color: var(--good-ink); border-color: var(--good); }
+.chip.warn { color: var(--ink); border-color: var(--warn); background: color-mix(in srgb, var(--warn) 18%, transparent); }
+.chip.serious { color: var(--ink); border-color: var(--serious); }
+.chip.critical { color: var(--critical); border-color: var(--critical); }
+.chip.neutral { color: var(--ink-2); border-color: var(--axis); }
+
+.rca-controls { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; }
+.rca-controls label { display: grid; gap: 4px; font-size: 12px; color: var(--ink-2); }
+.rca-controls input { font: inherit; width: 96px; color: var(--ink); background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 5px 8px; }
+.summary-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.rule { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 13px; display: grid; gap: 3px; }
+footer.notes { color: var(--ink-2); font-size: 12px; border-top: 1px solid var(--grid); padding-top: 12px; display: grid; gap: 4px; }
+footer.notes p { margin: 0; max-width: 90ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>GTM Tracker</h1>
+      <p class="sub">Revenue, Meta funnel, campaign health and what to scale, refresh or drop.</p>
+    </div>
+    <span class="badge" id="asof">Dummy data</span>
+  </div>
+
+  <div class="filters" role="toolbar" aria-label="Date range">
+    <div class="seg" id="presets">
+      <button type="button" data-p="mtd">Month to date</button>
+      <button type="button" data-p="last-month">Last month</button>
+      <button type="button" data-p="l30">Last 30 days</button>
+      <button type="button" data-p="l90">Last 90 days</button>
+      <button type="button" data-p="all">Since launch</button>
+    </div>
+    <div class="custom">
+      <label for="from">From</label><input type="date" id="from">
+      <label for="to">To</label><input type="date" id="to">
+    </div>
+    <span class="range" id="rangeLabel"></span>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-tab="revenue">Revenue</button>
+    <button role="tab" data-tab="funnel">Funnel</button>
+    <button role="tab" data-tab="campaigns">Campaigns</button>
+    <button role="tab" data-tab="rca">Scale · Refresh · Drop</button>
+  </nav>
+
+  <!-- REVENUE -->
+  <section class="panel" id="tab-revenue" role="tabpanel">
+    <div class="tiles" id="revTiles"></div>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Revenue vs target</h2><button class="tbtn" data-table="revChart">Table</button></header>
+        <div class="legend" id="revLegend"></div>
+        <div class="plot"><canvas id="revChart" aria-label="Program and workshop revenue against target"></canvas></div>
+        <div class="tw" id="revChart-table" hidden></div>
+      </article>
+      <article class="card">
+        <header><h2>Students onboarded</h2><button class="tbtn" data-table="onbChart">Table</button></header>
+        <div class="legend" id="onbLegend"></div>
+        <div class="plot"><canvas id="onbChart" aria-label="New students by plan type"></canvas></div>
+        <div class="tw" id="onbChart-table" hidden></div>
+      </article>
+    </div>
+    <article class="card">
+      <header><h2>Fortnightly workshops</h2><button class="tbtn" data-table="wsChart">Table</button></header>
+      <p class="hint">Seats sold at ₹3,999 each, by workshop date. Payments come from Razorpay.</p>
+      <div class="plot"><canvas id="wsChart" aria-label="Workshop revenue per workshop"></canvas></div>
+      <div class="tw" id="wsChart-table" hidden></div>
+    </article>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Invoices not paid</h2><span class="hint" id="unpaidHint"></span></header>
+        <div class="tw" id="unpaidTable"></div>
+      </article>
+      <article class="card">
+        <header><h2>Trial renewals due in 30 days</h2><span class="hint" id="renewHint"></span></header>
+        <div class="tw" id="renewTable"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FUNNEL -->
+  <section class="panel" id="tab-funnel" role="tabpanel" hidden>
+    <div class="tiles" id="funTiles"></div>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Lead journey</h2><button class="tbtn" data-table="funChart">Table</button></header>
+        <p class="hint">Leads created in the selected range, by the furthest stage reached. Recent leads may still be moving.</p>
+        <div class="plot tall"><canvas id="funChart" aria-label="Funnel from lead to sign-up"></canvas></div>
+        <div class="tw" id="funChart-table" hidden></div>
+      </article>
+      <article class="card">
+        <header><h2>By lead source</h2></header>
+        <div class="tw" id="sourceTable"></div>
+        <h3 class="hint" style="margin-top:6px">Where leads drop</h3>
+        <div class="tw" id="stageTable"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CAMPAIGNS -->
+  <section class="panel" id="tab-campaigns" role="tabpanel" hidden>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Cost per qualified lead</h2><button class="tbtn" data-table="cpqlChart">Table</button></header>
+        <p class="hint">Program campaigns only. Lower is better.</p>
+        <div class="plot"><canvas id="cpqlChart" aria-label="Cost per qualified lead by campaign"></canvas></div>
+        <div class="tw" id="cpqlChart-table" hidden></div>
+      </article>
+      <article class="card">
+        <header><h2>Ad-set frequency</h2><button class="tbtn" data-table="freqChart">Table</button></header>
+        <p class="hint">Last 7 days of the range. At 3 or more the same parents have seen the ad too often: change the creative.</p>
+        <div class="plot"><canvas id="freqChart" aria-label="Frequency by ad set"></canvas></div>
+        <div class="tw" id="freqChart-table" hidden></div>
+      </article>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Best creatives by CTR</h2></header>
+        <div class="tw" id="topCreatives"></div>
+      </article>
+      <article class="card">
+        <header><h2>Creatives to refresh</h2></header>
+        <div class="tw" id="lowCreatives"></div>
+      </article>
+    </div>
+    <article class="card">
+      <header><h2>Landing page health</h2><span class="hint">Fix when load time is over 3 s or drop-off is over 55%.</span></header>
+      <div class="tw" id="lpTable"></div>
+    </article>
+  </section>
+
+  <!-- RCA -->
+  <section class="panel" id="tab-rca" role="tabpanel" hidden>
+    <article class="card">
+      <header><h2>Campaign verdicts for the selected range</h2></header>
+      <div class="summary-chips" id="rcaSummary"></div>
+      <div class="tw" id="rcaTable"></div>
+    </article>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Rules</h2></header>
+        <ol class="rule">
+          <li><b>Drop</b> when cost per result is above the threshold multiple of the median for that campaign type.</li>
+          <li><b>Refresh</b> when frequency hits the cap, or CTR has fallen by the decay threshold since the campaign's first 14 days.</li>
+          <li><b>Scale</b> when cost per result is at or below the median and neither refresh signal is on.</li>
+          <li><b>Hold</b> otherwise. Result = qualified lead for program ads, lead for workshop ads.</li>
+        </ol>
+      </article>
+      <article class="card">
+        <header><h2>Thresholds</h2></header>
+        <div class="rca-controls">
+          <label for="tFreq">Frequency cap<input type="number" id="tFreq" step="0.1" min="1" value="3"></label>
+          <label for="tDecay">CTR decay, %<input type="number" id="tDecay" step="5" min="0" max="100" value="25"></label>
+          <label for="tMult">Drop at × median cost<input type="number" id="tMult" step="0.1" min="1" value="1.5"></label>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>Where each number comes from.</b> Revenue: Razorpay captured payments (cash basis). Leads and stages: every ClickUp status change, written to the database by an n8n webhook. Ads: Meta Marketing API, pulled daily at 06:00 IST. Landing pages: GA4. Targets: set by the founders on the 1st of each month.</p>
+    <p>All figures here are dummy data generated for this assignment. SQL for every metric is in the repo under <span style="font-family:var(--font-data)">sql/gtm_metrics.sql</span>.</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script>
+(() => {
+  const D = window.GTM_DATA;
+  const AS_OF = D.asOf, FIRST = "2026-05-01";
+
+  // ---------- date helpers (ISO strings, UTC maths so IST never shifts a day) ----------
+  const ms = s => { const [y, m, d] = s.split("-").map(Number); return Date.UTC(y, m - 1, d); };
+  const iso = t => new Date(t).toISOString().slice(0, 10);
+  const add = (s, n) => iso(ms(s) + n * 864e5);
+  const diff = (a, b) => Math.round((ms(b) - ms(a)) / 864e5);
+  const monthEnd = s => { const [y, m] = s.split("-").map(Number); return iso(Date.UTC(y, m, 1) - 864e5); };
+  const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const nice = s => `${+s.slice(8)} ${MON[+s.slice(5, 7) - 1]}`;
+
+  // ---------- number helpers ----------
+  const inr = v => "₹" + Math.round(v).toLocaleString("en-IN");
+  const short = v => Math.abs(v) >= 1e5 ? "₹" + (v / 1e5).toFixed(v >= 1e7 ? 0 : 1) + "L" : Math.abs(v) >= 1e3 ? "₹" + (v / 1e3).toFixed(1) + "k" : inr(v);
+  const pct = (v, d = 1) => Number.isFinite(v) ? (v * 100).toFixed(d) + "%" : "–";
+  const num = v => Math.round(v).toLocaleString("en-IN");
+  const sum = (a, f) => a.reduce((t, x) => t + f(x), 0);
+  const median = a => { const s = a.filter(Number.isFinite).sort((x, y) => x - y); if (!s.length) return NaN; const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+
+  // ---------- state ----------
+  const state = { from: "2026-10-01", to: AS_OF, preset: "mtd", tab: "revenue" };
+  const presets = {
+    "mtd": () => [AS_OF.slice(0, 8) + "01", AS_OF],
+    "last-month": () => { const end = add(AS_OF.slice(0, 8) + "01", -1); return [end.slice(0, 8) + "01", end]; },
+    "l30": () => [add(AS_OF, -29), AS_OF],
+    "l90": () => [add(AS_OF, -89), AS_OF],
+    "all": () => [FIRST, AS_OF],
+  };
+  const inRange = d => d >= state.from && d <= state.to;
+
+  // ---------- theme tokens for Chart.js ----------
+  const tok = () => { const c = getComputedStyle(document.documentElement); const g = n => c.getPropertyValue(n).trim();
+    return { s1: g("--s1"), s2: g("--s2"), s3: g("--s3"), ink: g("--ink"), ink2: g("--ink-2"), muted: g("--muted"), grid: g("--grid"),
+             axis: g("--axis"), surface: g("--surface"), serious: g("--serious"), critical: g("--critical"), good: g("--good") }; };
+
+  // ---------- buckets: weeks for short ranges, months for long ones ----------
+  const bucketing = () => diff(state.from, state.to) <= 62 ? "week" : "month";
+  const bucketOf = d => { if (bucketing() === "month") return d.slice(0, 7) + "-01";
+    const dow = (new Date(ms(d)).getUTCDay() + 6) % 7; const mon = add(d, -dow); return mon < state.from ? state.from : mon; };
+  const buckets = () => { const out = []; let d = state.from; while (d <= state.to) { const b = bucketOf(d); if (!out.includes(b)) out.push(b); d = add(d, 1); } return out; };
+  const bucketLabel = b => bucketing() === "month" ? MON[+b.slice(5, 7) - 1] : "wk " + nice(b);
+  const bucketEnd = (b, i, list) => i + 1 < list.length ? add(list[i + 1], -1) : state.to;
+
+  // prorated target for any window
+  function target(from, to) {
+    let prog = 0, ws = 0, st = 0;
+    for (const [m, p, w, s] of D.targets) {
+      const end = monthEnd(m), lo = from > m ? from : m, hi = to < end ? to : end;
+      if (lo > hi) continue;
+      const share = (diff(lo, hi) + 1) / (diff(m, end) + 1);
+      prog += p * share; ws += w * share; st += s * share;
+    }
+    return { prog, ws, total: prog + ws, students: st };
+  }
+
+  // ---------- DOM helpers (all data text goes in via textContent) ----------
+  const $ = id => document.getElementById(id);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  function tile(label, value, note, meter) {
+    const t = el("div", "tile"); t.append(el("div", "lab", label), el("div", "val", value));
+    if (meter != null) { const m = el("div", "meter"); const i = el("i"); i.style.width = Math.min(100, Math.max(0, meter * 100)) + "%"; m.append(i); t.append(m); }
+    if (note) t.append(el("div", "note", note));
+    return t;
+  }
+  function chip(kind, label) { const icons = { good: "▲", warn: "↻", serious: "!", critical: "✕", neutral: "–" };
+    const c = el("span", "chip " + kind); c.append(el("span", null, icons[kind]), el("span", null, label)); return c; }
+  function table(target, cols, rows, emptyText) {
+    const host = typeof target === "string" ? $(target) : target; host.replaceChildren();
+    if (!rows.length) { host.append(el("div", "empty", emptyText || "Nothing in this range.")); return; }
+    const t = el("table"), thead = el("thead"), hr = el("tr");
+    cols.forEach(c => hr.append(el("th", c.n ? "n" : null, c.h))); thead.append(hr); t.append(thead);
+    const tb = el("tbody");
+    rows.forEach(r => { const tr = el("tr"); cols.forEach((c, i) => { const td = el("td", c.n ? "n" : null); const v = r[i];
+      if (v instanceof Node) td.append(v); else td.textContent = v; tr.append(td); }); tb.append(tr); });
+    t.append(tb); host.append(t);
+  }
+  function legend(id, items) { const host = $(id); host.replaceChildren();
+    items.forEach(([label, color, isLine]) => { const s = el("span"); const i = el("i", isLine ? "line" : null); i.style.background = color; s.append(i, el("span", null, label)); host.append(s); }); }
+
+  // ---------- charts ----------
+  const charts = {};
+  const chartTables = {};
+  function draw(id, config, tableCols, tableRows) {
+    if (charts[id]) charts[id].destroy();
+    const T = tok();
+    Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+    Chart.defaults.font.size = 12;
+    Chart.defaults.color = T.muted;
+    const base = {
+      responsive: true, maintainAspectRatio: false, animation: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: { legend: { display: false },
+        tooltip: { backgroundColor: T.surface, titleColor: T.ink2, bodyColor: T.ink, borderColor: T.axis, borderWidth: 1,
+                   padding: 10, boxWidth: 12, boxHeight: 2, usePointStyle: false, bodyFont: { weight: "600" } } },
+    };
+    const o = config.options || {}, op = o.plugins || {};
+    config.options = Object.assign({}, base, o, {
+      plugins: Object.assign({}, base.plugins, op, { tooltip: Object.assign({}, base.plugins.tooltip, op.tooltip || {}) }) });
+    charts[id] = new Chart($(id), config);
+    chartTables[id] = [tableCols, tableRows];
+    const host = $(id + "-table"); if (!host.hidden) table(host, tableCols, tableRows);
+  }
+  const axes = (T, yFmt, opts = {}) => ({
+    x: Object.assign({ grid: { display: false }, border: { color: T.axis }, ticks: { color: T.muted, maxRotation: 0, autoSkip: true } }, opts.x || {}),
+    y: Object.assign({ grid: { color: T.grid }, border: { display: false }, ticks: { color: T.muted, callback: yFmt, maxTicksLimit: 6 }, beginAtZero: true }, opts.y || {}),
+  });
+  // direct labels at the end of horizontal bars (selective: funnel only)
+  const endLabels = { id: "endLabels", afterDatasetsDraw(chart, _, o) {
+    if (!o || !o.labels) return; const { ctx } = chart; const meta = chart.getDatasetMeta(0);
+    ctx.save(); ctx.font = `500 12px ${Chart.defaults.font.family}`; ctx.fillStyle = o.color; ctx.textBaseline = "middle";
+    meta.data.forEach((bar, i) => ctx.fillText(o.labels[i], bar.x + 6, bar.y)); ctx.restore(); } };
+
+  // ======================= REVENUE =======================
+  function renderRevenue() {
+    const T = tok();
+    const rows = D.revenueDaily.filter(r => inRange(r[0]));
+    const trial = sum(rows, r => r[1]), full = sum(rows, r => r[2]), ren = sum(rows, r => r[3]), ws = sum(rows, r => r[4]);
+    const seats = sum(rows, r => r[5]), nT = sum(rows, r => r[6]), nF = sum(rows, r => r[7]), nR = sum(rows, r => r[8]);
+    const prog = trial + full + ren, total = prog + ws, tg = target(state.from, state.to);
+
+    const unpaid = D.unpaidInvoices, overdue = unpaid.filter(u => u[4] < AS_OF);
+    const due = D.trials.filter(t => !t[3] && t[2] >= AS_OF && t[2] <= add(AS_OF, 30));
+    const tiles = $("revTiles"); tiles.replaceChildren(
+      tile("Revenue vs target", short(total), `${pct(total / tg.total, 0)} of ${short(tg.total)} target for this range`, total / tg.total),
+      tile("Program revenue", short(prog), `Trial ${short(trial)} · Full ${short(full)} · Renewals ${short(ren)}`),
+      tile("Workshop revenue", short(ws), `${num(seats)} seats sold · ${pct(ws / (total || 1), 0)} of revenue`),
+      tile("Students onboarded", num(nT + nF), `${num(nT)} trial · ${num(nF)} full program · target ${Math.round(tg.students)}`, (nT + nF) / (tg.students || 1)),
+      tile("Unpaid invoices", short(sum(unpaid, u => u[5])), `${unpaid.length} open · ${overdue.length} overdue, ${short(sum(overdue, u => u[5]))}`),
+      tile("Trial renewals due", num(due.length), "Next 30 days, not yet renewed"),
+    );
+
+    // revenue by bucket, with prorated target line
+    const bs = buckets(), lab = bs.map(bucketLabel);
+    const by = (i) => bs.map(b => sum(rows.filter(r => bucketOf(r[0]) === b), r => i(r)));
+    const pr = by(r => r[1] + r[2] + r[3]), wr = by(r => r[4]);
+    const tl = bs.map((b, i) => target(b, bucketEnd(b, i, bs)).total);
+    legend("revLegend", [["Program", T.s1], ["Workshop", T.s2], ["Target", T.ink2, true]]);
+    draw("revChart", { type: "bar", data: { labels: lab, datasets: [
+        { label: "Program", data: pr, backgroundColor: T.s1, stack: "r", borderColor: T.surface, borderWidth: { top: 2 }, borderSkipped: false, maxBarThickness: 36 },
+        { label: "Workshop", data: wr, backgroundColor: T.s2, stack: "r", borderRadius: { topLeft: 4, topRight: 4 }, borderSkipped: false, maxBarThickness: 36 },
+        { type: "line", label: "Target", data: tl, borderColor: T.ink2, backgroundColor: T.ink2, borderWidth: 2, pointRadius: 4, pointHoverRadius: 6, tension: 0 } ] },
+      options: { scales: Object.assign(axes(T, v => short(v)), { x: { stacked: true, grid: { display: false }, border: { color: T.axis }, ticks: { color: T.muted, maxRotation: 0 } },
+                                                                y: { stacked: true, beginAtZero: true, grid: { color: T.grid }, border: { display: false }, ticks: { color: T.muted, callback: v => short(v), maxTicksLimit: 6 } } }),
+        plugins: { tooltip: { callbacks: { label: c => ` ${c.dataset.label}: ${inr(c.raw)}` } } } } },
+      [{ h: "Period" }, { h: "Program", n: 1 }, { h: "Workshop", n: 1 }, { h: "Total", n: 1 }, { h: "Target", n: 1 }, { h: "% of target", n: 1 }],
+      bs.map((b, i) => [bucketLabel(b), inr(pr[i]), inr(wr[i]), inr(pr[i] + wr[i]), inr(tl[i]), pct((pr[i] + wr[i]) / tl[i], 0)]));
+
+    const ot = by(r => r[6]), of = by(r => r[7]), orn = by(r => r[8]);
+    legend("onbLegend", [["3-month trial", T.s1], ["Full program", T.s2], ["Renewal", T.s3]]);
+    draw("onbChart", { type: "bar", data: { labels: lab, datasets: [
+        { label: "3-month trial", data: ot, backgroundColor: T.s1, stack: "s", borderColor: T.surface, borderWidth: { top: 2 }, borderSkipped: false, maxBarThickness: 36 },
+        { label: "Full program", data: of, backgroundColor: T.s2, stack: "s", borderColor: T.surface, borderWidth: { top: 2 }, borderSkipped: false, maxBarThickness: 36 },
+        { label: "Renewal", data: orn, backgroundColor: T.s3, stack: "s", borderRadius: { topLeft: 4, topRight: 4 }, borderSkipped: false, maxBarThickness: 36 } ] },
+      options: { scales: { x: { stacked: true, grid: { display: false }, border: { color: T.axis }, ticks: { color: T.muted, maxRotation: 0 } },
+                           y: { stacked: true, beginAtZero: true, grid: { color: T.grid }, border: { display: false }, ticks: { color: T.muted, precision: 0 } } } } },
+      [{ h: "Period" }, { h: "Trial", n: 1 }, { h: "Full program", n: 1 }, { h: "Renewal", n: 1 }],
+      bs.map((b, i) => [bucketLabel(b), ot[i], of[i], orn[i]]));
+
+    const wsRows = D.workshops.filter(w => inRange(w[0]) || (w[0] > AS_OF && state.to === AS_OF && w[0] <= add(AS_OF, 14)));
+    draw("wsChart", { type: "bar", data: { labels: wsRows.map(w => nice(w[0])), datasets: [
+        { label: "Revenue", data: wsRows.map(w => w[3]), backgroundColor: wsRows.map(w => w[0] > AS_OF ? T.axis : T.s1), borderRadius: { topLeft: 4, topRight: 4 }, borderSkipped: false, maxBarThickness: 40 } ] },
+      options: { scales: axes(T, v => short(v)), interaction: { mode: "nearest", intersect: true },
+        plugins: { tooltip: { callbacks: { title: c => `${wsRows[c[0].dataIndex][1]} · ${nice(wsRows[c[0].dataIndex][0])}`,
+          label: c => ` ${inr(c.raw)} · ${wsRows[c.dataIndex][2]} seats${wsRows[c.dataIndex][0] > AS_OF ? " (bookings open)" : ""}` } } } } },
+      [{ h: "Date" }, { h: "Workshop" }, { h: "Seats", n: 1 }, { h: "Revenue", n: 1 }],
+      wsRows.map(w => [nice(w[0]) + (w[0] > AS_OF ? " (upcoming)" : ""), w[1], w[2], inr(w[3])]));
+
+    const age = u => { const d = diff(u[4], AS_OF); return d <= 0 ? chip("neutral", "Not due") : d <= 15 ? chip("warn", `${d} days late`) : chip("critical", `${d} days late`); };
+    $("unpaidHint").textContent = `As of ${nice(AS_OF)}`;
+    table("unpaidTable", [{ h: "Student" }, { h: "Plan" }, { h: "Issued" }, { h: "Amount", n: 1 }, { h: "Status" }],
+      [...unpaid].sort((a, b) => a[4].localeCompare(b[4])).map(u => [u[1], u[2].replace("_", " ").replace("trial 3m", "3-month trial"), nice(u[3]), inr(u[5]), age(u)]), "No unpaid invoices.");
+    $("renewHint").textContent = `As of ${nice(AS_OF)}`;
+    table("renewTable", [{ h: "Student" }, { h: "Trial ends" }, { h: "Days left", n: 1 }, { h: "Priority" }],
+      due.map(t => { const d = diff(AS_OF, t[2]); return [t[1], nice(t[2]), d, d <= 7 ? chip("critical", "Call this week") : d <= 14 ? chip("warn", "Book review") : chip("neutral", "Plan")]; }),
+      "No trials ending in the next 30 days.");
+  }
+
+  // ======================= FUNNEL =======================
+  const STAGES = [["Leads", null], ["Qualified", 4], ["Discovery call set", 5], ["Call attended", 6], ["Ambition interview", 7], ["Architect session", 8], ["Signed up", 9]];
+  const programSpend = () => sum(D.adDaily.filter(r => inRange(r[0]) && D.campaigns[D.ads[r[1]].campaign].objective === "program"), r => r[2]);
+  function renderFunnel() {
+    const T = tok();
+    const L = D.leads.filter(l => inRange(l[0]));
+    const counts = STAGES.map(([, i]) => i == null ? L.length : sum(L, l => l[i]));
+    const metaQ = sum(L.filter(l => l[1] === "meta_ads"), l => l[4]);
+    const spend = programSpend();
+    const conv = counts[6], setN = counts[2], att = counts[3], intv = counts[4];
+    const avg = (f) => { const a = L.filter(f); return a.length ? sum(a, l => l[11]) / a.length : NaN; };
+    const dSign = avg(l => l[9]), dDrop = avg(l => l[10]);
+    // count only leads that were actually marked dropped; leads still in progress are not losses
+    const reached = (l, i) => i === 0 || l[STAGES[i][1]] === 1;
+    const dropped = L.filter(l => l[10]);
+    const lost = STAGES.slice(1).map((s, i) => dropped.filter(l => reached(l, i) && !reached(l, i + 1)).length);
+    const rate = lost.map((n, i) => n / (counts[i] || 1));
+    const worst = rate.reduce((m, r, i) => r > rate[m] ? i : m, 0);
+    const open = L.filter(l => !l[9] && !l[10]).length;
+    const showUp = att / ((att + lost[2]) || 1), afterCall = lost[3] / ((lost[3] + intv) || 1);
+    $("funTiles").replaceChildren(
+      tile("Leads", num(L.length), `${num(L.filter(l => l[1] === "meta_ads").length)} Meta · ${num(L.filter(l => l[1] === "organic").length)} organic · ${num(L.filter(l => l[1] === "referral").length)} referral`),
+      tile("Cost per qualified lead", metaQ ? inr(spend / metaQ) : "–", `${short(spend)} program ad spend ÷ ${num(metaQ)} qualified Meta leads`),
+      tile("Discovery call show-up", pct(showUp, 0), `${num(att)} attended · ${num(lost[2])} no-shows dropped`),
+      tile("Drop-off before the interview", pct(afterCall, 0), `${num(lost[3])} attended the call, then dropped`),
+      tile("Program conversion", pct(conv / (L.length || 1), 1), `${num(conv)} sign-ups from ${num(L.length)} leads`),
+      tile("Average lead journey", Number.isFinite(dSign) ? `${dSign.toFixed(0)} days` : "–", `to sign up · ${Number.isFinite(dDrop) ? dDrop.toFixed(0) + " days" : "–"} to drop off`),
+    );
+    const step = counts.map((c, i) => i === 0 ? "" : pct(c / (counts[i - 1] || 1), 0) + " of previous");
+    draw("funChart", { type: "bar", data: { labels: STAGES.map(s => s[0]), datasets: [
+        { label: "Leads", data: counts, backgroundColor: T.s1, borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: false, barPercentage: 0.78, categoryPercentage: 0.9 } ] },
+      options: { indexAxis: "y", layout: { padding: { right: 120 } }, interaction: { mode: "nearest", axis: "y", intersect: false },
+        scales: { x: { beginAtZero: true, grid: { color: T.grid }, border: { display: false }, ticks: { color: T.muted, precision: 0, maxTicksLimit: 5 } },
+                  y: { grid: { display: false }, border: { color: T.axis }, ticks: { color: T.ink2 } } },
+        plugins: { endLabels: { color: T.ink2, labels: counts.map((c, i) => i ? `${num(c)}  ·  ${pct(c / (counts[i - 1] || 1), 0)}` : num(c)) },
+          tooltip: { callbacks: { label: c => ` ${num(c.raw)} leads${c.dataIndex ? " · " + step[c.dataIndex] : ""}` } } } },
+      plugins: [endLabels] },
+      [{ h: "Stage" }, { h: "Leads", n: 1 }, { h: "Step conversion", n: 1 }, { h: "Of all leads", n: 1 }],
+      STAGES.map((s, i) => [s[0], num(counts[i]), i ? pct(counts[i] / (counts[i - 1] || 1), 0) : "–", pct(counts[i] / (counts[0] || 1), 1)]));
+
+    const src = ["meta_ads", "organic", "referral"].map(s => { const a = L.filter(l => l[1] === s);
+      return [{ meta_ads: "Meta ads", organic: "Organic", referral: "Referral" }[s], num(a.length), pct(sum(a, l => l[4]) / (a.length || 1), 0), num(sum(a, l => l[9])), pct(sum(a, l => l[9]) / (a.length || 1), 1)]; });
+    table("sourceTable", [{ h: "Source" }, { h: "Leads", n: 1 }, { h: "Qualified", n: 1 }, { h: "Sign-ups", n: 1 }, { h: "Conversion", n: 1 }], src);
+    table("stageTable", [{ h: "Before reaching" }, { h: "Dropped", n: 1 }, { h: "Loss rate", n: 1 }, { h: "" }],
+      STAGES.slice(1).map((s, i) => [s[0], num(lost[i]), pct(rate[i], 0), i === worst ? chip("serious", "Biggest leak") : ""]));
+    $("stageTable").append(el("p", "hint", `${num(open)} leads from this range are still in progress and are not counted as lost.`));
+  }
+
+  // ======================= CAMPAIGNS =======================
+  function adAgg(from, to, keyFn) {
+    const m = {};
+    for (const r of D.adDaily) { if (r[0] < from || r[0] > to) continue; const k = keyFn(r[1]);
+      const a = m[k] || (m[k] = { spend: 0, impr: 0, reach: 0, clicks: 0, leads: 0 });
+      a.spend += r[2]; a.impr += r[3]; a.reach += r[4]; a.clicks += r[5]; a.leads += r[6]; }
+    return m;
+  }
+  function qualifiedBy(keyFn) { const m = {}; for (const l of D.leads) { if (!inRange(l[0]) || !l[3]) continue; const k = keyFn(l[3]); m[k] = (m[k] || 0) + l[4]; } return m; }
+  const shortName = n => n.replace(/^(Program|Workshop) \| /, "");
+  function renderCampaigns() {
+    const T = tok();
+    const byC = adAgg(state.from, state.to, a => D.ads[a].campaign), q = qualifiedBy(a => D.ads[a].campaign);
+    const prog = Object.keys(byC).filter(c => D.campaigns[c].objective === "program" && byC[c].spend > 0)
+      .map(c => ({ c, name: shortName(D.campaigns[c].name), spend: byC[c].spend, q: q[c] || 0, cpql: (q[c] ? byC[c].spend / q[c] : NaN) }))
+      .sort((a, b) => (a.cpql || 1e12) - (b.cpql || 1e12));
+    draw("cpqlChart", { type: "bar", data: { labels: prog.map(p => p.name), datasets: [
+        { label: "Cost per qualified lead", data: prog.map(p => Number.isFinite(p.cpql) ? Math.round(p.cpql) : 0), backgroundColor: T.s1, borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: false, barPercentage: 0.7 } ] },
+      options: { indexAxis: "y", interaction: { mode: "nearest", axis: "y", intersect: false },
+        scales: { x: { beginAtZero: true, grid: { color: T.grid }, border: { display: false }, ticks: { color: T.muted, callback: v => short(v), maxTicksLimit: 5 } },
+                  y: { grid: { display: false }, border: { color: T.axis }, ticks: { color: T.ink2 } } },
+        plugins: { tooltip: { callbacks: { label: c => ` ${inr(c.raw)} per qualified lead · ${prog[c.dataIndex].q} qualified · ${inr(prog[c.dataIndex].spend)} spent` } } } } },
+      [{ h: "Campaign" }, { h: "Spend", n: 1 }, { h: "Qualified", n: 1 }, { h: "CPQL", n: 1 }],
+      prog.map(p => [p.name, inr(p.spend), p.q, Number.isFinite(p.cpql) ? inr(p.cpql) : "–"]));
+
+    const f7 = add(state.to, -6) > state.from ? add(state.to, -6) : state.from;
+    const byS = adAgg(f7, state.to, a => D.ads[a].adSet);
+    const fr = Object.entries(byS).filter(([, a]) => a.reach > 0).map(([k, a]) => ({ k, name: `${shortName(D.campaigns[k.slice(0, 3)].name)} · set ${k.slice(-1)}`, f: a.impr / a.reach }))
+      .sort((a, b) => b.f - a.f);
+    const cap = parseFloat($("tFreq").value) || 3;
+    draw("freqChart", { type: "bar", data: { labels: fr.map(x => x.name), datasets: [
+        { label: "Frequency", data: fr.map(x => +x.f.toFixed(2)), backgroundColor: fr.map(x => x.f >= cap ? T.serious : T.s1), borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: false, barPercentage: 0.75 } ] },
+      options: { indexAxis: "y", interaction: { mode: "nearest", axis: "y", intersect: false },
+        scales: { x: { beginAtZero: true, grid: { color: T.grid }, border: { display: false }, ticks: { color: T.muted, maxTicksLimit: 6 } },
+                  y: { grid: { display: false }, border: { color: T.axis }, ticks: { color: T.ink2, font: { size: 11 } } } },
+        plugins: { tooltip: { callbacks: { label: c => ` Frequency ${c.raw}${c.raw >= cap ? "  ·  change creative" : ""}` } } } },
+      plugins: [{ id: "cap", afterDatasetsDraw(ch) { const x = ch.scales.x.getPixelForValue(cap), { top, bottom } = ch.chartArea, ctx = ch.ctx;
+        ctx.save(); ctx.strokeStyle = T.ink2; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x, bottom); ctx.stroke();
+        ctx.fillStyle = T.ink2; ctx.font = `500 11px ${Chart.defaults.font.family}`; ctx.fillText(`cap ${cap}`, x + 4, top + 10); ctx.restore(); } }] },
+      [{ h: "Ad set" }, { h: "Frequency", n: 1 }, { h: "Action" }],
+      fr.map(x => [x.name, x.f.toFixed(2), x.f >= cap ? "Change creative" : "OK"]));
+
+    const byA = adAgg(state.from, state.to, a => a);
+    const cr = Object.entries(byA).filter(([, a]) => a.impr >= 3000).map(([k, a]) => ({ k, ad: D.ads[k], ctr: a.clicks / a.impr, impr: a.impr }));
+    const row = x => [x.ad.creative, shortName(D.campaigns[x.ad.campaign].name), x.ad.format, num(x.impr), pct(x.ctr, 2)];
+    const cols = [{ h: "Creative" }, { h: "Campaign" }, { h: "Format" }, { h: "Impressions", n: 1 }, { h: "CTR", n: 1 }];
+    const sorted = [...cr].sort((a, b) => b.ctr - a.ctr);
+    table("topCreatives", cols, sorted.slice(0, 5).map(row), "No creative passed 3,000 impressions in this range.");
+    table("lowCreatives", cols, sorted.slice(-5).reverse().map(row), "No creative passed 3,000 impressions in this range.");
+
+    const lp = {}; for (const r of D.lpDaily) { if (!inRange(r[0])) continue; const a = lp[r[1]] || (lp[r[1]] = { s: 0, b: 0, f: 0, lw: 0 }); a.s += r[2]; a.b += r[3]; a.f += r[4]; a.lw += r[5] * r[2]; }
+    table("lpTable", [{ h: "Page" }, { h: "Type" }, { h: "Sessions", n: 1 }, { h: "Drop-off", n: 1 }, { h: "Load time", n: 1 }, { h: "Form conversion", n: 1 }, { h: "Status" }],
+      Object.entries(lp).sort((a, b) => b[1].b / b[1].s - a[1].b / a[1].s).map(([k, a]) => { const load = a.lw / a.s / 1000, drop = a.b / a.s;
+        return [D.landingPages[k].url, D.landingPages[k].type, num(a.s), pct(drop, 0), load.toFixed(1) + " s", pct(a.f / a.s, 1),
+                load > 3 || drop > 0.55 ? chip("critical", load > 3 ? "Fix: slow page" : "Fix: high drop-off") : chip("good", "Healthy")]; }));
+  }
+
+  // ======================= RCA =======================
+  function renderRCA() {
+    const cap = parseFloat($("tFreq").value) || 3, decayT = (parseFloat($("tDecay").value) || 25) / 100, mult = parseFloat($("tMult").value) || 1.5;
+    const byC = adAgg(state.from, state.to, a => D.ads[a].campaign);
+    const f7 = add(state.to, -6) > state.from ? add(state.to, -6) : state.from;
+    const last7 = adAgg(f7, state.to, a => D.ads[a].campaign);
+    const q = qualifiedBy(a => D.ads[a].campaign);
+    const launch = {}; for (const r of D.adDaily) { const c = D.ads[r[1]].campaign; if (r[0] >= add(D.campaigns[c].start, 14)) continue;
+      const a = launch[c] || (launch[c] = { i: 0, c: 0 }); a.i += r[3]; a.c += r[5]; }
+    const rows = Object.keys(byC).filter(c => byC[c].spend > 0).map(c => { const a = byC[c], obj = D.campaigns[c].objective;
+      const results = obj === "program" ? (q[c] || 0) : a.leads; const ctr = a.clicks / a.impr;
+      const l = launch[c]; const decay = l && l.i ? 1 - ctr / (l.c / l.i) : 0;
+      const freq = last7[c] && last7[c].reach ? last7[c].impr / last7[c].reach : NaN;
+      return { c, obj, name: shortName(D.campaigns[c].name), spend: a.spend, results, cost: results ? a.spend / results : Infinity, freq, ctr, decay }; });
+    const med = {}; ["program", "workshop"].forEach(o => med[o] = median(rows.filter(r => r.obj === o).map(r => r.cost)));
+    rows.forEach(r => { const m = med[r.obj]; const why = [];
+      if (r.cost > m * mult) { r.v = "DROP"; why.push(`cost ${short(r.cost)} is ${(r.cost / m).toFixed(1)}× the median`); }
+      else if (r.freq >= cap || r.decay >= decayT) { r.v = "REFRESH"; if (r.freq >= cap) why.push(`frequency ${r.freq.toFixed(1)}`); if (r.decay >= decayT) why.push(`CTR down ${pct(r.decay, 0)} since launch`); }
+      else if (r.cost <= m) { r.v = "SCALE"; why.push(`cost at or below median ${short(m)}, ad still fresh`); }
+      else { r.v = "HOLD"; why.push("cost above median, below drop line"); }
+      r.why = why.join(" · "); });
+    const K = { SCALE: ["good", "Scale"], REFRESH: ["warn", "Refresh"], DROP: ["critical", "Drop"], HOLD: ["neutral", "Hold"] };
+    const order = { DROP: 0, REFRESH: 1, SCALE: 2, HOLD: 3 };
+    rows.sort((a, b) => order[a.v] - order[b.v] || a.obj.localeCompare(b.obj));
+    const sumHost = $("rcaSummary"); sumHost.replaceChildren(...["SCALE", "REFRESH", "DROP", "HOLD"].map(v => chip(K[v][0], `${K[v][1]}: ${rows.filter(r => r.v === v).length}`)));
+    table("rcaTable", [{ h: "Verdict" }, { h: "Campaign" }, { h: "Type" }, { h: "Spend", n: 1 }, { h: "Results", n: 1 }, { h: "Cost per result", n: 1 }, { h: "Frequency", n: 1 }, { h: "CTR", n: 1 }, { h: "Why" }],
+      rows.map(r => [chip(...K[r.v]), r.name, r.obj, inr(r.spend), num(r.results), Number.isFinite(r.cost) ? inr(r.cost) : "no results", Number.isFinite(r.freq) ? r.freq.toFixed(2) : "–", pct(r.ctr, 2), r.why]),
+      "No campaign spent money in this range.");
+  }
+
+  // ---------- wiring ----------
+  const R = { revenue: renderRevenue, funnel: renderFunnel, campaigns: renderCampaigns, rca: renderRCA };
+  function render() {
+    $("rangeLabel").textContent = `${nice(state.from)} – ${nice(state.to)} ${state.to.slice(0, 4)} · ${diff(state.from, state.to) + 1} days`;
+    document.querySelectorAll("#presets button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.p === state.preset)));
+    $("from").value = state.from; $("to").value = state.to;
+    R[state.tab]();
+  }
+  function setTab(t) {
+    if (!R[t]) t = "revenue"; state.tab = t;
+    document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === t)));
+    Object.keys(R).forEach(k => $("tab-" + k).hidden = k !== t);
+    try { history.replaceState(null, "", "#" + t); } catch (e) {}
+    render();
+  }
+  $("asof").textContent = `Dummy data · live to ${nice(AS_OF)} ${AS_OF.slice(0, 4)}`;
+  $("from").min = $("to").min = FIRST; $("from").max = $("to").max = AS_OF;
+  document.querySelectorAll("#presets button").forEach(b => b.addEventListener("click", () => {
+    [state.from, state.to] = presets[b.dataset.p](); state.preset = b.dataset.p; render(); }));
+  ["from", "to"].forEach(id => $(id).addEventListener("change", () => {
+    let f = $("from").value || FIRST, t = $("to").value || AS_OF; if (f > t) [f, t] = [t, f];
+    state.from = f < FIRST ? FIRST : f; state.to = t > AS_OF ? AS_OF : t; state.preset = null; render(); }));
+  document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => setTab(b.dataset.tab)));
+  ["tFreq", "tDecay", "tMult"].forEach(id => $(id).addEventListener("input", () => render()));
+  document.querySelectorAll("[data-table]").forEach(btn => btn.addEventListener("click", () => {
+    const id = btn.dataset.table, host = $(id + "-table"); host.hidden = !host.hidden; btn.textContent = host.hidden ? "Table" : "Hide table";
+    if (!host.hidden && chartTables[id]) table(host, ...chartTables[id]); }));
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  (mq.addEventListener ? mq.addEventListener("change", render) : mq.addListener(render));
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  const h = (location.hash || "").slice(1);
+  setTab(R[h] ? h : "revenue");
+})();
+</script>

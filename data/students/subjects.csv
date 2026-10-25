@@ -1,0 +1,101 @@
+student_id,subject,is_tuition,target_score,chapters_total
+S01,Maths,1,85,24
+S01,Science,1,85,22
+S01,English,0,90,14
+S01,Social Science,0,75,20
+S01,Hindi,0,80,15
+S02,Maths,1,75,24
+S02,Science,1,75,22
+S02,English,0,85,14
+S02,Social Science,0,80,20
+S02,Hindi,0,85,15
+S03,Maths,1,80,24
+S03,Science,1,75,22
+S03,English,0,85,14
+S03,Social Science,0,75,20
+S03,Hindi,0,85,15
+S04,Maths,1,80,24
+S04,Science,1,75,22
+S04,English,0,75,14
+S04,Social Science,0,90,20
+S04,Hindi,0,90,15
+S05,Maths,1,85,24
+S05,Science,1,85,22
+S05,English,0,85,14
+S05,Social Science,0,75,20
+S05,Hindi,0,90,15
+S06,Maths,1,75,24
+S06,Science,1,75,22
+S06,English,0,85,14
+S06,Social Science,0,90,20
+S06,Hindi,0,75,15
+S07,Maths,1,75,24
+S07,Science,1,90,22
+S07,English,0,90,14
+S07,Social Science,0,85,20
+S07,Hindi,0,80,15
+S08,Maths,1,80,24
+S08,Science,1,85,22
+S08,English,0,90,14
+S08,Social Science,0,80,20
+S08,Hindi,0,80,15
+S09,Maths,1,75,24
+S09,Science,1,80,22
+S09,English,0,85,14
+S09,Social Science,0,85,20
+S09,Hindi,0,85,15
+S10,Maths,1,75,24
+S10,Science,1,90,22
+S10,English,0,75,14
+S10,Social Science,0,85,20
+S10,Hindi,0,90,15
+S11,Maths,1,80,24
+S11,Science,1,85,22
+S11,English,0,75,14
+S11,Social Science,0,80,20
+S11,Hindi,0,80,15
+S12,Maths,1,90,24
+S12,Science,1,90,22
+S12,English,0,90,14
+S12,Social Science,0,90,20
+S12,Hindi,0,90,15
+S13,Maths,1,75,24
+S13,Science,1,75,22
+S13,English,0,85,14
+S13,Social Science,0,85,20
+S13,Hindi,0,85,15
+S14,Maths,1,80,24
+S14,Science,1,90,22
+S14,English,0,75,14
+S14,Social Science,0,90,20
+S14,Hindi,0,90,15
+S15,Maths,1,80,24
+S15,Science,1,75,22
+S15,English,0,85,14
+S15,Social Science,0,85,20
+S15,Hindi,0,90,15
+S16,Maths,1,85,24
+S16,Science,1,85,22
+S16,English,0,90,14
+S16,Social Science,0,80,20
+S16,Hindi,0,85,15
+S17,Maths,1,80,24
+S17,Science,1,90,22
+S17,English,0,75,14
+S17,Social Science,0,75,20
+S17,Hindi,0,75,15
+S18,Maths,1,75,24
+S18,Science,1,80,22
+S18,English,0,80,14
+S18,Social Science,0,75,20
+S18,Hindi,0,80,15
+S19,Maths,1,80,24
+S19,Science,1,85,22
+S19,English,0,80,14
+S19,Social Science,0,75,20
+S19,Hindi,0,75,15
+S20,Maths,1,90,24
+S20,Science,1,80,22
+S20,English,0,85,14
+S20,Social Science,0,90,20
+S20,Hindi,0,75,15

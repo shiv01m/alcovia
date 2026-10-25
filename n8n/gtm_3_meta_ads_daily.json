@@ -1,0 +1,199 @@
+{
+  "name": "GTM 3 \u00b7 Daily Meta Ads metrics (06:00 IST)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Every day 06:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.facebook.com/v19.0/act_{{$env.META_AD_ACCOUNT}}/insights",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "level",
+              "value": "ad"
+            },
+            {
+              "name": "date_preset",
+              "value": "yesterday"
+            },
+            {
+              "name": "fields",
+              "value": "ad_id,spend,impressions,reach,inline_link_clicks,actions"
+            },
+            {
+              "name": "limit",
+              "value": "500"
+            }
+          ]
+        },
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "facebookGraphApi"
+      },
+      "name": "Meta Insights: yesterday by ad",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        260,
+        0
+      ],
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "3",
+          "name": "Meta Ads"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const day = new Date(Date.now() - 864e5).toISOString().slice(0, 10);\nreturn $json.data.map(r => ({ json: {\n  metric_date: day, ad_id: r.ad_id, spend_inr: Number(r.spend), impressions: Number(r.impressions),\n  reach: Number(r.reach), link_clicks: Number(r.inline_link_clicks || 0),\n  leads: Number((r.actions || []).find(a => a.action_type === 'lead')?.value || 0),\n}}));"
+      },
+      "name": "Shape rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": "ad_daily_metrics",
+        "columns": "metric_date,ad_id,spend_inr,impressions,reach,link_clicks,leads",
+        "conflictColumns": "metric_date,ad_id"
+      },
+      "name": "Upsert ad_daily_metrics",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        780,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT s.ad_set_name, ROUND(SUM(m.impressions)::numeric / NULLIF(SUM(m.reach),0), 2) AS frequency\nFROM ad_daily_metrics m JOIN ads a USING (ad_id) JOIN ad_sets s USING (ad_set_id)\nWHERE m.metric_date >= CURRENT_DATE - 7\nGROUP BY 1 HAVING SUM(m.impressions)::numeric / NULLIF(SUM(m.reach),0) >= 3;"
+      },
+      "name": "Any ad set at frequency 3+?",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1040,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "list": "={{$env.CLICKUP_MARKETING_LIST}}",
+        "name": "=Refresh creative: {{$json.ad_set_name}} (frequency {{$json.frequency}})"
+      },
+      "name": "Post to ClickUp: refresh creatives",
+      "type": "n8n-nodes-base.clickUp",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        0
+      ],
+      "credentials": {
+        "clickUpApi": {
+          "id": "2",
+          "name": "ClickUp"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every day 06:00": {
+      "main": [
+        [
+          {
+            "node": "Meta Insights: yesterday by ad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meta Insights: yesterday by ad": {
+      "main": [
+        [
+          {
+            "node": "Shape rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shape rows": {
+      "main": [
+        [
+          {
+            "node": "Upsert ad_daily_metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert ad_daily_metrics": {
+      "main": [
+        [
+          {
+            "node": "Any ad set at frequency 3+?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Any ad set at frequency 3+?": {
+      "main": [
+        [
+          {
+            "node": "Post to ClickUp: refresh creatives",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Kolkata"
+  },
+  "active": false
+}

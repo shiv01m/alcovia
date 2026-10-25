@@ -1,0 +1,524 @@
+<title>Alcovian Progress Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one filter row scopes four tabs; summary tiles first, then charts, then the tables you act on. */
+:root {
+  --page: #f6f6f3; --surface: #fcfcfb; --surface-2: #efeee9;
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #7a7873;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+  --good: #0ca30c; --good-ink: #006300; --warn: #fab219; --serious: #ec835a; --critical: #d03b3b;
+  --accent: #2a78d6; --accent-wash: #e3eefb;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0d0d0d; --surface: #1a1a19; --surface-2: #242422;
+    --ink: #f0efec; --ink-2: #c3c2b7; --muted: #8f8d86;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    --good-ink: #0ca30c; --accent: #3987e5; --accent-wash: #1b2b40;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --surface-2: #242422;
+  --ink: #f0efec; --ink-2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+  --good-ink: #0ca30c; --accent: #3987e5; --accent-wash: #1b2b40;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--page); color: var(--ink); font-family: var(--font-ui); font-size: 14px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.wrap { max-width: 1240px; margin: 0 auto; display: grid; gap: 16px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+h2 { font-size: 14px; font-weight: 600; }
+.sub { margin: 2px 0 0; color: var(--ink-2); font-size: 13px; }
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.badge { font-family: var(--font-data); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-2);
+  border: 1px solid var(--ring); border-radius: 999px; padding: 3px 9px; background: var(--surface); }
+
+/* filter row */
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.seg { display: inline-flex; flex-wrap: wrap; background: var(--surface-2); border-radius: 8px; padding: 3px; gap: 2px; }
+.seg button { font: inherit; font-size: 13px; border: 0; background: transparent; color: var(--ink-2); padding: 6px 11px; border-radius: 6px; cursor: pointer; }
+.seg button:hover { background: var(--surface); color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: 0 0 0 1px var(--ring); }
+.custom { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--ink-2); font-size: 13px; }
+.custom input { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 5px 8px; }
+.range { font-family: var(--font-data); font-size: 12px; color: var(--muted); }
+
+/* tabs */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--grid); overflow-x: auto; }
+.tabs button { font: inherit; font-size: 14px; border: 0; background: none; color: var(--ink-2); padding: 10px 12px; cursor: pointer;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.panel { display: grid; gap: 16px; }
+
+/* tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 14px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.tile .lab { font-size: 12px; color: var(--ink-2); letter-spacing: 0.02em; }
+.tile .val { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+.tile .note { font-size: 12px; color: var(--muted); }
+.meter { height: 6px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+.meter > i { display: block; height: 100%; background: var(--s1); border-radius: 999px; }
+
+/* cards */
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 14px 16px 16px; display: grid; gap: 10px; min-width: 0; align-content: start; }
+.card > header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.card .hint { font-size: 12px; color: var(--muted); margin: 0; }
+.tbtn { font: inherit; font-size: 12px; color: var(--ink-2); background: none; border: 1px solid var(--ring); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+.tbtn:hover { color: var(--ink); background: var(--surface-2); }
+.plot { position: relative; height: 280px; }
+.plot.tall { height: 330px; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.legend i.line { height: 2px; width: 14px; border-radius: 0; }
+
+/* tables */
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; font-weight: 500; color: var(--ink-2); font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+td { padding: 7px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--font-data); font-size: 12px; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.empty { color: var(--muted); font-size: 13px; padding: 10px 0; }
+
+/* status chips: icon + label, never colour alone */
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid; }
+.chip.good { color: var(--good-ink); border-color: var(--good); }
+.chip.warn { color: var(--ink); border-color: var(--warn); background: color-mix(in srgb, var(--warn) 18%, transparent); }
+.chip.serious { color: var(--ink); border-color: var(--serious); }
+.chip.critical { color: var(--critical); border-color: var(--critical); }
+.chip.neutral { color: var(--ink-2); border-color: var(--axis); }
+
+.rca-controls { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; }
+.rca-controls label { display: grid; gap: 4px; font-size: 12px; color: var(--ink-2); }
+.rca-controls input { font: inherit; width: 96px; color: var(--ink); background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 5px 8px; }
+.summary-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.rule { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 13px; display: grid; gap: 3px; }
+footer.notes { color: var(--ink-2); font-size: 12px; border-top: 1px solid var(--grid); padding-top: 12px; display: grid; gap: 4px; }
+footer.notes p { margin: 0; max-width: 90ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+<style>
+select { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 5px 8px; max-width: 100%; }
+.lens { display: grid; gap: 2px; min-width: 0; }
+.lens b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.lens small { color: var(--muted); font-size: 11px; line-height: 1.3; }
+td.act { font-weight: 500; white-space: nowrap; }
+td.cad { color: var(--muted); font-size: 12px; white-space: nowrap; }
+tr.group td { background: var(--surface-2); color: var(--ink-2); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; padding-block: 5px; }
+.matrix td { min-width: 150px; }
+.matrix td.act, .matrix td.cad { min-width: 0; }
+.how { font-size: 11px; color: var(--muted); }
+.stagebar { display: flex; height: 10px; border-radius: 3px; overflow: hidden; gap: 2px; min-width: 120px; background: var(--surface); }
+.stagebar i { display: block; height: 100%; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 13px; }
+.kv dt { color: var(--ink-2); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.alert-x input { width: 70px; }
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Alcovian Progress Board</h1>
+      <p class="sub">Every routine Alcovia runs, measured three ways: did we deliver it, did the teen value it, did the teen improve.</p>
+    </div>
+    <span class="badge" id="asof">Dummy data</span>
+  </div>
+
+  <div class="filters" role="toolbar" aria-label="Filters">
+    <div class="seg" id="presets">
+      <button type="button" data-p="l7">Last 7 days</button>
+      <button type="button" data-p="l30">Last 30 days</button>
+      <button type="button" data-p="mtd">This month</button>
+      <button type="button" data-p="all">Since 1 Aug</button>
+    </div>
+    <div class="custom">
+      <label for="from">From</label><input type="date" id="from">
+      <label for="to">To</label><input type="date" id="to">
+    </div>
+    <div class="custom">
+      <label for="advisor">Advisor</label>
+      <select id="advisor"><option value="">All advisors</option></select>
+    </div>
+    <span class="range" id="rangeLabel"></span>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" data-tab="cohort">All Alcovians</button>
+    <button role="tab" data-tab="kpis">KPI matrix</button>
+    <button role="tab" data-tab="student">One Alcovian</button>
+  </nav>
+
+  <!-- COHORT -->
+  <section class="panel" id="tab-cohort" role="tabpanel">
+    <div class="tiles" id="cohortTiles"></div>
+    <article class="card">
+      <header><h2>Needs attention</h2><span class="hint" id="alertHint"></span></header>
+      <div class="rca-controls alert-x">
+        <label for="xDev">Syllabus behind plan by more than, %<input type="number" id="xDev" min="5" max="80" step="5" value="25"></label>
+        <label for="xTask">On-time tasks below, %<input type="number" id="xTask" min="10" max="95" step="5" value="60"></label>
+        <label for="xRec">Recovery below, %<input type="number" id="xRec" min="10" max="80" step="5" value="40"></label>
+      </div>
+      <div class="tw" id="alertTable"></div>
+    </article>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Exam readiness by week</h2><button class="tbtn" data-table="readChart">Table</button></header>
+        <p class="hint">Share of chapters due so far that have cleared all five rigour stages. Average across students in view.</p>
+        <div class="plot"><canvas id="readChart" aria-label="Average exam readiness by week"></canvas></div>
+        <div class="tw" id="readChart-table" hidden></div>
+      </article>
+      <article class="card">
+        <header><h2>Daily habits by week</h2><button class="tbtn" data-table="habitChart">Table</button></header>
+        <div class="legend" id="habitLegend"></div>
+        <p class="hint">% of student-days where the teen did each habit.</p>
+        <div class="plot"><canvas id="habitChart" aria-label="Daily habit rates by week"></canvas></div>
+        <div class="tw" id="habitChart-table" hidden></div>
+      </article>
+    </div>
+    <article class="card">
+      <header><h2>Every Alcovian at a glance</h2><span class="hint">Click a name to open that student.</span></header>
+      <div class="tw" id="rosterTable"></div>
+    </article>
+  </section>
+
+  <!-- KPI MATRIX -->
+  <section class="panel" id="tab-kpis" role="tabpanel" hidden>
+    <article class="card">
+      <header><h2>Quantity · Quality · Performance</h2><span class="hint" id="kpiScope"></span></header>
+      <p class="hint">Quantity: did Alcovia deliver it. Quality: did the teen show up and value it. Performance: is the teen getting better. Small text shows the data source; "advisor" means one manual input.</p>
+      <div class="tw"><table class="matrix" id="kpiTable"></table></div>
+    </article>
+  </section>
+
+  <!-- STUDENT -->
+  <section class="panel" id="tab-student" role="tabpanel" hidden>
+    <div class="filters">
+      <div class="custom"><label for="who">Alcovian</label><select id="who"></select></div>
+    </div>
+    <div class="tiles" id="stuTiles"></div>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Focus minutes per day</h2><button class="tbtn" data-table="focusChart">Table</button></header>
+        <div class="plot"><canvas id="focusChart" aria-label="Focus minutes per day"></canvas></div>
+        <div class="tw" id="focusChart-table" hidden></div>
+      </article>
+      <article class="card">
+        <header><h2>8 pm quiz score</h2><button class="tbtn" data-table="quizChart">Table</button></header>
+        <p class="hint">Gaps are days the quiz was skipped.</p>
+        <div class="plot"><canvas id="quizChart" aria-label="Daily quiz score"></canvas></div>
+        <div class="tw" id="quizChart-table" hidden></div>
+      </article>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <header><h2>Syllabus rigour by subject</h2></header>
+        <div class="legend" id="stageLegend"></div>
+        <div class="tw" id="subjectTable"></div>
+      </article>
+      <article class="card">
+        <header><h2>Programme and roadmaps</h2></header>
+        <div class="tw" id="stuEvents"></div>
+        <dl class="kv" id="stuRoadmaps"></dl>
+      </article>
+    </div>
+  </section>
+
+  <footer class="notes">
+    <p><b>How data gets in.</b> App: timetable, focus mode, tasks, chapter stages, 1-tap ratings after every session. Quiz form: n8n writes scores at 8:30 pm. Wearables: WHOOP, Apple Health and Google Fit sync nightly. ClickUp: advisor session notes and roadmap sign-off. The only manual inputs are the advisor's workshop soft-skill scores and roadmap sign-off.</p>
+    <p>All names and figures are dummy data generated for this assignment. Schema in <span style="font-family:var(--font-data)">schema/student_schema.sql</span>, metric SQL in <span style="font-family:var(--font-data)">sql/student_metrics.sql</span>.</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script>
+(() => {
+  const D = window.STUDENT_DATA, AS_OF = D.asOf, FIRST = "2026-08-01";
+  const ms = s => { const [y, m, d] = s.split("-").map(Number); return Date.UTC(y, m - 1, d); };
+  const iso = t => new Date(t).toISOString().slice(0, 10);
+  const add = (s, n) => iso(ms(s) + n * 864e5);
+  const diff = (a, b) => Math.round((ms(b) - ms(a)) / 864e5);
+  const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const nice = s => `${+s.slice(8)} ${MON[+s.slice(5, 7) - 1]}`;
+  const pct = (v, d = 0) => Number.isFinite(v) ? (v * 100).toFixed(d) + "%" : "–";
+  const f1 = v => Number.isFinite(v) ? v.toFixed(1) : "–";
+  const f0 = v => Number.isFinite(v) ? Math.round(v).toLocaleString("en-IN") : "–";
+  const sum = (a, f) => a.reduce((t, x) => t + f(x), 0);
+  const avg = (a, f) => { const v = a.map(f).filter(x => x != null && Number.isFinite(x)); return v.length ? v.reduce((t, x) => t + x, 0) / v.length : NaN; };
+  const ratio = (n, d) => d ? n / d : NaN;
+
+  const S = {}; D.students.forEach(s => S[s[0]] = { id: s[0], name: s[1], grade: s[2], advisor: s[3], plan: s[4], wear: s[5] });
+  const state = { from: add(AS_OF, -29), to: AS_OF, preset: "l30", tab: "cohort", advisor: "", who: D.students[0][0] };
+  const presets = { l7: () => [add(AS_OF, -6), AS_OF], l30: () => [add(AS_OF, -29), AS_OF], mtd: () => [AS_OF.slice(0, 8) + "01", AS_OF], all: () => [FIRST, AS_OF] };
+  const inR = d => d >= state.from && d <= state.to;
+  const inView = sid => !state.advisor || S[sid].advisor === state.advisor;
+
+  const $ = id => document.getElementById(id);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const tile = (label, value, note, meter) => { const t = el("div", "tile"); t.append(el("div", "lab", label), el("div", "val", value));
+    if (meter != null && Number.isFinite(meter)) { const m = el("div", "meter"), i = el("i"); i.style.width = Math.min(100, Math.max(0, meter * 100)) + "%"; m.append(i); t.append(m); }
+    if (note) t.append(el("div", "note", note)); return t; };
+  const chip = (kind, label) => { const ic = { good: "▲", warn: "↻", serious: "!", critical: "✕", neutral: "–" }; const c = el("span", "chip " + kind); c.append(el("span", null, ic[kind]), el("span", null, label)); return c; };
+  function table(host, cols, rows, empty) { host = typeof host === "string" ? $(host) : host; host.replaceChildren();
+    if (!rows.length) { host.append(el("div", "empty", empty || "Nothing in this range.")); return; }
+    const t = el("table"), th = el("thead"), hr = el("tr"); cols.forEach(c => hr.append(el("th", c.n ? "n" : null, c.h))); th.append(hr); t.append(th);
+    const tb = el("tbody"); rows.forEach(r => { const tr = el("tr"); cols.forEach((c, i) => { const td = el("td", c.n ? "n" : null); const v = r[i]; if (v instanceof Node) td.append(v); else td.textContent = v ?? ""; tr.append(td); }); tb.append(tr); });
+    t.append(tb); host.append(t); }
+  function legend(id, items) { const h = $(id); h.replaceChildren(); items.forEach(([l, c, line]) => { const s = el("span"), i = el("i", line ? "line" : null); i.style.background = c; s.append(i, el("span", null, l)); h.append(s); }); }
+  const tok = () => { const c = getComputedStyle(document.documentElement), g = n => c.getPropertyValue(n).trim();
+    return { s1: g("--s1"), s2: g("--s2"), s3: g("--s3"), ink: g("--ink"), ink2: g("--ink-2"), muted: g("--muted"), grid: g("--grid"), axis: g("--axis"), surface: g("--surface"), good: g("--good"), warn: g("--warn"), serious: g("--serious"), critical: g("--critical") }; };
+
+  const charts = {}, chartTables = {};
+  function draw(id, cfg, cols, rows) {
+    if (charts[id]) charts[id].destroy(); const T = tok();
+    Chart.defaults.font.family = getComputedStyle(document.body).fontFamily; Chart.defaults.font.size = 12; Chart.defaults.color = T.muted;
+    const o = cfg.options || {}, op = o.plugins || {};
+    const tip = { backgroundColor: T.surface, titleColor: T.ink2, bodyColor: T.ink, borderColor: T.axis, borderWidth: 1, padding: 10, boxWidth: 12, boxHeight: 2, bodyFont: { weight: "600" } };
+    cfg.options = Object.assign({ responsive: true, maintainAspectRatio: false, animation: false, interaction: { mode: "index", intersect: false } }, o,
+      { plugins: Object.assign({ legend: { display: false } }, op, { tooltip: Object.assign(tip, op.tooltip || {}) }) });
+    charts[id] = new Chart($(id), cfg); chartTables[id] = [cols, rows];
+    const h = $(id + "-table"); if (!h.hidden) table(h, cols, rows);
+  }
+  const xy = (T, yopt = {}) => ({ x: { grid: { display: false }, border: { color: T.axis }, ticks: { color: T.muted, maxRotation: 0, autoSkip: true, maxTicksLimit: 10 } },
+                                 y: Object.assign({ beginAtZero: true, grid: { color: T.grid }, border: { display: false }, ticks: { color: T.muted, maxTicksLimit: 6 } }, yopt) });
+
+  // ---------- core aggregations ----------
+  const dailyIn = sid => D.daily.filter(r => inR(r[0]) && (sid ? r[1] === sid : inView(r[1])));
+  const eventsIn = (type, sid) => D.events.filter(e => e[0] === type && inR(e[2]) && (sid ? e[3] === sid : inView(e[3])));
+  const tasksIn = sid => D.tasks.filter(t => inR(t[1]) && t[1] <= AS_OF && (sid ? t[0] === sid : inView(t[0])));
+  const chaptersOf = sid => D.chapters.filter(c => sid ? c[0] === sid : inView(c[0]));
+  const DUE_NOW = "2026-09-30";                  // quarters closed so far
+  function syllabus(sid) {
+    const ch = chaptersOf(sid), due = ch.filter(c => c[3] <= DUE_NOW), cur = ch.filter(c => c[3] > DUE_NOW && c[3] <= "2026-12-31");
+    const ready = due.filter(c => c[2] === 5).length;
+    const qElapsed = (diff("2026-10-01", AS_OF) + 1) / 92;               // share of Q3 gone
+    const curExpected = cur.length * qElapsed * 5, curDone = sum(cur, c => c[2]);
+    return { due: due.length, ready, readyPct: ratio(ready, due.length), readiness: ratio(sum(due, c => c[2]), due.length * 5),
+             curPace: ratio(curDone, curExpected), behind: 1 - Math.min(1, ratio(sum(due, c => c[2]) + curDone, due.length * 5 + curExpected)) };
+  }
+  function eventStats(rows) { const held = rows.filter(r => r[4]); const sessions = new Set(rows.map(r => r[2] + r[0]));
+    const heldSessions = new Set(held.map(r => r[2] + r[0]));
+    return { planned: sessions.size, held: heldSessions.size, invites: held.length, attended: held.filter(r => r[5]).length,
+             rating: avg(held.filter(r => r[5]), r => r[6]), score: avg(held.filter(r => r[5]), r => r[7]) }; }
+  function taskStats(rows) { const done = rows.filter(t => t[2]); const onTime = done.filter(t => t[2] <= t[1]);
+    const est = done.filter(t => t[4]); return { n: rows.length, done: done.length, onTime: ratio(onTime.length, rows.length),
+      estAcc: est.length ? 1 - Math.min(1, avg(est, t => Math.abs(t[4] - t[3]) / t[4])) : NaN }; }
+  function habit(rows) { return { n: rows.length, planned: ratio(sum(rows, r => r[2]), rows.length), adherence: ratio(sum(rows, r => r[4]), sum(rows, r => r[3])),
+      quiz: ratio(sum(rows, r => r[5]), rows.length), quizScore: avg(rows, r => r[6]), focusDays: ratio(rows.filter(r => r[7] > 0).length, rows.length),
+      focus: avg(rows, r => r[7]), focus45: ratio(rows.filter(r => r[7] >= 45).length, rows.length),
+      wearDays: rows.filter(r => r[8] != null).length, active: avg(rows, r => r[8]), sleep: avg(rows, r => r[9]), recovery: avg(rows, r => r[10]),
+      app: avg(rows, r => r[11]) }; }
+  const studentsInView = () => Object.values(S).filter(s => inView(s.id));
+
+  // ---------- alerts ----------
+  function alerts() {
+    const xDev = (+$("xDev").value || 25) / 100, xTask = (+$("xTask").value || 60) / 100, xRec = +$("xRec").value || 40;
+    const out = [], last7 = add(AS_OF, -6);
+    for (const s of studentsInView()) {
+      const sy = syllabus(s.id);
+      if (sy.behind > xDev) out.push([s, "critical", "Syllabus behind plan", `${pct(sy.behind)} behind the quarter plan`, "Advisor + parent", "Book a sprint; flag tutor support"]);
+      const ts = taskStats(tasksIn(s.id));
+      if (ts.n >= 5 && ts.onTime < xTask) out.push([s, "serious", "Missing deadlines", `${pct(ts.onTime)} of ${ts.n} tasks on time`, "Advisor", "Re-plan the week with the teen"]);
+      const wk = D.daily.filter(r => r[1] === s.id && r[0] >= last7);
+      const skipped = wk.filter(r => !r[5]).length;
+      if (skipped >= 5) out.push([s, "warn", "Skipping the 8 pm quiz", `${skipped} of last 7 quizzes missed`, "Student (app nudge)", "Automatic nudge at 7:45 pm"]);
+      const rec = wk.filter(r => r[10] != null).slice(-3);
+      if (rec.length === 3 && avg(rec, r => r[10]) < xRec) out.push([s, "serious", "Low recovery", `${f0(avg(rec, r => r[10]))}% average over 3 days`, "Advisor + student", "Lighter plan; check sleep"]);
+      const noPlan = wk.filter(r => !r[2]).length;
+      if (noPlan >= 5) out.push([s, "warn", "No timetable", `${noPlan} of last 7 days unplanned`, "Student (app nudge)", "Prompt to plan at 4 pm"]);
+    }
+    const order = { critical: 0, serious: 1, warn: 2 };
+    return out.sort((a, b) => order[a[1]] - order[b[1]] || a[0].name.localeCompare(b[0].name));
+  }
+
+  // ---------- weekly buckets ----------
+  const weeksIn = () => { const out = []; let d = state.from; while (d <= state.to) { out.push(d); d = add(d, 7); } return out; };
+
+  // ======================= COHORT =======================
+  function renderCohort() {
+    const T = tok(), rows = dailyIn(), h = habit(rows), stu = studentsInView();
+    const active = new Set(rows.filter(r => r[11] > 1 || r[7] > 0).map(r => r[1]));
+    const sy = syllabus(), al = alerts(), tasks = taskStats(tasksIn());
+    const wear = stu.filter(s => s.wear).length;
+    $("cohortTiles").replaceChildren(
+      tile("Active Alcovians", `${active.size} of ${stu.length}`, "Opened the app or ran focus mode in range"),
+      tile("App minutes per day", f1(h.app), "Focus mode excluded · target 30", h.app / 30),
+      tile("8 pm quiz participation", pct(h.quiz), `Average score ${f0(h.quizScore)}%`, h.quiz),
+      tile("Focus time per day", `${f0(h.focus)} min`, `${pct(h.focus45)} of days hit 45+ min`),
+      tile("Chapters exam-ready", pct(sy.readyPct), `${sy.ready} of ${sy.due} chapters due by 30 Sep`, sy.readyPct),
+      tile("Tasks on time", pct(tasks.onTime), `${tasks.done} of ${tasks.n} done`, tasks.onTime),
+      tile("Wearables connected", `${wear} of ${stu.length}`, "Active minutes and recovery need a device"),
+      tile("Needs attention", String(new Set(al.map(a => a[0].id)).size), `${al.length} open flags`),
+    );
+    $("alertHint").textContent = `Rules run nightly in n8n · as of ${nice(AS_OF)}`;
+    const kindLabel = { critical: "Act now", serious: "This week", warn: "Nudge" };
+    table("alertTable", [{ h: "Priority" }, { h: "Alcovian" }, { h: "Flag" }, { h: "Detail" }, { h: "Message goes to" }, { h: "Next step" }],
+      al.map(a => [chip(a[1], kindLabel[a[1]]), a[0].name, a[2], a[3], a[4], a[5]]), "No flags with these thresholds.");
+
+    const wk = weeksIn();
+    const rd = wk.map(w => avg(D.readiness.filter(r => r[0] >= w && r[0] < add(w, 7) && inView(r[1])), r => r[2]));
+    draw("readChart", { type: "line", data: { labels: wk.map(nice), datasets: [{ label: "Readiness", data: rd.map(v => Number.isFinite(v) ? +v.toFixed(1) : null),
+        borderColor: T.s1, backgroundColor: T.s1, borderWidth: 2, pointRadius: 3, pointHoverRadius: 6, tension: 0.25, spanGaps: true }] },
+      options: { scales: xy(T, { max: 100, ticks: { color: T.muted, callback: v => v + "%" } }), plugins: { tooltip: { callbacks: { label: c => ` ${c.raw}% exam-ready` } } } } },
+      [{ h: "Week of" }, { h: "Readiness", n: 1 }], wk.map((w, i) => [nice(w), Number.isFinite(rd[i]) ? rd[i].toFixed(1) + "%" : "–"]));
+
+    const hb = wk.map(w => habit(rows.filter(r => r[0] >= w && r[0] < add(w, 7))));
+    legend("habitLegend", [["Planned the day", T.s1, true], ["Took the quiz", T.s2, true], ["Used focus mode", T.s3, true]]);
+    const line = (label, color, key) => ({ label, data: hb.map(x => Number.isFinite(x[key]) ? +(x[key] * 100).toFixed(1) : null), borderColor: color, backgroundColor: color, borderWidth: 2, pointRadius: 3, pointHoverRadius: 6, tension: 0.25 });
+    draw("habitChart", { type: "line", data: { labels: wk.map(nice), datasets: [line("Planned the day", T.s1, "planned"), line("Took the quiz", T.s2, "quiz"), line("Used focus mode", T.s3, "focusDays")] },
+      options: { scales: xy(T, { max: 100, ticks: { color: T.muted, callback: v => v + "%" } }), plugins: { tooltip: { callbacks: { label: c => ` ${c.dataset.label}: ${c.raw}%` } } } } },
+      [{ h: "Week of" }, { h: "Planned", n: 1 }, { h: "Quiz", n: 1 }, { h: "Focus", n: 1 }], wk.map((w, i) => [nice(w), pct(hb[i].planned), pct(hb[i].quiz), pct(hb[i].focusDays)]));
+
+    const flagged = {}; al.forEach(a => { const k = a[0].id; if (!flagged[k] || ({ critical: 0, serious: 1, warn: 2 })[a[1]] < ({ critical: 0, serious: 1, warn: 2 })[flagged[k]]) flagged[k] = a[1]; });
+    const roster = stu.map(s => { const hh = habit(dailyIn(s.id)), ss = syllabus(s.id), tt = taskStats(tasksIn(s.id));
+      const link = el("button", "tbtn", s.name); link.style.border = "0"; link.style.padding = "0"; link.style.color = "var(--accent)"; link.style.fontSize = "13px";
+      link.addEventListener("click", () => { state.who = s.id; setTab("student"); });
+      return { s, row: [link, s.advisor.replace(" (Advisor)", ""), f1(hh.app), pct(hh.quiz), f0(hh.focus), pct(ss.readyPct), pct(tt.onTime),
+        flagged[s.id] ? chip(flagged[s.id], ({ critical: "Act now", serious: "This week", warn: "Nudge" })[flagged[s.id]]) : chip("good", "On track")], key: ss.readyPct }; })
+      .sort((a, b) => a.key - b.key);
+    table("rosterTable", [{ h: "Alcovian" }, { h: "Advisor" }, { h: "App min/day", n: 1 }, { h: "Quiz", n: 1 }, { h: "Focus min/day", n: 1 }, { h: "Exam-ready", n: 1 }, { h: "Tasks on time", n: 1 }, { h: "Status" }], roster.map(r => r.row));
+  }
+
+  // ======================= KPI MATRIX =======================
+  function renderKPIs() {
+    const rows = dailyIn(), h = habit(rows), stu = studentsInView(), tasks = taskStats(tasksIn()), sy = syllabus();
+    const days = diff(state.from, state.to) + 1, wear = stu.filter(s => s.wear).length;
+    const L = (v, src) => { const d = el("div", "lens"); d.append(el("b", null, v)); if (src) d.append(el("small", null, src)); return d; };
+    const ev = t => eventStats(eventsIn(t));
+    const evRow = (label, cad, t, perf, perfSrc) => { const e = ev(t);
+      return [label, cad, L(e.planned ? `${e.held} of ${e.planned} held` : "None planned", "calendar → n8n"),
+        L(e.invites ? `${pct(ratio(e.attended, e.invites))} attended · ${f1(e.rating)}/5` : "–", "attendance + 1-tap rating"),
+        L(perf ? perf(e) : "–", perfSrc || "")]; };
+    const ms = (road, month) => D.milestones.filter(m => m[1] === road && inView(m[0]) && (!month || (m[2] >= state.from.slice(0, 8) + "01" && m[2] <= state.to)));
+    const career = ms("career"), personal = ms("personal", true), acad = ms("academic", true);
+    const groups = [
+      ["Day", [
+        ["Timetable management", "daily", L(pct(h.planned) + " of days planned", "app"), L(pct(h.adherence) + " of blocks done", "app"), L(pct(tasks.onTime) + " tasks on time", "app")],
+        ["8 pm quiz", "daily", L(`${days} of ${days} quizzes sent`, "n8n schedule"), L(pct(h.quiz) + " took part", "quiz form → n8n"), L(f0(h.quizScore) + "% average score", "quiz form")],
+        ["Focus time", "daily", L(pct(ratio(new Set(rows.filter(r => r[7] > 0).map(r => r[1])).size, stu.length)) + " of teens used it", "app"), L(f0(h.focus) + " min per day", "app"), L(pct(h.focus45) + " of days 45+ min", "app")],
+        ["Active minutes", "daily", L(`${wear} of ${stu.length} wearables linked`, "wearable sync"), L(pct(ratio(h.wearDays, rows.filter(r => S[r[1]].wear).length)) + " of days synced", "wearable sync"), L(f0(h.active) + " active min per day", "wearable")],
+        ["Active recovery", "daily", L(`${wear} of ${stu.length} wearables linked`, "wearable sync"), L(f1(h.sleep) + " h sleep", "wearable"), L(f0(h.recovery) + "% recovery", "wearable")],
+      ]],
+      ["Week", [
+        evRow("Academic sessions", "2 a week", "academic_session"),
+        ["Syllabus rigour", "weekly review", L(`${sy.due} chapters due so far`, "quarter plan: 25% each"), L(pct(sy.curPace) + " of this quarter's pace", "chapter stages in app"), L(pct(sy.readyPct) + " exam-ready · " + pct(sy.readiness) + " readiness", "5-stage rigour")],
+        ["Tasks", "weekly", L(`${tasks.n} tasks assigned`, "app / ClickUp"), L(pct(ratio(tasks.done, tasks.n)) + " completed", "app"), L(pct(tasks.estAcc) + " time-estimate accuracy", "est vs actual hours")],
+      ]],
+      ["Month", [
+        evRow("Career workshops", "2 a month", "workshop", e => f0(e.score) + " / 100 soft skills", "advisor: 11 soft skills"),
+        evRow("Pod session", "monthly", "pod_session"),
+        evRow("Peer session", "monthly", "peer_session"),
+        evRow("Mentor call", "monthly", "mentor_call"),
+        evRow("Personal branding shoot", "monthly", "branding_shoot"),
+      ]],
+      ["Quarter", [
+        evRow("Podcast shoot", "quarterly", "podcast", e => f0(e.score) + " / 100 host score", "advisor"),
+        evRow("Competition prep", "quarterly", "competition", e => f0(e.score) + " / 100 readiness", "advisor"),
+        evRow("Parent-child workshop", "quarterly", "parent_workshop"),
+        evRow("Out-of-city experience", "quarterly", "out_of_city"),
+      ]],
+      ["Roadmaps", [
+        ["Career roadmap", "binary", L(`${career.length} roadmaps owed`, "ClickUp"), L("–"), L(pct(ratio(sum(career, m => m[3]), career.length)) + " signed off", "advisor sign-off")],
+        ["Personal roadmap", "monthly milestones", L(`${personal.length} milestones set`, "ClickUp"), L("–"), L(pct(ratio(sum(personal, m => m[3]), personal.length)) + " milestones hit", "advisor")],
+        ["Academic roadmap", "monthly targets", L(`${acad.length} targets set`, "advisor"), L("–"), L(pct(ratio(sum(acad, m => m[3]), acad.length)) + " targets met", "exam scores")],
+      ]],
+    ];
+    const t = $("kpiTable"); t.replaceChildren();
+    const th = el("thead"), hr = el("tr"); ["Activity", "Cadence", "Quantity", "Quality", "Performance"].forEach(x => hr.append(el("th", null, x))); th.append(hr); t.append(th);
+    const tb = el("tbody");
+    for (const [g, list] of groups) { const gr = el("tr", "group"), gc = el("td", null, g); gc.colSpan = 5; gr.append(gc); tb.append(gr);
+      for (const r of list) { const tr = el("tr"); tr.append(el("td", "act", r[0]), el("td", "cad", r[1])); r.slice(2).forEach(c => { const td = el("td"); td.append(c); tr.append(td); }); tb.append(tr); } }
+    t.append(tb);
+    $("kpiScope").textContent = `${stu.length} Alcovians · ${nice(state.from)} – ${nice(state.to)}`;
+  }
+
+  // ======================= STUDENT =======================
+  function renderStudent() {
+    const T = tok(), sel = $("who");
+    if (!sel.options.length) Object.values(S).forEach(s => { const o = el("option", null, `${s.name} · Grade ${s.grade}`); o.value = s.id; sel.append(o); });
+    sel.value = state.who; const s = S[state.who];
+    const rows = dailyIn(s.id), h = habit(rows), sy = syllabus(s.id), tt = taskStats(tasksIn(s.id));
+    const flags = alerts().filter(a => a[0].id === s.id);
+    $("stuTiles").replaceChildren(
+      tile("Advisor", s.advisor.replace(" (Advisor)", ""), `${s.plan === "trial_3m" ? "3-month trial" : "Full program"} · Grade ${s.grade}`),
+      tile("Flags", flags.length ? String(flags.length) : "None", flags.map(f => f[2]).join(" · ") || "On track"),
+      tile("App minutes per day", f1(h.app), "Focus mode excluded · target 30", h.app / 30),
+      tile("Quiz", pct(h.quiz), `Average ${f0(h.quizScore)}%`, h.quiz),
+      tile("Exam-ready chapters", pct(sy.readyPct), `${sy.ready} of ${sy.due} due · this quarter ${pct(sy.curPace)} of pace`, sy.readyPct),
+      tile("Tasks on time", pct(tt.onTime), `Estimates ${pct(tt.estAcc)} accurate`, tt.onTime),
+      tile("Recovery", s.wear ? `${f0(h.recovery)}%` : "No device", s.wear ? `${f1(h.sleep)} h sleep · ${f0(h.active)} active min` : "Candidate for a gifted or coin-earned wearable"),
+    );
+    draw("focusChart", { type: "bar", data: { labels: rows.map(r => nice(r[0])), datasets: [{ label: "Focus minutes", data: rows.map(r => r[7]),
+        backgroundColor: rows.map(r => r[7] >= 45 ? T.s1 : T.axis), borderRadius: { topLeft: 3, topRight: 3 }, borderSkipped: false, maxBarThickness: 18 }] },
+      options: { scales: xy(T), plugins: { tooltip: { callbacks: { label: c => ` ${c.raw} min${c.raw >= 45 ? " · goal met" : ""}` } } } } },
+      [{ h: "Date" }, { h: "Focus min", n: 1 }], rows.map(r => [nice(r[0]), r[7]]));
+    draw("quizChart", { type: "line", data: { labels: rows.map(r => nice(r[0])), datasets: [{ label: "Score", data: rows.map(r => r[6]),
+        borderColor: T.s2, backgroundColor: T.s2, borderWidth: 2, pointRadius: 2.5, pointHoverRadius: 6, tension: 0.2, spanGaps: false }] },
+      options: { scales: xy(T, { max: 100, ticks: { color: T.muted, callback: v => v + "%" } }), plugins: { tooltip: { callbacks: { label: c => c.raw == null ? " skipped" : ` ${c.raw}%` } } } } },
+      [{ h: "Date" }, { h: "Score", n: 1 }], rows.map(r => [nice(r[0]), r[6] == null ? "skipped" : r[6] + "%"]));
+
+    const stageColors = [T.axis, "#86b6ef", "#5598e7", "#2a78d6", "#1c5cab", "#104281"];
+    legend("stageLegend", [["Not started", stageColors[0]], ["Read", stageColors[1]], ["Notes", stageColors[2]], ["Practice 70%+", stageColors[3]], ["Past paper", stageColors[4]], ["Exam-ready 80%+", stageColors[5]]]);
+    const subj = D.subjects.filter(x => x[0] === s.id).map(([, name, total, target]) => {
+      const ch = D.chapters.filter(c => c[0] === s.id && c[1] === name && c[3] <= "2026-12-31");
+      const bar = el("div", "stagebar"); [0, 1, 2, 3, 4, 5].forEach(k => { const n = ch.filter(c => c[2] === k).length; if (!n) return; const i = el("i"); i.style.flex = n; i.style.background = stageColors[k]; i.title = `${n} chapters`; bar.append(i); });
+      const due = ch.filter(c => c[3] <= DUE_NOW), ready = due.filter(c => c[2] === 5).length, r = ratio(ready, due.length);
+      return [name, `${total}`, bar, `${ready} / ${due.length}`, `${target}%`, r >= 0.7 ? chip("good", "On track") : r >= 0.4 ? chip("warn", "Sprint") : chip("critical", "Tutor support")]; });
+    table("subjectTable", [{ h: "Subject" }, { h: "Chapters", n: 1 }, { h: "Rigour stages (due by Dec)" }, { h: "Ready / due", n: 1 }, { h: "Target", n: 1 }, { h: "Plan" }], subj);
+
+    const types = [["academic_session", "Academic sessions"], ["workshop", "Workshops"], ["pod_session", "Pod sessions"], ["peer_session", "Peer sessions"], ["mentor_call", "Mentor calls"], ["branding_shoot", "Branding shoots"]];
+    table("stuEvents", [{ h: "Programme" }, { h: "Attended", n: 1 }, { h: "Rating", n: 1 }],
+      types.map(([t, l]) => { const r = eventsIn(t, s.id).filter(e => e[4]); return [l, `${r.filter(e => e[5]).length} / ${r.length}`, f1(avg(r.filter(e => e[5]), e => e[6]))]; }));
+    const dl = $("stuRoadmaps"); dl.replaceChildren();
+    const road = (k) => D.milestones.filter(m => m[0] === s.id && m[1] === k);
+    [["Career roadmap", road("career").some(m => m[3]) ? "Signed off" : "Not done"],
+     ["Personal milestones", `${sum(road("personal"), m => m[3])} of ${road("personal").length} hit`],
+     ["Academic targets", `${sum(road("academic"), m => m[3])} of ${road("academic").length} months met`]].forEach(([k, v]) => dl.append(el("dt", null, k), el("dd", null, v)));
+  }
+
+  // ---------- wiring ----------
+  const R = { cohort: renderCohort, kpis: renderKPIs, student: renderStudent };
+  function render() {
+    $("rangeLabel").textContent = `${nice(state.from)} – ${nice(state.to)} · ${diff(state.from, state.to) + 1} days`;
+    document.querySelectorAll("#presets button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.p === state.preset)));
+    $("from").value = state.from; $("to").value = state.to; R[state.tab]();
+  }
+  function setTab(t) { if (!R[t]) t = "cohort"; state.tab = t;
+    document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === t)));
+    Object.keys(R).forEach(k => $("tab-" + k).hidden = k !== t);
+    try { history.replaceState(null, "", "#" + t); } catch (e) {} render(); }
+  $("asof").textContent = `Dummy data · live to ${nice(AS_OF)} 2026`;
+  $("from").min = $("to").min = FIRST; $("from").max = $("to").max = AS_OF;
+  [...new Set(D.students.map(s => s[3]))].forEach(a => { const o = el("option", null, a.replace(" (Advisor)", "")); o.value = a; $("advisor").append(o); });
+  $("advisor").addEventListener("change", e => { state.advisor = e.target.value; render(); });
+  $("who").addEventListener("change", e => { state.who = e.target.value; render(); });
+  document.querySelectorAll("#presets button").forEach(b => b.addEventListener("click", () => { [state.from, state.to] = presets[b.dataset.p](); state.preset = b.dataset.p; render(); }));
+  ["from", "to"].forEach(id => $(id).addEventListener("change", () => { let f = $("from").value || FIRST, t = $("to").value || AS_OF; if (f > t) [f, t] = [t, f];
+    state.from = f < FIRST ? FIRST : f; state.to = t > AS_OF ? AS_OF : t; state.preset = null; render(); }));
+  ["xDev", "xTask", "xRec"].forEach(id => $(id).addEventListener("input", render));
+  document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => setTab(b.dataset.tab)));
+  document.querySelectorAll("[data-table]").forEach(btn => btn.addEventListener("click", () => { const id = btn.dataset.table, h = $(id + "-table"); h.hidden = !h.hidden;
+    btn.textContent = h.hidden ? "Table" : "Hide table"; if (!h.hidden && chartTables[id]) table(h, ...chartTables[id]); }));
+  const mq = window.matchMedia("(prefers-color-scheme: dark)"); (mq.addEventListener ? mq.addEventListener("change", render) : mq.addListener(render));
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  const hsh = (location.hash || "").slice(1); setTab(R[hsh] ? hsh : "cohort");
+})();
+</script>

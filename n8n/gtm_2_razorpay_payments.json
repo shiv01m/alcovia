@@ -1,0 +1,140 @@
+{
+  "name": "GTM 2 \u00b7 Razorpay payments to revenue tables",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "razorpay-payment",
+        "responseMode": "onReceived"
+      },
+      "name": "Razorpay webhook: payment.captured",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const crypto = require('crypto');\nconst body = JSON.stringify($json.body);\nconst sig = $json.headers['x-razorpay-signature'];\nconst expected = crypto.createHmac('sha256', $env.RAZORPAY_WEBHOOK_SECRET).update(body).digest('hex');\nif (sig !== expected) throw new Error('Bad Razorpay signature');\nconst p = $json.body.payload.payment.entity;\nreturn [{ json: {\n  payment_id: p.id, amount_inr: p.amount / 100, paid_at: new Date(p.created_at * 1000).toISOString(),\n  kind: p.notes?.kind,                    // 'workshop' or 'invoice', set on the payment link\n  workshop_id: p.notes?.workshop_id, invoice_id: p.notes?.invoice_id, lead_id: p.notes?.lead_id || null,\n}}];"
+      },
+      "name": "Verify signature",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$json.kind}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "workshop",
+              "output": 0
+            },
+            {
+              "value2": "invoice",
+              "output": 1
+            }
+          ]
+        }
+      },
+      "name": "Workshop or invoice?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        520,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO workshop_bookings (booking_id, workshop_id, lead_id, paid_at, amount_inr, razorpay_payment_id)\nVALUES ('{{$json.payment_id}}', '{{$json.workshop_id}}', {{ $json.lead_id ? \"'\" + $json.lead_id + \"'\" : 'NULL' }}, '{{$json.paid_at}}', {{$json.amount_inr}}, '{{$json.payment_id}}')\nON CONFLICT (booking_id) DO NOTHING;"
+      },
+      "name": "Insert workshop booking",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        780,
+        -80
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE invoices SET paid_at = '{{$json.paid_at}}'::date, razorpay_payment_id = '{{$json.payment_id}}'\nWHERE invoice_id = '{{$json.invoice_id}}' AND paid_at IS NULL;"
+      },
+      "name": "Mark invoice paid",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        780,
+        80
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Razorpay webhook: payment.captured": {
+      "main": [
+        [
+          {
+            "node": "Verify signature",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify signature": {
+      "main": [
+        [
+          {
+            "node": "Workshop or invoice?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workshop or invoice?": {
+      "main": [
+        [
+          {
+            "node": "Insert workshop booking",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mark invoice paid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Kolkata"
+  },
+  "active": false
+}

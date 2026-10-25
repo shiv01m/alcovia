@@ -1,0 +1,2052 @@
+event_id,lead_id,stage,occurred_at,note
+E000001,L00001,qualified,2026-05-05 15:31:00,
+E000002,L00001,discovery_call_set,2026-05-07 19:31:00,
+E000003,L00001,discovery_call_attended,2026-05-10 23:31:00,
+E000004,L00001,ambition_interview_done,2026-05-12 23:31:00,
+E000005,L00001,dropped,2026-05-18 04:31:00,dropped before architect_session_done
+E000006,L00002,dropped,2026-05-11 19:53:00,dropped before qualified
+E000007,L00003,dropped,2026-05-13 17:10:00,dropped before qualified
+E000008,L00004,qualified,2026-05-22 18:21:00,
+E000009,L00004,discovery_call_set,2026-05-25 01:21:00,
+E000010,L00004,discovery_call_attended,2026-05-31 02:21:00,
+E000011,L00004,ambition_interview_done,2026-06-05 04:21:00,
+E000012,L00004,architect_session_done,2026-06-14 10:21:00,
+E000013,L00004,dropped,2026-06-20 12:21:00,dropped before converted
+E000014,L00005,dropped,2026-07-11 22:05:00,dropped before qualified
+E000015,L00006,qualified,2026-07-20 20:45:00,
+E000016,L00006,dropped,2026-07-22 00:45:00,dropped before discovery_call_set
+E000017,L00007,qualified,2026-07-23 11:49:00,
+E000018,L00007,discovery_call_set,2026-07-26 14:49:00,
+E000019,L00007,dropped,2026-07-30 21:49:00,dropped before discovery_call_attended
+E000020,L00008,qualified,2026-05-03 00:07:00,
+E000021,L00008,discovery_call_set,2026-05-06 05:07:00,
+E000022,L00008,dropped,2026-05-11 12:07:00,dropped before discovery_call_attended
+E000023,L00009,dropped,2026-05-20 14:22:00,dropped before qualified
+E000024,L00010,qualified,2026-05-29 21:20:00,
+E000025,L00010,discovery_call_set,2026-06-01 01:20:00,
+E000026,L00010,dropped,2026-06-03 07:20:00,dropped before discovery_call_attended
+E000027,L00011,qualified,2026-06-13 22:40:00,
+E000028,L00011,dropped,2026-06-15 00:40:00,dropped before discovery_call_set
+E000029,L00012,dropped,2026-06-30 02:13:00,dropped before qualified
+E000030,L00013,dropped,2026-07-12 21:04:00,dropped before qualified
+E000031,L00014,dropped,2026-07-21 22:22:00,dropped before qualified
+E000032,L00015,qualified,2026-07-27 20:56:00,
+E000033,L00015,dropped,2026-07-30 03:56:00,dropped before discovery_call_set
+E000034,L00016,dropped,2026-08-15 13:03:00,dropped before qualified
+E000035,L00017,dropped,2026-05-05 00:58:00,dropped before qualified
+E000036,L00018,dropped,2026-05-07 13:25:00,dropped before qualified
+E000037,L00019,qualified,2026-05-12 13:43:00,
+E000038,L00019,dropped,2026-05-13 14:43:00,dropped before discovery_call_set
+E000039,L00020,dropped,2026-05-14 18:22:00,dropped before qualified
+E000040,L00021,qualified,2026-05-17 02:15:00,
+E000041,L00021,dropped,2026-05-20 10:15:00,dropped before discovery_call_set
+E000042,L00022,dropped,2026-05-18 02:37:00,dropped before qualified
+E000043,L00023,dropped,2026-05-18 23:33:00,dropped before qualified
+E000044,L00024,qualified,2026-05-26 14:18:00,
+E000045,L00024,discovery_call_set,2026-05-29 20:18:00,
+E000046,L00024,dropped,2026-06-05 03:18:00,dropped before discovery_call_attended
+E000047,L00025,dropped,2026-05-25 18:12:00,dropped before qualified
+E000048,L00026,qualified,2026-05-27 03:56:00,
+E000049,L00026,discovery_call_set,2026-05-31 05:56:00,
+E000050,L00026,discovery_call_attended,2026-06-04 12:56:00,
+E000051,L00026,dropped,2026-06-09 15:56:00,dropped before ambition_interview_done
+E000052,L00027,dropped,2026-05-28 20:29:00,dropped before qualified
+E000053,L00028,dropped,2026-05-30 11:14:00,dropped before qualified
+E000054,L00029,qualified,2026-06-07 16:40:00,
+E000055,L00029,discovery_call_set,2026-06-10 21:40:00,
+E000056,L00029,discovery_call_attended,2026-06-14 00:40:00,
+E000057,L00029,ambition_interview_done,2026-06-21 02:40:00,
+E000058,L00029,architect_session_done,2026-06-30 08:40:00,
+E000059,L00029,dropped,2026-07-05 09:40:00,dropped before converted
+E000060,L00030,qualified,2026-06-07 04:07:00,
+E000061,L00030,dropped,2026-06-08 11:07:00,dropped before discovery_call_set
+E000062,L00031,dropped,2026-06-06 17:24:00,dropped before qualified
+E000063,L00032,dropped,2026-06-05 20:11:00,dropped before qualified
+E000064,L00033,qualified,2026-06-11 20:53:00,
+E000065,L00033,discovery_call_set,2026-06-12 20:53:00,
+E000066,L00033,dropped,2026-06-16 01:53:00,dropped before discovery_call_attended
+E000067,L00034,qualified,2026-06-17 19:39:00,
+E000068,L00034,discovery_call_set,2026-06-18 22:39:00,
+E000069,L00034,dropped,2026-06-24 22:39:00,dropped before discovery_call_attended
+E000070,L00035,dropped,2026-06-21 23:17:00,dropped before qualified
+E000071,L00036,dropped,2026-06-29 21:01:00,dropped before qualified
+E000072,L00037,dropped,2026-07-02 19:05:00,dropped before qualified
+E000073,L00038,dropped,2026-07-07 22:26:00,dropped before qualified
+E000074,L00039,qualified,2026-07-22 13:47:00,
+E000075,L00039,dropped,2026-07-26 20:47:00,dropped before discovery_call_set
+E000076,L00040,qualified,2026-07-28 04:06:00,
+E000077,L00040,dropped,2026-07-29 09:06:00,dropped before discovery_call_set
+E000078,L00041,dropped,2026-07-29 19:23:00,dropped before qualified
+E000079,L00042,qualified,2026-08-01 14:07:00,
+E000080,L00042,dropped,2026-08-05 20:07:00,dropped before discovery_call_set
+E000081,L00043,qualified,2026-08-04 17:52:00,
+E000082,L00043,dropped,2026-08-06 19:52:00,dropped before discovery_call_set
+E000083,L00044,dropped,2026-08-12 23:31:00,dropped before qualified
+E000084,L00045,dropped,2026-05-06 11:47:00,dropped before qualified
+E000085,L00046,dropped,2026-05-11 14:41:00,dropped before qualified
+E000086,L00047,dropped,2026-06-11 01:19:00,dropped before qualified
+E000087,L00048,dropped,2026-06-16 12:57:00,dropped before qualified
+E000088,L00049,dropped,2026-06-27 21:26:00,dropped before qualified
+E000089,L00050,dropped,2026-07-27 16:16:00,dropped before qualified
+E000090,L00051,dropped,2026-07-26 02:28:00,dropped before qualified
+E000091,L00052,dropped,2026-07-28 17:26:00,dropped before qualified
+E000092,L00053,dropped,2026-07-30 16:38:00,dropped before qualified
+E000093,L00054,qualified,2026-08-06 05:57:00,
+E000094,L00054,discovery_call_set,2026-08-09 06:57:00,
+E000095,L00054,discovery_call_attended,2026-08-15 06:57:00,
+E000096,L00054,ambition_interview_done,2026-08-20 12:57:00,
+E000097,L00054,architect_session_done,2026-08-29 15:57:00,
+E000098,L00054,dropped,2026-09-04 15:57:00,dropped before converted
+E000099,L00055,dropped,2026-08-14 21:41:00,dropped before qualified
+E000100,L00056,dropped,2026-08-14 13:51:00,dropped before qualified
+E000101,L00057,dropped,2026-05-09 20:35:00,dropped before qualified
+E000102,L00058,qualified,2026-05-15 03:55:00,
+E000103,L00058,dropped,2026-05-18 03:55:00,dropped before discovery_call_set
+E000104,L00059,dropped,2026-05-19 02:47:00,dropped before qualified
+E000105,L00060,dropped,2026-05-22 13:24:00,dropped before qualified
+E000106,L00061,qualified,2026-05-23 17:37:00,
+E000107,L00061,discovery_call_set,2026-05-27 17:37:00,
+E000108,L00061,discovery_call_attended,2026-05-29 17:37:00,
+E000109,L00061,ambition_interview_done,2026-06-01 21:37:00,
+E000110,L00061,architect_session_done,2026-06-11 04:37:00,
+E000111,L00061,dropped,2026-06-14 06:37:00,dropped before converted
+E000112,L00062,dropped,2026-05-29 01:32:00,dropped before qualified
+E000113,L00063,dropped,2026-06-06 17:07:00,dropped before qualified
+E000114,L00064,dropped,2026-06-13 10:55:00,dropped before qualified
+E000115,L00065,qualified,2026-06-21 11:46:00,
+E000116,L00065,dropped,2026-06-22 16:46:00,dropped before discovery_call_set
+E000117,L00066,dropped,2026-07-14 21:18:00,dropped before qualified
+E000118,L00067,dropped,2026-07-17 01:06:00,dropped before qualified
+E000119,L00068,qualified,2026-08-10 18:22:00,
+E000120,L00068,dropped,2026-08-14 00:22:00,dropped before discovery_call_set
+E000121,L00069,dropped,2026-08-16 19:30:00,dropped before qualified
+E000122,L00070,dropped,2026-08-18 01:17:00,dropped before qualified
+E000123,L00071,qualified,2026-05-27 21:22:00,
+E000124,L00071,dropped,2026-06-01 01:22:00,dropped before discovery_call_set
+E000125,L00072,qualified,2026-05-26 21:21:00,
+E000126,L00072,discovery_call_set,2026-05-28 03:21:00,
+E000127,L00072,discovery_call_attended,2026-06-01 06:21:00,
+E000128,L00072,dropped,2026-06-07 06:21:00,dropped before ambition_interview_done
+E000129,L00073,dropped,2026-05-30 01:05:00,dropped before qualified
+E000130,L00074,dropped,2026-06-03 21:52:00,dropped before qualified
+E000131,L00075,qualified,2026-06-08 21:13:00,
+E000132,L00075,dropped,2026-06-10 21:13:00,dropped before discovery_call_set
+E000133,L00076,dropped,2026-06-11 11:22:00,dropped before qualified
+E000134,L00077,dropped,2026-06-17 13:33:00,dropped before qualified
+E000135,L00078,qualified,2026-06-21 23:10:00,
+E000136,L00078,discovery_call_set,2026-06-23 00:10:00,
+E000137,L00078,discovery_call_attended,2026-06-29 04:10:00,
+E000138,L00078,dropped,2026-07-01 12:10:00,dropped before ambition_interview_done
+E000139,L00079,dropped,2026-06-22 12:14:00,dropped before qualified
+E000140,L00080,dropped,2026-07-09 20:29:00,dropped before qualified
+E000141,L00081,dropped,2026-07-31 16:45:00,dropped before qualified
+E000142,L00082,dropped,2026-08-04 13:34:00,dropped before qualified
+E000143,L00083,dropped,2026-06-03 12:54:00,dropped before qualified
+E000144,L00084,qualified,2026-06-02 21:04:00,
+E000145,L00084,discovery_call_set,2026-06-05 01:04:00,
+E000146,L00084,discovery_call_attended,2026-06-08 03:04:00,
+E000147,L00084,dropped,2026-06-14 03:04:00,dropped before ambition_interview_done
+E000148,L00085,dropped,2026-06-08 11:12:00,dropped before qualified
+E000149,L00086,dropped,2026-06-13 10:57:00,dropped before qualified
+E000150,L00087,dropped,2026-06-13 19:02:00,dropped before qualified
+E000151,L00088,qualified,2026-06-19 14:23:00,
+E000152,L00088,dropped,2026-06-20 15:23:00,dropped before discovery_call_set
+E000153,L00089,dropped,2026-06-18 03:27:00,dropped before qualified
+E000154,L00090,dropped,2026-06-29 23:32:00,dropped before qualified
+E000155,L00091,qualified,2026-07-03 23:49:00,
+E000156,L00091,discovery_call_set,2026-07-08 07:49:00,
+E000157,L00091,discovery_call_attended,2026-07-10 12:49:00,
+E000158,L00091,dropped,2026-07-16 16:49:00,dropped before ambition_interview_done
+E000159,L00092,dropped,2026-07-03 09:32:00,dropped before qualified
+E000160,L00093,dropped,2026-07-03 02:35:00,dropped before qualified
+E000161,L00094,dropped,2026-07-04 18:57:00,dropped before qualified
+E000162,L00095,dropped,2026-07-06 19:44:00,dropped before qualified
+E000163,L00096,dropped,2026-07-08 00:47:00,dropped before qualified
+E000164,L00097,dropped,2026-07-12 10:03:00,dropped before qualified
+E000165,L00098,dropped,2026-07-16 20:06:00,dropped before qualified
+E000166,L00099,dropped,2026-07-19 22:44:00,dropped before qualified
+E000167,L00100,dropped,2026-07-17 16:02:00,dropped before qualified
+E000168,L00101,qualified,2026-07-19 18:32:00,
+E000169,L00101,discovery_call_set,2026-07-22 20:32:00,
+E000170,L00101,discovery_call_attended,2026-07-25 22:32:00,
+E000171,L00101,ambition_interview_done,2026-08-01 03:32:00,
+E000172,L00101,architect_session_done,2026-08-10 04:32:00,
+E000173,L00101,dropped,2026-08-16 12:32:00,dropped before converted
+E000174,L00102,qualified,2026-07-22 01:00:00,
+E000175,L00102,discovery_call_set,2026-07-26 04:00:00,
+E000176,L00102,discovery_call_attended,2026-07-30 11:00:00,
+E000177,L00102,ambition_interview_done,2026-08-06 11:00:00,
+E000178,L00102,dropped,2026-08-14 12:00:00,dropped before architect_session_done
+E000179,L00103,dropped,2026-07-24 02:23:00,dropped before qualified
+E000180,L00104,qualified,2026-07-28 17:20:00,
+E000181,L00104,discovery_call_set,2026-08-01 17:20:00,
+E000182,L00104,dropped,2026-08-05 21:20:00,dropped before discovery_call_attended
+E000183,L00105,qualified,2026-07-30 15:10:00,
+E000184,L00105,discovery_call_set,2026-07-31 19:10:00,
+E000185,L00105,discovery_call_attended,2026-08-07 03:10:00,
+E000186,L00105,ambition_interview_done,2026-08-10 11:10:00,
+E000187,L00105,dropped,2026-08-13 12:10:00,dropped before architect_session_done
+E000188,L00106,qualified,2026-08-07 22:26:00,
+E000189,L00106,discovery_call_set,2026-08-09 01:26:00,
+E000190,L00106,discovery_call_attended,2026-08-13 03:26:00,
+E000191,L00106,ambition_interview_done,2026-08-16 05:26:00,
+E000192,L00106,architect_session_done,2026-08-25 08:26:00,
+E000193,L00106,dropped,2026-08-29 12:26:00,dropped before converted
+E000194,L00107,dropped,2026-08-07 22:22:00,dropped before qualified
+E000195,L00108,qualified,2026-08-17 01:51:00,
+E000196,L00108,dropped,2026-08-20 09:51:00,dropped before discovery_call_set
+E000197,L00109,dropped,2026-08-19 10:37:00,dropped before qualified
+E000198,L00110,qualified,2026-08-17 08:54:00,
+E000199,L00110,discovery_call_set,2026-08-19 13:54:00,
+E000200,L00110,discovery_call_attended,2026-08-25 17:54:00,
+E000201,L00110,ambition_interview_done,2026-09-01 21:54:00,
+E000202,L00110,dropped,2026-09-07 23:54:00,dropped before architect_session_done
+E000203,L00111,dropped,2026-08-21 19:04:00,dropped before qualified
+E000204,L00112,dropped,2026-08-26 18:42:00,dropped before qualified
+E000205,L00113,dropped,2026-08-27 15:45:00,dropped before qualified
+E000206,L00114,dropped,2026-08-30 15:25:00,dropped before qualified
+E000207,L00115,dropped,2026-09-03 02:50:00,dropped before qualified
+E000208,L00116,qualified,2026-09-06 06:47:00,
+E000209,L00116,dropped,2026-09-10 14:47:00,dropped before discovery_call_set
+E000210,L00117,dropped,2026-09-11 20:52:00,dropped before qualified
+E000211,L00118,dropped,2026-09-14 16:53:00,dropped before qualified
+E000212,L00119,dropped,2026-09-17 22:24:00,dropped before qualified
+E000213,L00120,qualified,2026-09-23 12:15:00,
+E000214,L00120,discovery_call_set,2026-09-27 16:15:00,
+E000215,L00120,dropped,2026-09-30 22:15:00,dropped before discovery_call_attended
+E000216,L00121,dropped,2026-09-29 02:23:00,dropped before qualified
+E000217,L00122,dropped,2026-10-05 15:19:00,dropped before qualified
+E000218,L00123,dropped,2026-10-07 17:35:00,dropped before qualified
+E000219,L00124,dropped,2026-10-11 15:41:00,dropped before qualified
+E000220,L00125,dropped,2026-10-17 18:44:00,dropped before qualified
+E000221,L00126,dropped,2026-10-18 12:47:00,dropped before qualified
+E000222,L00127,dropped,2026-06-07 23:27:00,dropped before qualified
+E000223,L00128,dropped,2026-06-20 00:22:00,dropped before qualified
+E000224,L00129,qualified,2026-06-27 18:37:00,
+E000225,L00129,discovery_call_set,2026-07-01 01:37:00,
+E000226,L00129,discovery_call_attended,2026-07-04 01:37:00,
+E000227,L00129,dropped,2026-07-11 04:37:00,dropped before ambition_interview_done
+E000228,L00130,qualified,2026-07-08 13:53:00,
+E000229,L00130,dropped,2026-07-12 14:53:00,dropped before discovery_call_set
+E000230,L00131,qualified,2026-07-10 20:12:00,
+E000231,L00131,dropped,2026-07-13 04:12:00,dropped before discovery_call_set
+E000232,L00132,dropped,2026-07-11 00:51:00,dropped before qualified
+E000233,L00133,dropped,2026-07-24 18:00:00,dropped before qualified
+E000234,L00134,qualified,2026-07-27 20:20:00,
+E000235,L00134,discovery_call_set,2026-07-31 04:20:00,
+E000236,L00134,dropped,2026-08-03 10:20:00,dropped before discovery_call_attended
+E000237,L00135,dropped,2026-08-18 16:55:00,dropped before qualified
+E000238,L00136,dropped,2026-09-18 22:02:00,dropped before qualified
+E000239,L00137,qualified,2026-10-04 21:18:00,
+E000240,L00137,discovery_call_set,2026-10-06 01:18:00,
+E000241,L00137,discovery_call_attended,2026-10-12 04:18:00,
+E000242,L00137,ambition_interview_done,2026-10-16 08:18:00,
+E000243,L00137,dropped,2026-10-23 14:18:00,dropped before architect_session_done
+E000244,L00138,dropped,2026-10-08 16:15:00,dropped before qualified
+E000245,L00139,dropped,2026-06-05 15:31:00,dropped before qualified
+E000246,L00140,qualified,2026-06-06 17:12:00,
+E000247,L00140,dropped,2026-06-07 21:12:00,dropped before discovery_call_set
+E000248,L00141,dropped,2026-06-08 05:05:00,dropped before qualified
+E000249,L00142,qualified,2026-06-08 20:22:00,
+E000250,L00142,discovery_call_set,2026-06-10 02:22:00,
+E000251,L00142,discovery_call_attended,2026-06-15 10:22:00,
+E000252,L00142,dropped,2026-06-19 18:22:00,dropped before ambition_interview_done
+E000253,L00143,qualified,2026-06-09 15:15:00,
+E000254,L00143,discovery_call_set,2026-06-13 19:15:00,
+E000255,L00143,discovery_call_attended,2026-06-17 02:15:00,
+E000256,L00143,ambition_interview_done,2026-06-19 07:15:00,
+E000257,L00143,architect_session_done,2026-06-23 10:15:00,
+E000258,L00143,dropped,2026-06-26 12:15:00,dropped before converted
+E000259,L00144,dropped,2026-06-13 15:31:00,dropped before qualified
+E000260,L00145,qualified,2026-06-13 13:06:00,
+E000261,L00145,discovery_call_set,2026-06-14 14:06:00,
+E000262,L00145,discovery_call_attended,2026-06-20 18:06:00,
+E000263,L00145,ambition_interview_done,2026-06-24 21:06:00,
+E000264,L00145,architect_session_done,2026-06-29 02:06:00,
+E000265,L00145,dropped,2026-07-05 03:06:00,dropped before converted
+E000266,L00146,dropped,2026-06-18 06:43:00,dropped before qualified
+E000267,L00147,qualified,2026-06-25 02:59:00,
+E000268,L00147,discovery_call_set,2026-06-28 03:59:00,
+E000269,L00147,discovery_call_attended,2026-07-01 03:59:00,
+E000270,L00147,dropped,2026-07-08 05:59:00,dropped before ambition_interview_done
+E000271,L00148,qualified,2026-06-28 19:52:00,
+E000272,L00148,discovery_call_set,2026-06-30 22:52:00,
+E000273,L00148,discovery_call_attended,2026-07-03 05:52:00,
+E000274,L00148,ambition_interview_done,2026-07-07 09:52:00,
+E000275,L00148,architect_session_done,2026-07-10 16:52:00,
+E000276,L00148,dropped,2026-07-11 17:52:00,dropped before converted
+E000277,L00149,qualified,2026-06-27 23:58:00,
+E000278,L00149,discovery_call_set,2026-06-29 03:58:00,
+E000279,L00149,discovery_call_attended,2026-07-04 11:58:00,
+E000280,L00149,ambition_interview_done,2026-07-11 18:58:00,
+E000281,L00149,architect_session_done,2026-07-19 02:58:00,
+E000282,L00149,dropped,2026-07-25 08:58:00,dropped before converted
+E000283,L00150,dropped,2026-06-30 00:20:00,dropped before qualified
+E000284,L00151,dropped,2026-06-30 19:00:00,dropped before qualified
+E000285,L00152,dropped,2026-07-06 03:44:00,dropped before qualified
+E000286,L00153,dropped,2026-07-08 21:27:00,dropped before qualified
+E000287,L00154,dropped,2026-07-19 13:17:00,dropped before qualified
+E000288,L00155,qualified,2026-07-22 19:25:00,
+E000289,L00155,discovery_call_set,2026-07-23 23:25:00,
+E000290,L00155,discovery_call_attended,2026-07-28 01:25:00,
+E000291,L00155,ambition_interview_done,2026-07-30 02:25:00,
+E000292,L00155,architect_session_done,2026-08-05 09:25:00,
+E000293,L00155,dropped,2026-08-07 14:25:00,dropped before converted
+E000294,L00156,qualified,2026-07-21 11:22:00,
+E000295,L00156,discovery_call_set,2026-07-22 16:22:00,
+E000296,L00156,discovery_call_attended,2026-07-26 21:22:00,
+E000297,L00156,ambition_interview_done,2026-07-29 05:22:00,
+E000298,L00156,dropped,2026-08-04 05:22:00,dropped before architect_session_done
+E000299,L00157,dropped,2026-07-21 00:23:00,dropped before qualified
+E000300,L00158,qualified,2026-07-26 03:08:00,
+E000301,L00158,dropped,2026-07-29 09:08:00,dropped before discovery_call_set
+E000302,L00159,qualified,2026-07-26 01:07:00,
+E000303,L00159,discovery_call_set,2026-07-29 04:07:00,
+E000304,L00159,discovery_call_attended,2026-08-01 06:07:00,
+E000305,L00159,ambition_interview_done,2026-08-06 09:07:00,
+E000306,L00159,architect_session_done,2026-08-12 17:07:00,
+E000307,L00159,dropped,2026-08-18 18:07:00,dropped before converted
+E000308,L00160,dropped,2026-07-29 19:46:00,dropped before qualified
+E000309,L00161,dropped,2026-08-02 20:22:00,dropped before qualified
+E000310,L00162,dropped,2026-08-07 01:29:00,dropped before qualified
+E000311,L00163,dropped,2026-08-12 02:50:00,dropped before qualified
+E000312,L00164,qualified,2026-08-12 15:51:00,
+E000313,L00164,discovery_call_set,2026-08-16 19:51:00,
+E000314,L00164,discovery_call_attended,2026-08-19 19:51:00,
+E000315,L00164,ambition_interview_done,2026-08-23 01:51:00,
+E000316,L00164,architect_session_done,2026-08-31 04:51:00,
+E000317,L00164,dropped,2026-09-04 08:51:00,dropped before converted
+E000318,L00165,qualified,2026-08-16 23:59:00,
+E000319,L00165,discovery_call_set,2026-08-18 01:59:00,
+E000320,L00165,dropped,2026-08-24 05:59:00,dropped before discovery_call_attended
+E000321,L00166,dropped,2026-08-18 14:41:00,dropped before qualified
+E000322,L00167,dropped,2026-08-22 23:03:00,dropped before qualified
+E000323,L00168,dropped,2026-08-26 02:30:00,dropped before qualified
+E000324,L00169,dropped,2026-08-27 01:20:00,dropped before qualified
+E000325,L00170,dropped,2026-09-03 02:36:00,dropped before qualified
+E000326,L00171,dropped,2026-09-01 18:04:00,dropped before qualified
+E000327,L00172,qualified,2026-09-03 16:22:00,
+E000328,L00172,discovery_call_set,2026-09-07 22:22:00,
+E000329,L00172,discovery_call_attended,2026-09-10 04:22:00,
+E000330,L00172,ambition_interview_done,2026-09-15 05:22:00,
+E000331,L00172,architect_session_done,2026-09-20 09:22:00,
+E000332,L00172,dropped,2026-09-23 12:22:00,dropped before converted
+E000333,L00173,dropped,2026-09-07 18:24:00,dropped before qualified
+E000334,L00174,dropped,2026-09-12 10:54:00,dropped before qualified
+E000335,L00175,qualified,2026-09-19 04:14:00,
+E000336,L00175,discovery_call_set,2026-09-20 04:14:00,
+E000337,L00175,discovery_call_attended,2026-09-24 07:14:00,
+E000338,L00175,ambition_interview_done,2026-10-01 15:14:00,
+E000339,L00175,architect_session_done,2026-10-06 23:14:00,
+E000340,L00175,converted,2026-10-13 01:14:00,
+E000341,L00176,dropped,2026-09-20 19:46:00,dropped before qualified
+E000342,L00177,qualified,2026-09-20 11:13:00,
+E000343,L00177,dropped,2026-09-22 11:13:00,dropped before discovery_call_set
+E000344,L00178,qualified,2026-09-23 02:00:00,
+E000345,L00178,dropped,2026-09-24 04:00:00,dropped before discovery_call_set
+E000346,L00179,dropped,2026-09-27 18:43:00,dropped before qualified
+E000347,L00180,dropped,2026-09-28 14:52:00,dropped before qualified
+E000348,L00181,dropped,2026-10-03 00:15:00,dropped before qualified
+E000349,L00182,qualified,2026-10-07 03:11:00,
+E000350,L00182,dropped,2026-10-10 10:11:00,dropped before discovery_call_set
+E000351,L00183,qualified,2026-10-16 21:22:00,
+E000352,L00183,discovery_call_set,2026-10-18 22:22:00,
+E000353,L00183,discovery_call_attended,2026-10-22 03:22:00,
+E000354,L00184,dropped,2026-10-19 13:54:00,dropped before qualified
+E000355,L00185,dropped,2026-10-21 14:38:00,dropped before qualified
+E000356,L00186,qualified,2026-06-06 15:38:00,
+E000357,L00186,dropped,2026-06-10 17:38:00,dropped before discovery_call_set
+E000358,L00187,dropped,2026-06-13 20:57:00,dropped before qualified
+E000359,L00188,qualified,2026-06-21 18:42:00,
+E000360,L00188,discovery_call_set,2026-06-23 19:42:00,
+E000361,L00188,discovery_call_attended,2026-06-27 03:42:00,
+E000362,L00188,ambition_interview_done,2026-06-29 11:42:00,
+E000363,L00188,architect_session_done,2026-07-02 18:42:00,
+E000364,L00188,dropped,2026-07-03 23:42:00,dropped before converted
+E000365,L00189,dropped,2026-06-24 04:00:00,dropped before qualified
+E000366,L00190,qualified,2026-06-23 17:23:00,
+E000367,L00190,discovery_call_set,2026-06-27 22:23:00,
+E000368,L00190,discovery_call_attended,2026-07-03 01:23:00,
+E000369,L00190,ambition_interview_done,2026-07-07 01:23:00,
+E000370,L00190,architect_session_done,2026-07-14 02:23:00,
+E000371,L00190,dropped,2026-07-17 08:23:00,dropped before converted
+E000372,L00191,qualified,2026-06-27 18:54:00,
+E000373,L00191,discovery_call_set,2026-06-28 20:54:00,
+E000374,L00191,discovery_call_attended,2026-07-04 22:54:00,
+E000375,L00191,ambition_interview_done,2026-07-07 23:54:00,
+E000376,L00191,architect_session_done,2026-07-12 07:54:00,
+E000377,L00191,dropped,2026-07-14 14:54:00,dropped before converted
+E000378,L00192,qualified,2026-07-09 02:51:00,
+E000379,L00192,discovery_call_set,2026-07-12 02:51:00,
+E000380,L00192,discovery_call_attended,2026-07-15 05:51:00,
+E000381,L00192,ambition_interview_done,2026-07-22 11:51:00,
+E000382,L00192,architect_session_done,2026-07-28 17:51:00,
+E000383,L00192,dropped,2026-07-30 21:51:00,dropped before converted
+E000384,L00193,dropped,2026-07-09 01:13:00,dropped before qualified
+E000385,L00194,dropped,2026-07-11 00:12:00,dropped before qualified
+E000386,L00195,dropped,2026-07-16 09:18:00,dropped before qualified
+E000387,L00196,qualified,2026-07-20 23:47:00,
+E000388,L00196,discovery_call_set,2026-07-22 01:47:00,
+E000389,L00196,discovery_call_attended,2026-07-24 01:47:00,
+E000390,L00196,ambition_interview_done,2026-07-27 04:47:00,
+E000391,L00196,architect_session_done,2026-08-04 07:47:00,
+E000392,L00196,dropped,2026-08-09 10:47:00,dropped before converted
+E000393,L00197,dropped,2026-07-21 04:23:00,dropped before qualified
+E000394,L00198,dropped,2026-07-26 04:41:00,dropped before qualified
+E000395,L00199,dropped,2026-07-25 16:14:00,dropped before qualified
+E000396,L00200,qualified,2026-07-27 18:53:00,
+E000397,L00200,dropped,2026-07-31 23:53:00,dropped before discovery_call_set
+E000398,L00201,qualified,2026-07-31 18:39:00,
+E000399,L00201,dropped,2026-08-04 23:39:00,dropped before discovery_call_set
+E000400,L00202,qualified,2026-07-31 02:02:00,
+E000401,L00202,discovery_call_set,2026-08-04 04:02:00,
+E000402,L00202,discovery_call_attended,2026-08-06 07:02:00,
+E000403,L00202,dropped,2026-08-10 07:02:00,dropped before ambition_interview_done
+E000404,L00203,qualified,2026-08-01 20:45:00,
+E000405,L00203,discovery_call_set,2026-08-05 22:45:00,
+E000406,L00203,dropped,2026-08-10 04:45:00,dropped before discovery_call_attended
+E000407,L00204,qualified,2026-08-09 11:12:00,
+E000408,L00204,discovery_call_set,2026-08-11 15:12:00,
+E000409,L00204,discovery_call_attended,2026-08-16 23:12:00,
+E000410,L00204,ambition_interview_done,2026-08-24 05:12:00,
+E000411,L00204,dropped,2026-08-28 13:12:00,dropped before architect_session_done
+E000412,L00205,qualified,2026-08-11 13:29:00,
+E000413,L00205,discovery_call_set,2026-08-13 21:29:00,
+E000414,L00205,discovery_call_attended,2026-08-19 05:29:00,
+E000415,L00205,ambition_interview_done,2026-08-26 12:29:00,
+E000416,L00205,dropped,2026-09-03 16:29:00,dropped before architect_session_done
+E000417,L00206,qualified,2026-08-20 15:13:00,
+E000418,L00206,dropped,2026-08-22 20:13:00,dropped before discovery_call_set
+E000419,L00207,qualified,2026-09-13 18:34:00,
+E000420,L00207,dropped,2026-09-17 20:34:00,dropped before discovery_call_set
+E000421,L00208,dropped,2026-09-17 19:59:00,dropped before qualified
+E000422,L00209,qualified,2026-09-20 15:59:00,
+E000423,L00209,discovery_call_set,2026-09-22 21:59:00,
+E000424,L00209,discovery_call_attended,2026-09-26 00:59:00,
+E000425,L00209,ambition_interview_done,2026-09-29 02:59:00,
+E000426,L00209,architect_session_done,2026-10-07 06:59:00,
+E000427,L00209,dropped,2026-10-10 08:59:00,dropped before converted
+E000428,L00210,dropped,2026-09-22 15:03:00,dropped before qualified
+E000429,L00211,qualified,2026-09-28 18:42:00,
+E000430,L00211,dropped,2026-09-30 19:42:00,dropped before discovery_call_set
+E000431,L00212,dropped,2026-06-04 05:34:00,dropped before qualified
+E000432,L00213,qualified,2026-06-03 23:08:00,
+E000433,L00213,discovery_call_set,2026-06-08 03:08:00,
+E000434,L00213,discovery_call_attended,2026-06-11 07:08:00,
+E000435,L00213,ambition_interview_done,2026-06-17 12:08:00,
+E000436,L00213,dropped,2026-06-25 13:08:00,dropped before architect_session_done
+E000437,L00214,qualified,2026-06-05 16:53:00,
+E000438,L00214,dropped,2026-06-07 00:53:00,dropped before discovery_call_set
+E000439,L00215,qualified,2026-06-08 14:11:00,
+E000440,L00215,discovery_call_set,2026-06-11 18:11:00,
+E000441,L00215,discovery_call_attended,2026-06-15 01:11:00,
+E000442,L00215,ambition_interview_done,2026-06-22 01:11:00,
+E000443,L00215,dropped,2026-06-25 09:11:00,dropped before architect_session_done
+E000444,L00216,qualified,2026-06-09 08:56:00,
+E000445,L00216,dropped,2026-06-13 15:56:00,dropped before discovery_call_set
+E000446,L00217,qualified,2026-06-09 14:00:00,
+E000447,L00217,dropped,2026-06-11 16:00:00,dropped before discovery_call_set
+E000448,L00218,dropped,2026-06-11 02:20:00,dropped before qualified
+E000449,L00219,qualified,2026-06-13 18:25:00,
+E000450,L00219,discovery_call_set,2026-06-17 18:25:00,
+E000451,L00219,discovery_call_attended,2026-06-21 19:25:00,
+E000452,L00219,dropped,2026-06-25 19:25:00,dropped before ambition_interview_done
+E000453,L00220,qualified,2026-06-16 04:50:00,
+E000454,L00220,dropped,2026-06-17 11:50:00,dropped before discovery_call_set
+E000455,L00221,qualified,2026-06-14 17:54:00,
+E000456,L00221,discovery_call_set,2026-06-15 17:54:00,
+E000457,L00221,discovery_call_attended,2026-06-19 19:54:00,
+E000458,L00221,ambition_interview_done,2026-06-22 02:54:00,
+E000459,L00221,dropped,2026-06-27 06:54:00,dropped before architect_session_done
+E000460,L00222,dropped,2026-06-18 21:53:00,dropped before qualified
+E000461,L00223,dropped,2026-06-19 01:43:00,dropped before qualified
+E000462,L00224,dropped,2026-06-24 22:44:00,dropped before qualified
+E000463,L00225,qualified,2026-06-25 20:58:00,
+E000464,L00225,discovery_call_set,2026-06-28 21:58:00,
+E000465,L00225,discovery_call_attended,2026-07-04 04:58:00,
+E000466,L00225,ambition_interview_done,2026-07-09 05:58:00,
+E000467,L00225,dropped,2026-07-16 06:58:00,dropped before architect_session_done
+E000468,L00226,dropped,2026-06-26 02:46:00,dropped before qualified
+E000469,L00227,dropped,2026-07-02 22:51:00,dropped before qualified
+E000470,L00228,qualified,2026-07-06 04:44:00,
+E000471,L00228,discovery_call_set,2026-07-10 11:44:00,
+E000472,L00228,discovery_call_attended,2026-07-14 11:44:00,
+E000473,L00228,ambition_interview_done,2026-07-17 15:44:00,
+E000474,L00228,dropped,2026-07-24 23:44:00,dropped before architect_session_done
+E000475,L00229,qualified,2026-07-08 22:37:00,
+E000476,L00229,dropped,2026-07-13 04:37:00,dropped before discovery_call_set
+E000477,L00230,qualified,2026-07-24 15:20:00,
+E000478,L00230,discovery_call_set,2026-07-26 16:20:00,
+E000479,L00230,discovery_call_attended,2026-07-30 19:20:00,
+E000480,L00230,ambition_interview_done,2026-08-01 22:20:00,
+E000481,L00230,architect_session_done,2026-08-08 04:20:00,
+E000482,L00230,converted,2026-08-09 06:20:00,
+E000483,L00231,qualified,2026-07-24 20:58:00,
+E000484,L00231,discovery_call_set,2026-07-27 04:58:00,
+E000485,L00231,discovery_call_attended,2026-07-30 08:58:00,
+E000486,L00231,ambition_interview_done,2026-08-05 13:58:00,
+E000487,L00231,architect_session_done,2026-08-09 19:58:00,
+E000488,L00231,converted,2026-08-15 01:58:00,
+E000489,L00232,qualified,2026-07-27 15:04:00,
+E000490,L00232,dropped,2026-07-29 15:04:00,dropped before discovery_call_set
+E000491,L00233,qualified,2026-07-30 20:28:00,
+E000492,L00233,dropped,2026-08-04 00:28:00,dropped before discovery_call_set
+E000493,L00234,qualified,2026-09-07 17:38:00,
+E000494,L00234,dropped,2026-09-10 17:38:00,dropped before discovery_call_set
+E000495,L00235,qualified,2026-09-11 02:03:00,
+E000496,L00235,discovery_call_set,2026-09-12 03:03:00,
+E000497,L00235,discovery_call_attended,2026-09-17 06:03:00,
+E000498,L00235,dropped,2026-09-22 07:03:00,dropped before ambition_interview_done
+E000499,L00236,dropped,2026-09-19 10:30:00,dropped before qualified
+E000500,L00237,dropped,2026-09-24 11:25:00,dropped before qualified
+E000501,L00238,qualified,2026-10-08 16:03:00,
+E000502,L00238,discovery_call_set,2026-10-12 23:03:00,
+E000503,L00238,discovery_call_attended,2026-10-15 04:03:00,
+E000504,L00238,dropped,2026-10-21 12:03:00,dropped before ambition_interview_done
+E000505,L00239,qualified,2026-10-14 04:26:00,
+E000506,L00239,discovery_call_set,2026-10-16 12:26:00,
+E000507,L00239,discovery_call_attended,2026-10-22 17:26:00,
+E000508,L00240,qualified,2026-10-23 12:15:00,
+E000509,L00240,dropped,2026-10-24 13:15:00,dropped before discovery_call_set
+E000510,L00241,qualified,2026-10-24 21:43:00,
+E000511,L00242,qualified,2026-06-01 20:45:00,
+E000512,L00242,discovery_call_set,2026-06-03 22:45:00,
+E000513,L00242,dropped,2026-06-09 01:45:00,dropped before discovery_call_attended
+E000514,L00243,dropped,2026-06-03 20:36:00,dropped before qualified
+E000515,L00244,dropped,2026-06-08 12:04:00,dropped before qualified
+E000516,L00245,dropped,2026-06-14 19:11:00,dropped before qualified
+E000517,L00246,dropped,2026-06-15 22:35:00,dropped before qualified
+E000518,L00247,dropped,2026-06-18 11:14:00,dropped before qualified
+E000519,L00248,dropped,2026-06-21 23:01:00,dropped before qualified
+E000520,L00249,qualified,2026-06-21 09:09:00,
+E000521,L00249,dropped,2026-06-24 13:09:00,dropped before discovery_call_set
+E000522,L00250,qualified,2026-06-24 12:38:00,
+E000523,L00250,dropped,2026-06-25 13:38:00,dropped before discovery_call_set
+E000524,L00251,qualified,2026-06-28 20:55:00,
+E000525,L00251,dropped,2026-07-02 22:55:00,dropped before discovery_call_set
+E000526,L00252,qualified,2026-07-03 04:24:00,
+E000527,L00252,dropped,2026-07-06 04:24:00,dropped before discovery_call_set
+E000528,L00253,qualified,2026-07-03 23:20:00,
+E000529,L00253,dropped,2026-07-07 23:20:00,dropped before discovery_call_set
+E000530,L00254,dropped,2026-07-08 02:39:00,dropped before qualified
+E000531,L00255,dropped,2026-07-14 22:47:00,dropped before qualified
+E000532,L00256,dropped,2026-07-15 22:54:00,dropped before qualified
+E000533,L00257,qualified,2026-07-16 21:45:00,
+E000534,L00257,discovery_call_set,2026-07-18 23:45:00,
+E000535,L00257,discovery_call_attended,2026-07-23 01:45:00,
+E000536,L00257,dropped,2026-07-30 01:45:00,dropped before ambition_interview_done
+E000537,L00258,qualified,2026-07-18 08:18:00,
+E000538,L00258,discovery_call_set,2026-07-19 11:18:00,
+E000539,L00258,dropped,2026-07-23 13:18:00,dropped before discovery_call_attended
+E000540,L00259,dropped,2026-07-21 00:55:00,dropped before qualified
+E000541,L00260,dropped,2026-07-23 18:42:00,dropped before qualified
+E000542,L00261,dropped,2026-07-24 16:21:00,dropped before qualified
+E000543,L00262,dropped,2026-08-02 14:47:00,dropped before qualified
+E000544,L00263,qualified,2026-08-07 14:39:00,
+E000545,L00263,discovery_call_set,2026-08-10 21:39:00,
+E000546,L00263,dropped,2026-08-14 04:39:00,dropped before discovery_call_attended
+E000547,L00264,dropped,2026-08-15 09:34:00,dropped before qualified
+E000548,L00265,dropped,2026-08-22 05:02:00,dropped before qualified
+E000549,L00266,dropped,2026-08-23 12:22:00,dropped before qualified
+E000550,L00267,dropped,2026-08-23 16:59:00,dropped before qualified
+E000551,L00268,qualified,2026-08-30 19:22:00,
+E000552,L00268,discovery_call_set,2026-09-01 03:22:00,
+E000553,L00268,discovery_call_attended,2026-09-03 09:22:00,
+E000554,L00268,dropped,2026-09-10 16:22:00,dropped before ambition_interview_done
+E000555,L00269,dropped,2026-09-05 23:27:00,dropped before qualified
+E000556,L00270,dropped,2026-09-05 12:22:00,dropped before qualified
+E000557,L00271,dropped,2026-09-08 00:39:00,dropped before qualified
+E000558,L00272,dropped,2026-09-09 12:08:00,dropped before qualified
+E000559,L00273,qualified,2026-09-18 18:41:00,
+E000560,L00273,dropped,2026-09-22 19:41:00,dropped before discovery_call_set
+E000561,L00274,qualified,2026-09-22 15:44:00,
+E000562,L00274,discovery_call_set,2026-09-25 18:44:00,
+E000563,L00274,discovery_call_attended,2026-09-28 22:44:00,
+E000564,L00274,ambition_interview_done,2026-10-03 23:44:00,
+E000565,L00274,dropped,2026-10-13 06:44:00,dropped before architect_session_done
+E000566,L00275,qualified,2026-09-30 13:26:00,
+E000567,L00275,discovery_call_set,2026-10-01 19:26:00,
+E000568,L00275,dropped,2026-10-03 19:26:00,dropped before discovery_call_attended
+E000569,L00276,qualified,2026-10-02 22:07:00,
+E000570,L00276,dropped,2026-10-07 02:07:00,dropped before discovery_call_set
+E000571,L00277,qualified,2026-10-02 15:04:00,
+E000572,L00277,discovery_call_set,2026-10-04 21:04:00,
+E000573,L00277,discovery_call_attended,2026-10-11 03:04:00,
+E000574,L00277,ambition_interview_done,2026-10-18 03:04:00,
+E000575,L00277,architect_session_done,2026-10-24 11:04:00,
+E000576,L00278,dropped,2026-10-10 08:44:00,dropped before qualified
+E000577,L00279,qualified,2026-10-12 19:13:00,
+E000578,L00279,discovery_call_set,2026-10-17 00:13:00,
+E000579,L00279,dropped,2026-10-20 05:13:00,dropped before discovery_call_attended
+E000580,L00280,dropped,2026-10-23 19:30:00,dropped before qualified
+E000581,L00281,dropped,2026-07-14 18:35:00,dropped before qualified
+E000582,L00282,qualified,2026-07-22 17:06:00,
+E000583,L00282,dropped,2026-07-24 21:06:00,dropped before discovery_call_set
+E000584,L00283,dropped,2026-07-22 21:37:00,dropped before qualified
+E000585,L00284,dropped,2026-07-22 16:53:00,dropped before qualified
+E000586,L00285,dropped,2026-07-23 18:35:00,dropped before qualified
+E000587,L00286,dropped,2026-07-27 02:25:00,dropped before qualified
+E000588,L00287,dropped,2026-07-26 19:46:00,dropped before qualified
+E000589,L00288,dropped,2026-07-30 18:43:00,dropped before qualified
+E000590,L00289,dropped,2026-07-31 15:02:00,dropped before qualified
+E000591,L00290,dropped,2026-08-03 17:28:00,dropped before qualified
+E000592,L00291,dropped,2026-08-02 13:59:00,dropped before qualified
+E000593,L00292,qualified,2026-08-05 09:55:00,
+E000594,L00292,discovery_call_set,2026-08-07 09:55:00,
+E000595,L00292,dropped,2026-08-11 15:55:00,dropped before discovery_call_attended
+E000596,L00293,dropped,2026-08-05 03:23:00,dropped before qualified
+E000597,L00294,dropped,2026-08-14 17:08:00,dropped before qualified
+E000598,L00295,qualified,2026-08-14 00:09:00,
+E000599,L00295,discovery_call_set,2026-08-15 00:09:00,
+E000600,L00295,discovery_call_attended,2026-08-21 03:09:00,
+E000601,L00295,dropped,2026-08-27 03:09:00,dropped before ambition_interview_done
+E000602,L00296,dropped,2026-08-14 07:29:00,dropped before qualified
+E000603,L00297,dropped,2026-08-16 17:06:00,dropped before qualified
+E000604,L00298,qualified,2026-08-20 04:00:00,
+E000605,L00298,dropped,2026-08-23 04:00:00,dropped before discovery_call_set
+E000606,L00299,dropped,2026-08-23 20:31:00,dropped before qualified
+E000607,L00300,dropped,2026-08-25 14:09:00,dropped before qualified
+E000608,L00301,dropped,2026-08-26 11:02:00,dropped before qualified
+E000609,L00302,dropped,2026-08-28 18:34:00,dropped before qualified
+E000610,L00303,dropped,2026-08-27 12:15:00,dropped before qualified
+E000611,L00304,qualified,2026-08-30 09:40:00,
+E000612,L00304,discovery_call_set,2026-08-31 14:40:00,
+E000613,L00304,discovery_call_attended,2026-09-05 20:40:00,
+E000614,L00304,ambition_interview_done,2026-09-09 20:40:00,
+E000615,L00304,architect_session_done,2026-09-13 02:40:00,
+E000616,L00304,dropped,2026-09-14 04:40:00,dropped before converted
+E000617,L00305,dropped,2026-09-09 15:00:00,dropped before qualified
+E000618,L00306,dropped,2026-09-12 21:41:00,dropped before qualified
+E000619,L00307,dropped,2026-09-12 18:33:00,dropped before qualified
+E000620,L00308,dropped,2026-09-15 16:43:00,dropped before qualified
+E000621,L00309,dropped,2026-09-19 01:42:00,dropped before qualified
+E000622,L00310,dropped,2026-09-21 23:17:00,dropped before qualified
+E000623,L00311,qualified,2026-09-22 20:10:00,
+E000624,L00311,discovery_call_set,2026-09-25 22:10:00,
+E000625,L00311,discovery_call_attended,2026-09-28 01:10:00,
+E000626,L00311,ambition_interview_done,2026-10-03 02:10:00,
+E000627,L00311,dropped,2026-10-09 09:10:00,dropped before architect_session_done
+E000628,L00312,dropped,2026-09-28 13:31:00,dropped before qualified
+E000629,L00313,qualified,2026-10-09 12:18:00,
+E000630,L00313,discovery_call_set,2026-10-11 18:18:00,
+E000631,L00313,discovery_call_attended,2026-10-16 19:18:00,
+E000632,L00313,dropped,2026-10-23 21:18:00,dropped before ambition_interview_done
+E000633,L00314,qualified,2026-10-12 22:10:00,
+E000634,L00314,dropped,2026-10-14 04:10:00,dropped before discovery_call_set
+E000635,L00315,dropped,2026-10-17 13:01:00,dropped before qualified
+E000636,L00316,dropped,2026-10-22 06:46:00,dropped before qualified
+E000637,L00317,dropped,2026-10-24 21:37:00,dropped before qualified
+E000638,L00319,dropped,2026-10-24 22:50:00,dropped before qualified
+E000639,L00320,qualified,2026-07-18 22:52:00,
+E000640,L00320,discovery_call_set,2026-07-22 01:52:00,
+E000641,L00320,discovery_call_attended,2026-07-24 04:52:00,
+E000642,L00320,dropped,2026-07-31 07:52:00,dropped before ambition_interview_done
+E000643,L00321,dropped,2026-07-22 20:13:00,dropped before qualified
+E000644,L00322,qualified,2026-07-29 01:39:00,
+E000645,L00322,discovery_call_set,2026-07-31 07:39:00,
+E000646,L00322,discovery_call_attended,2026-08-06 09:39:00,
+E000647,L00322,dropped,2026-08-13 11:39:00,dropped before ambition_interview_done
+E000648,L00323,dropped,2026-07-31 18:16:00,dropped before qualified
+E000649,L00324,dropped,2026-08-05 22:32:00,dropped before qualified
+E000650,L00325,dropped,2026-08-17 15:04:00,dropped before qualified
+E000651,L00326,dropped,2026-08-18 21:45:00,dropped before qualified
+E000652,L00327,dropped,2026-08-20 13:14:00,dropped before qualified
+E000653,L00328,dropped,2026-08-20 10:45:00,dropped before qualified
+E000654,L00329,qualified,2026-08-23 10:17:00,
+E000655,L00329,dropped,2026-08-25 17:17:00,dropped before discovery_call_set
+E000656,L00330,dropped,2026-08-25 23:08:00,dropped before qualified
+E000657,L00331,dropped,2026-09-02 07:55:00,dropped before qualified
+E000658,L00332,qualified,2026-09-06 21:58:00,
+E000659,L00332,dropped,2026-09-08 22:58:00,dropped before discovery_call_set
+E000660,L00333,qualified,2026-09-13 14:27:00,
+E000661,L00333,dropped,2026-09-16 18:27:00,dropped before discovery_call_set
+E000662,L00334,dropped,2026-10-23 20:20:00,dropped before qualified
+E000663,L00336,dropped,2026-07-13 17:58:00,dropped before qualified
+E000664,L00337,dropped,2026-07-20 00:03:00,dropped before qualified
+E000665,L00338,dropped,2026-07-23 14:03:00,dropped before qualified
+E000666,L00339,dropped,2026-07-25 11:06:00,dropped before qualified
+E000667,L00340,qualified,2026-07-26 23:28:00,
+E000668,L00340,discovery_call_set,2026-07-29 23:28:00,
+E000669,L00340,discovery_call_attended,2026-08-04 04:28:00,
+E000670,L00340,dropped,2026-08-07 06:28:00,dropped before ambition_interview_done
+E000671,L00341,dropped,2026-08-03 15:41:00,dropped before qualified
+E000672,L00342,dropped,2026-08-03 20:31:00,dropped before qualified
+E000673,L00343,qualified,2026-08-13 16:56:00,
+E000674,L00343,dropped,2026-08-15 16:56:00,dropped before discovery_call_set
+E000675,L00344,dropped,2026-08-17 11:35:00,dropped before qualified
+E000676,L00345,dropped,2026-08-19 18:55:00,dropped before qualified
+E000677,L00346,dropped,2026-08-20 17:00:00,dropped before qualified
+E000678,L00347,dropped,2026-08-22 16:35:00,dropped before qualified
+E000679,L00348,dropped,2026-08-25 15:18:00,dropped before qualified
+E000680,L00349,dropped,2026-09-10 15:18:00,dropped before qualified
+E000681,L00350,dropped,2026-09-10 18:56:00,dropped before qualified
+E000682,L00351,qualified,2026-09-14 17:35:00,
+E000683,L00351,dropped,2026-09-16 21:35:00,dropped before discovery_call_set
+E000684,L00352,qualified,2026-09-22 01:48:00,
+E000685,L00352,dropped,2026-09-26 06:48:00,dropped before discovery_call_set
+E000686,L00353,dropped,2026-09-21 22:29:00,dropped before qualified
+E000687,L00354,dropped,2026-09-25 01:14:00,dropped before qualified
+E000688,L00355,qualified,2026-09-23 12:53:00,
+E000689,L00355,discovery_call_set,2026-09-25 15:53:00,
+E000690,L00355,discovery_call_attended,2026-09-29 20:53:00,
+E000691,L00355,ambition_interview_done,2026-10-02 22:53:00,
+E000692,L00355,dropped,2026-10-05 22:53:00,dropped before architect_session_done
+E000693,L00356,qualified,2026-09-26 03:54:00,
+E000694,L00356,dropped,2026-09-28 10:54:00,dropped before discovery_call_set
+E000695,L00357,dropped,2026-09-25 10:40:00,dropped before qualified
+E000696,L00358,qualified,2026-10-08 01:36:00,
+E000697,L00358,discovery_call_set,2026-10-12 06:36:00,
+E000698,L00358,dropped,2026-10-18 10:36:00,dropped before discovery_call_attended
+E000699,L00359,dropped,2026-10-21 22:09:00,dropped before qualified
+E000700,L00360,dropped,2026-10-21 22:15:00,dropped before qualified
+E000701,L00361,qualified,2026-07-11 23:33:00,
+E000702,L00361,discovery_call_set,2026-07-14 04:33:00,
+E000703,L00361,discovery_call_attended,2026-07-19 06:33:00,
+E000704,L00361,dropped,2026-07-24 13:33:00,dropped before ambition_interview_done
+E000705,L00362,dropped,2026-07-17 12:54:00,dropped before qualified
+E000706,L00363,dropped,2026-07-26 18:27:00,dropped before qualified
+E000707,L00364,dropped,2026-08-16 05:16:00,dropped before qualified
+E000708,L00365,dropped,2026-08-20 20:32:00,dropped before qualified
+E000709,L00366,qualified,2026-08-30 21:35:00,
+E000710,L00366,discovery_call_set,2026-09-04 01:35:00,
+E000711,L00366,dropped,2026-09-06 04:35:00,dropped before discovery_call_attended
+E000712,L00367,dropped,2026-09-13 20:41:00,dropped before qualified
+E000713,L00368,dropped,2026-09-22 21:17:00,dropped before qualified
+E000714,L00369,dropped,2026-09-24 20:27:00,dropped before qualified
+E000715,L00370,dropped,2026-10-02 05:53:00,dropped before qualified
+E000716,L00371,qualified,2026-10-12 01:17:00,
+E000717,L00371,discovery_call_set,2026-10-15 09:17:00,
+E000718,L00371,dropped,2026-10-18 10:17:00,dropped before discovery_call_attended
+E000719,L00372,dropped,2026-10-17 10:59:00,dropped before qualified
+E000720,L00373,dropped,2026-07-13 01:37:00,dropped before qualified
+E000721,L00374,qualified,2026-07-12 14:41:00,
+E000722,L00374,discovery_call_set,2026-07-15 15:41:00,
+E000723,L00374,discovery_call_attended,2026-07-20 20:41:00,
+E000724,L00374,ambition_interview_done,2026-07-26 21:41:00,
+E000725,L00374,dropped,2026-07-30 02:41:00,dropped before architect_session_done
+E000726,L00375,dropped,2026-07-18 21:37:00,dropped before qualified
+E000727,L00376,dropped,2026-07-22 09:16:00,dropped before qualified
+E000728,L00377,dropped,2026-07-25 03:07:00,dropped before qualified
+E000729,L00378,dropped,2026-07-26 12:56:00,dropped before qualified
+E000730,L00379,dropped,2026-07-26 12:23:00,dropped before qualified
+E000731,L00380,dropped,2026-07-28 18:14:00,dropped before qualified
+E000732,L00381,dropped,2026-08-03 15:21:00,dropped before qualified
+E000733,L00382,dropped,2026-08-05 18:43:00,dropped before qualified
+E000734,L00383,dropped,2026-08-05 19:49:00,dropped before qualified
+E000735,L00384,dropped,2026-08-05 16:55:00,dropped before qualified
+E000736,L00385,dropped,2026-08-09 10:21:00,dropped before qualified
+E000737,L00386,dropped,2026-08-11 12:48:00,dropped before qualified
+E000738,L00387,dropped,2026-08-13 15:46:00,dropped before qualified
+E000739,L00388,dropped,2026-08-18 01:58:00,dropped before qualified
+E000740,L00389,dropped,2026-08-20 19:17:00,dropped before qualified
+E000741,L00390,qualified,2026-08-22 12:14:00,
+E000742,L00390,dropped,2026-08-24 19:14:00,dropped before discovery_call_set
+E000743,L00391,qualified,2026-09-02 12:55:00,
+E000744,L00391,discovery_call_set,2026-09-05 12:55:00,
+E000745,L00391,dropped,2026-09-09 19:55:00,dropped before discovery_call_attended
+E000746,L00392,qualified,2026-09-02 17:55:00,
+E000747,L00392,discovery_call_set,2026-09-04 00:55:00,
+E000748,L00392,discovery_call_attended,2026-09-10 05:55:00,
+E000749,L00392,ambition_interview_done,2026-09-12 09:55:00,
+E000750,L00392,dropped,2026-09-20 15:55:00,dropped before architect_session_done
+E000751,L00393,qualified,2026-09-03 02:39:00,
+E000752,L00393,dropped,2026-09-05 07:39:00,dropped before discovery_call_set
+E000753,L00394,dropped,2026-09-10 06:06:00,dropped before qualified
+E000754,L00395,dropped,2026-09-11 21:22:00,dropped before qualified
+E000755,L00396,dropped,2026-09-11 22:29:00,dropped before qualified
+E000756,L00397,qualified,2026-09-12 23:56:00,
+E000757,L00397,dropped,2026-09-17 02:56:00,dropped before discovery_call_set
+E000758,L00398,qualified,2026-09-13 15:22:00,
+E000759,L00398,dropped,2026-09-16 20:22:00,dropped before discovery_call_set
+E000760,L00399,dropped,2026-09-25 18:26:00,dropped before qualified
+E000761,L00400,dropped,2026-10-09 21:23:00,dropped before qualified
+E000762,L00401,dropped,2026-10-09 07:54:00,dropped before qualified
+E000763,L00402,dropped,2026-10-14 17:15:00,dropped before qualified
+E000764,L00403,dropped,2026-10-15 23:45:00,dropped before qualified
+E000765,L00404,dropped,2026-10-18 13:24:00,dropped before qualified
+E000766,L00405,dropped,2026-07-22 16:08:00,dropped before qualified
+E000767,L00406,dropped,2026-07-26 15:12:00,dropped before qualified
+E000768,L00407,qualified,2026-08-11 17:03:00,
+E000769,L00407,dropped,2026-08-14 20:03:00,dropped before discovery_call_set
+E000770,L00408,qualified,2026-09-16 22:55:00,
+E000771,L00408,dropped,2026-09-19 01:55:00,dropped before discovery_call_set
+E000772,L00409,dropped,2026-10-16 08:37:00,dropped before qualified
+E000773,L00410,dropped,2026-08-20 11:32:00,dropped before qualified
+E000774,L00411,dropped,2026-08-29 14:22:00,dropped before qualified
+E000775,L00412,dropped,2026-08-29 14:04:00,dropped before qualified
+E000776,L00413,qualified,2026-08-30 09:49:00,
+E000777,L00413,discovery_call_set,2026-09-03 12:49:00,
+E000778,L00413,dropped,2026-09-07 18:49:00,dropped before discovery_call_attended
+E000779,L00414,dropped,2026-09-02 18:34:00,dropped before qualified
+E000780,L00415,dropped,2026-09-26 20:45:00,dropped before qualified
+E000781,L00416,dropped,2026-09-29 02:12:00,dropped before qualified
+E000782,L00417,dropped,2026-10-01 11:13:00,dropped before qualified
+E000783,L00418,dropped,2026-10-04 22:13:00,dropped before qualified
+E000784,L00419,qualified,2026-10-05 17:37:00,
+E000785,L00419,discovery_call_set,2026-10-09 21:37:00,
+E000786,L00419,dropped,2026-10-14 03:37:00,dropped before discovery_call_attended
+E000787,L00420,qualified,2026-10-05 20:16:00,
+E000788,L00420,discovery_call_set,2026-10-07 00:16:00,
+E000789,L00420,dropped,2026-10-12 07:16:00,dropped before discovery_call_attended
+E000790,L00421,qualified,2026-10-20 12:08:00,
+E000791,L00421,dropped,2026-10-22 19:08:00,dropped before discovery_call_set
+E000792,L00422,dropped,2026-08-22 14:54:00,dropped before qualified
+E000793,L00423,dropped,2026-08-26 12:35:00,dropped before qualified
+E000794,L00424,qualified,2026-09-01 22:00:00,
+E000795,L00424,discovery_call_set,2026-09-04 04:00:00,
+E000796,L00424,discovery_call_attended,2026-09-09 06:00:00,
+E000797,L00424,dropped,2026-09-13 07:00:00,dropped before ambition_interview_done
+E000798,L00425,dropped,2026-09-04 16:03:00,dropped before qualified
+E000799,L00426,dropped,2026-09-26 20:53:00,dropped before qualified
+E000800,L00427,dropped,2026-09-28 17:27:00,dropped before qualified
+E000801,L00428,qualified,2026-10-04 07:02:00,
+E000802,L00428,dropped,2026-10-05 12:02:00,dropped before discovery_call_set
+E000803,L00429,dropped,2026-10-04 07:52:00,dropped before qualified
+E000804,L00430,dropped,2026-10-09 13:45:00,dropped before qualified
+E000805,L00431,qualified,2026-10-14 02:03:00,
+E000806,L00431,discovery_call_set,2026-10-18 02:03:00,
+E000807,L00431,discovery_call_attended,2026-10-22 08:03:00,
+E000808,L00432,dropped,2026-10-20 22:03:00,dropped before qualified
+E000809,L00433,dropped,2026-10-22 22:39:00,dropped before qualified
+E000810,L00434,qualified,2026-08-23 20:45:00,
+E000811,L00434,dropped,2026-08-28 01:45:00,dropped before discovery_call_set
+E000812,L00435,qualified,2026-09-01 13:45:00,
+E000813,L00435,discovery_call_set,2026-09-03 13:45:00,
+E000814,L00435,dropped,2026-09-06 20:45:00,dropped before discovery_call_attended
+E000815,L00436,dropped,2026-09-03 18:09:00,dropped before qualified
+E000816,L00437,dropped,2026-09-04 14:34:00,dropped before qualified
+E000817,L00438,qualified,2026-09-05 00:02:00,
+E000818,L00438,discovery_call_set,2026-09-06 07:02:00,
+E000819,L00438,discovery_call_attended,2026-09-09 08:02:00,
+E000820,L00438,ambition_interview_done,2026-09-15 16:02:00,
+E000821,L00438,dropped,2026-09-24 23:02:00,dropped before architect_session_done
+E000822,L00439,qualified,2026-09-06 14:57:00,
+E000823,L00439,discovery_call_set,2026-09-07 21:57:00,
+E000824,L00439,discovery_call_attended,2026-09-09 22:57:00,
+E000825,L00439,ambition_interview_done,2026-09-17 05:57:00,
+E000826,L00439,architect_session_done,2026-09-23 05:57:00,
+E000827,L00439,dropped,2026-09-27 06:57:00,dropped before converted
+E000828,L00440,dropped,2026-09-06 11:27:00,dropped before qualified
+E000829,L00441,dropped,2026-09-07 23:50:00,dropped before qualified
+E000830,L00442,dropped,2026-09-08 20:21:00,dropped before qualified
+E000831,L00443,dropped,2026-09-13 14:03:00,dropped before qualified
+E000832,L00444,dropped,2026-09-13 20:11:00,dropped before qualified
+E000833,L00445,dropped,2026-09-16 20:21:00,dropped before qualified
+E000834,L00446,qualified,2026-09-26 14:00:00,
+E000835,L00446,dropped,2026-09-29 19:00:00,dropped before discovery_call_set
+E000836,L00447,dropped,2026-09-27 01:13:00,dropped before qualified
+E000837,L00448,dropped,2026-09-29 03:00:00,dropped before qualified
+E000838,L00449,dropped,2026-10-12 03:26:00,dropped before qualified
+E000839,L00450,qualified,2026-10-13 16:51:00,
+E000840,L00450,dropped,2026-10-14 22:51:00,dropped before discovery_call_set
+E000841,L00451,dropped,2026-10-12 14:23:00,dropped before qualified
+E000842,L00452,dropped,2026-10-16 20:33:00,dropped before qualified
+E000843,L00453,dropped,2026-10-17 13:36:00,dropped before qualified
+E000844,L00454,dropped,2026-08-22 19:02:00,dropped before qualified
+E000845,L00455,dropped,2026-08-22 12:12:00,dropped before qualified
+E000846,L00456,qualified,2026-08-25 18:39:00,
+E000847,L00456,dropped,2026-08-30 02:39:00,dropped before discovery_call_set
+E000848,L00457,qualified,2026-08-26 11:27:00,
+E000849,L00457,discovery_call_set,2026-08-27 19:27:00,
+E000850,L00457,dropped,2026-08-31 02:27:00,dropped before discovery_call_attended
+E000851,L00458,qualified,2026-09-02 00:38:00,
+E000852,L00458,discovery_call_set,2026-09-03 07:38:00,
+E000853,L00458,dropped,2026-09-09 10:38:00,dropped before discovery_call_attended
+E000854,L00459,dropped,2026-09-03 16:14:00,dropped before qualified
+E000855,L00460,qualified,2026-09-04 12:36:00,
+E000856,L00460,dropped,2026-09-07 17:36:00,dropped before discovery_call_set
+E000857,L00461,dropped,2026-09-06 05:57:00,dropped before qualified
+E000858,L00462,dropped,2026-09-12 11:46:00,dropped before qualified
+E000859,L00463,qualified,2026-09-13 04:36:00,
+E000860,L00463,dropped,2026-09-14 07:36:00,dropped before discovery_call_set
+E000861,L00464,qualified,2026-09-12 23:36:00,
+E000862,L00464,dropped,2026-09-15 01:36:00,dropped before discovery_call_set
+E000863,L00465,qualified,2026-09-16 15:10:00,
+E000864,L00465,discovery_call_set,2026-09-20 22:10:00,
+E000865,L00465,discovery_call_attended,2026-09-26 06:10:00,
+E000866,L00465,ambition_interview_done,2026-10-01 06:10:00,
+E000867,L00465,architect_session_done,2026-10-09 12:10:00,
+E000868,L00465,dropped,2026-10-10 19:10:00,dropped before converted
+E000869,L00466,dropped,2026-09-17 13:08:00,dropped before qualified
+E000870,L00467,dropped,2026-09-20 22:00:00,dropped before qualified
+E000871,L00468,qualified,2026-09-21 13:15:00,
+E000872,L00468,discovery_call_set,2026-09-23 19:15:00,
+E000873,L00468,discovery_call_attended,2026-09-28 01:15:00,
+E000874,L00468,ambition_interview_done,2026-10-01 03:15:00,
+E000875,L00468,architect_session_done,2026-10-09 04:15:00,
+E000876,L00468,dropped,2026-10-14 11:15:00,dropped before converted
+E000877,L00469,dropped,2026-09-21 20:26:00,dropped before qualified
+E000878,L00470,dropped,2026-09-23 04:37:00,dropped before qualified
+E000879,L00471,qualified,2026-09-23 21:08:00,
+E000880,L00471,dropped,2026-09-25 01:08:00,dropped before discovery_call_set
+E000881,L00472,dropped,2026-09-23 23:49:00,dropped before qualified
+E000882,L00473,qualified,2026-09-29 05:57:00,
+E000883,L00473,discovery_call_set,2026-10-01 08:57:00,
+E000884,L00473,discovery_call_attended,2026-10-03 11:57:00,
+E000885,L00473,ambition_interview_done,2026-10-09 16:57:00,
+E000886,L00473,architect_session_done,2026-10-18 00:57:00,
+E000887,L00473,dropped,2026-10-22 05:57:00,dropped before converted
+E000888,L00474,dropped,2026-09-30 00:58:00,dropped before qualified
+E000889,L00475,dropped,2026-09-27 11:05:00,dropped before qualified
+E000890,L00476,qualified,2026-10-04 16:25:00,
+E000891,L00476,discovery_call_set,2026-10-05 17:25:00,
+E000892,L00476,discovery_call_attended,2026-10-07 17:25:00,
+E000893,L00476,ambition_interview_done,2026-10-13 19:25:00,
+E000894,L00476,architect_session_done,2026-10-17 03:25:00,
+E000895,L00476,converted,2026-10-21 11:25:00,
+E000896,L00477,qualified,2026-10-06 14:34:00,
+E000897,L00477,dropped,2026-10-10 19:34:00,dropped before discovery_call_set
+E000898,L00478,dropped,2026-10-10 11:48:00,dropped before qualified
+E000899,L00479,qualified,2026-10-10 17:21:00,
+E000900,L00479,dropped,2026-10-13 17:21:00,dropped before discovery_call_set
+E000901,L00480,qualified,2026-10-18 02:54:00,
+E000902,L00480,discovery_call_set,2026-10-19 08:54:00,
+E000903,L00480,discovery_call_attended,2026-10-24 13:54:00,
+E000904,L00482,dropped,2026-08-26 02:42:00,dropped before qualified
+E000905,L00483,dropped,2026-08-28 04:48:00,dropped before qualified
+E000906,L00484,qualified,2026-08-29 00:10:00,
+E000907,L00484,discovery_call_set,2026-08-31 06:10:00,
+E000908,L00484,discovery_call_attended,2026-09-02 14:10:00,
+E000909,L00484,dropped,2026-09-04 18:10:00,dropped before ambition_interview_done
+E000910,L00485,dropped,2026-08-29 19:55:00,dropped before qualified
+E000911,L00486,qualified,2026-08-31 10:03:00,
+E000912,L00486,discovery_call_set,2026-09-04 14:03:00,
+E000913,L00486,discovery_call_attended,2026-09-07 14:03:00,
+E000914,L00486,dropped,2026-09-14 20:03:00,dropped before ambition_interview_done
+E000915,L00487,dropped,2026-08-31 10:26:00,dropped before qualified
+E000916,L00488,qualified,2026-09-08 03:22:00,
+E000917,L00488,dropped,2026-09-12 05:22:00,dropped before discovery_call_set
+E000918,L00489,dropped,2026-09-06 07:20:00,dropped before qualified
+E000919,L00490,dropped,2026-09-11 17:13:00,dropped before qualified
+E000920,L00491,qualified,2026-09-15 19:07:00,
+E000921,L00491,dropped,2026-09-20 02:07:00,dropped before discovery_call_set
+E000922,L00492,qualified,2026-09-19 23:41:00,
+E000923,L00492,discovery_call_set,2026-09-22 04:41:00,
+E000924,L00492,discovery_call_attended,2026-09-25 07:41:00,
+E000925,L00492,ambition_interview_done,2026-09-28 07:41:00,
+E000926,L00492,architect_session_done,2026-10-07 09:41:00,
+E000927,L00492,converted,2026-10-09 15:41:00,
+E000928,L00493,dropped,2026-09-23 01:08:00,dropped before qualified
+E000929,L00494,dropped,2026-09-23 15:50:00,dropped before qualified
+E000930,L00495,dropped,2026-09-24 14:42:00,dropped before qualified
+E000931,L00496,dropped,2026-09-30 12:29:00,dropped before qualified
+E000932,L00497,qualified,2026-09-30 10:12:00,
+E000933,L00497,discovery_call_set,2026-10-03 15:12:00,
+E000934,L00497,discovery_call_attended,2026-10-06 20:12:00,
+E000935,L00497,ambition_interview_done,2026-10-12 00:12:00,
+E000936,L00497,dropped,2026-10-15 05:12:00,dropped before architect_session_done
+E000937,L00498,qualified,2026-10-03 15:13:00,
+E000938,L00498,discovery_call_set,2026-10-07 19:13:00,
+E000939,L00498,dropped,2026-10-12 03:13:00,dropped before discovery_call_attended
+E000940,L00499,dropped,2026-10-07 01:17:00,dropped before qualified
+E000941,L00500,dropped,2026-10-07 18:39:00,dropped before qualified
+E000942,L00501,dropped,2026-10-08 22:03:00,dropped before qualified
+E000943,L00502,dropped,2026-10-12 19:07:00,dropped before qualified
+E000944,L00503,dropped,2026-10-17 14:29:00,dropped before qualified
+E000945,L00504,qualified,2026-10-21 20:25:00,
+E000946,L00504,dropped,2026-10-23 23:25:00,dropped before discovery_call_set
+E000947,L00505,dropped,2026-10-23 16:35:00,dropped before qualified
+E000948,L00506,dropped,2026-08-29 20:08:00,dropped before qualified
+E000949,L00507,dropped,2026-08-30 17:06:00,dropped before qualified
+E000950,L00508,dropped,2026-09-10 15:59:00,dropped before qualified
+E000951,L00509,qualified,2026-09-12 21:38:00,
+E000952,L00509,dropped,2026-09-15 02:38:00,dropped before discovery_call_set
+E000953,L00510,dropped,2026-09-22 09:10:00,dropped before qualified
+E000954,L00511,dropped,2026-09-27 11:41:00,dropped before qualified
+E000955,L00512,dropped,2026-09-29 16:05:00,dropped before qualified
+E000956,L00513,qualified,2026-10-01 17:49:00,
+E000957,L00513,dropped,2026-10-03 18:49:00,dropped before discovery_call_set
+E000958,L00514,qualified,2026-10-14 19:00:00,
+E000959,L00514,discovery_call_set,2026-10-16 21:00:00,
+E000960,L00514,dropped,2026-10-21 22:00:00,dropped before discovery_call_attended
+E000961,L00515,dropped,2026-10-14 21:16:00,dropped before qualified
+E000962,L00516,qualified,2026-10-18 11:46:00,
+E000963,L00516,dropped,2026-10-20 17:46:00,dropped before discovery_call_set
+E000964,L00517,dropped,2026-10-22 21:39:00,dropped before qualified
+E000965,L00518,qualified,2026-05-24 14:05:00,
+E000966,L00518,discovery_call_set,2026-05-26 18:05:00,
+E000967,L00518,discovery_call_attended,2026-05-30 20:05:00,
+E000968,L00518,ambition_interview_done,2026-06-03 21:05:00,
+E000969,L00518,architect_session_done,2026-06-11 05:05:00,
+E000970,L00518,dropped,2026-06-17 09:05:00,dropped before converted
+E000971,L00519,dropped,2026-05-30 13:10:00,dropped before qualified
+E000972,L00520,dropped,2026-06-07 12:39:00,dropped before qualified
+E000973,L00521,qualified,2026-06-21 13:58:00,
+E000974,L00521,dropped,2026-06-25 13:58:00,dropped before discovery_call_set
+E000975,L00522,dropped,2026-07-29 00:25:00,dropped before qualified
+E000976,L00523,dropped,2026-08-24 04:32:00,dropped before qualified
+E000977,L00524,dropped,2026-08-23 10:35:00,dropped before qualified
+E000978,L00525,qualified,2026-08-29 02:43:00,
+E000979,L00525,discovery_call_set,2026-09-01 06:43:00,
+E000980,L00525,discovery_call_attended,2026-09-05 12:43:00,
+E000981,L00525,ambition_interview_done,2026-09-08 17:43:00,
+E000982,L00525,architect_session_done,2026-09-11 18:43:00,
+E000983,L00525,dropped,2026-09-13 02:43:00,dropped before converted
+E000984,L00526,dropped,2026-09-04 15:16:00,dropped before qualified
+E000985,L00527,qualified,2026-10-13 23:59:00,
+E000986,L00527,discovery_call_set,2026-10-15 00:59:00,
+E000987,L00527,discovery_call_attended,2026-10-17 08:59:00,
+E000988,L00527,ambition_interview_done,2026-10-19 11:59:00,
+E000989,L00528,dropped,2026-10-14 17:25:00,dropped before qualified
+E000990,L00529,qualified,2026-05-17 20:38:00,
+E000991,L00529,dropped,2026-05-21 21:38:00,dropped before discovery_call_set
+E000992,L00530,dropped,2026-05-31 18:44:00,dropped before qualified
+E000993,L00531,dropped,2026-06-10 15:29:00,dropped before qualified
+E000994,L00532,dropped,2026-06-09 18:24:00,dropped before qualified
+E000995,L00533,qualified,2026-06-14 16:58:00,
+E000996,L00533,discovery_call_set,2026-06-16 20:58:00,
+E000997,L00533,discovery_call_attended,2026-06-20 23:58:00,
+E000998,L00533,dropped,2026-06-23 05:58:00,dropped before ambition_interview_done
+E000999,L00534,dropped,2026-06-17 14:53:00,dropped before qualified
+E001000,L00535,qualified,2026-06-20 14:57:00,
+E001001,L00535,discovery_call_set,2026-06-22 16:57:00,
+E001002,L00535,dropped,2026-06-27 20:57:00,dropped before discovery_call_attended
+E001003,L00536,dropped,2026-07-04 15:11:00,dropped before qualified
+E001004,L00537,qualified,2026-07-04 20:22:00,
+E001005,L00537,dropped,2026-07-07 02:22:00,dropped before discovery_call_set
+E001006,L00538,qualified,2026-07-10 21:20:00,
+E001007,L00538,dropped,2026-07-13 02:20:00,dropped before discovery_call_set
+E001008,L00539,qualified,2026-07-13 22:32:00,
+E001009,L00539,discovery_call_set,2026-07-18 00:32:00,
+E001010,L00539,dropped,2026-07-22 08:32:00,dropped before discovery_call_attended
+E001011,L00540,qualified,2026-07-18 05:09:00,
+E001012,L00540,dropped,2026-07-21 12:09:00,dropped before discovery_call_set
+E001013,L00541,qualified,2026-08-23 11:19:00,
+E001014,L00541,discovery_call_set,2026-08-25 13:19:00,
+E001015,L00541,discovery_call_attended,2026-08-28 21:19:00,
+E001016,L00541,ambition_interview_done,2026-09-03 23:19:00,
+E001017,L00541,architect_session_done,2026-09-12 00:19:00,
+E001018,L00541,dropped,2026-09-14 05:19:00,dropped before converted
+E001019,L00542,dropped,2026-08-28 08:36:00,dropped before qualified
+E001020,L00543,dropped,2026-09-03 01:38:00,dropped before qualified
+E001021,L00544,dropped,2026-09-09 14:55:00,dropped before qualified
+E001022,L00545,qualified,2026-10-16 22:38:00,
+E001023,L00545,discovery_call_set,2026-10-19 22:38:00,
+E001024,L00545,discovery_call_attended,2026-10-24 23:38:00,
+E001025,L00546,dropped,2026-05-17 12:15:00,dropped before qualified
+E001026,L00547,dropped,2026-05-20 20:20:00,dropped before qualified
+E001027,L00548,dropped,2026-05-20 10:22:00,dropped before qualified
+E001028,L00549,dropped,2026-05-20 14:37:00,dropped before qualified
+E001029,L00550,dropped,2026-05-21 20:13:00,dropped before qualified
+E001030,L00551,qualified,2026-05-27 17:14:00,
+E001031,L00551,dropped,2026-05-31 22:14:00,dropped before discovery_call_set
+E001032,L00552,dropped,2026-05-29 00:31:00,dropped before qualified
+E001033,L00553,qualified,2026-05-28 16:33:00,
+E001034,L00553,discovery_call_set,2026-05-29 20:33:00,
+E001035,L00553,discovery_call_attended,2026-06-01 04:33:00,
+E001036,L00553,ambition_interview_done,2026-06-08 05:33:00,
+E001037,L00553,architect_session_done,2026-06-16 12:33:00,
+E001038,L00553,dropped,2026-06-21 18:33:00,dropped before converted
+E001039,L00554,dropped,2026-05-29 17:03:00,dropped before qualified
+E001040,L00555,qualified,2026-06-01 19:59:00,
+E001041,L00555,discovery_call_set,2026-06-05 20:59:00,
+E001042,L00555,discovery_call_attended,2026-06-09 03:59:00,
+E001043,L00555,ambition_interview_done,2026-06-13 03:59:00,
+E001044,L00555,dropped,2026-06-19 11:59:00,dropped before architect_session_done
+E001045,L00556,qualified,2026-06-01 20:04:00,
+E001046,L00556,dropped,2026-06-02 23:04:00,dropped before discovery_call_set
+E001047,L00557,dropped,2026-06-04 13:31:00,dropped before qualified
+E001048,L00558,dropped,2026-06-06 22:08:00,dropped before qualified
+E001049,L00559,qualified,2026-06-13 00:32:00,
+E001050,L00559,dropped,2026-06-15 07:32:00,dropped before discovery_call_set
+E001051,L00560,qualified,2026-06-10 13:31:00,
+E001052,L00560,discovery_call_set,2026-06-11 17:31:00,
+E001053,L00560,dropped,2026-06-16 23:31:00,dropped before discovery_call_attended
+E001054,L00561,dropped,2026-06-13 13:41:00,dropped before qualified
+E001055,L00562,qualified,2026-06-14 23:12:00,
+E001056,L00562,discovery_call_set,2026-06-19 06:12:00,
+E001057,L00562,dropped,2026-06-25 08:12:00,dropped before discovery_call_attended
+E001058,L00563,qualified,2026-06-16 13:50:00,
+E001059,L00563,dropped,2026-06-19 21:50:00,dropped before discovery_call_set
+E001060,L00564,qualified,2026-06-22 19:23:00,
+E001061,L00564,dropped,2026-06-26 21:23:00,dropped before discovery_call_set
+E001062,L00565,dropped,2026-06-22 05:47:00,dropped before qualified
+E001063,L00566,qualified,2026-06-22 16:12:00,
+E001064,L00566,discovery_call_set,2026-06-24 20:12:00,
+E001065,L00566,discovery_call_attended,2026-06-28 21:12:00,
+E001066,L00566,ambition_interview_done,2026-07-01 00:12:00,
+E001067,L00566,architect_session_done,2026-07-09 03:12:00,
+E001068,L00566,dropped,2026-07-12 03:12:00,dropped before converted
+E001069,L00567,dropped,2026-06-25 12:30:00,dropped before qualified
+E001070,L00568,dropped,2026-07-01 17:58:00,dropped before qualified
+E001071,L00569,dropped,2026-07-06 02:20:00,dropped before qualified
+E001072,L00570,qualified,2026-07-10 02:16:00,
+E001073,L00570,discovery_call_set,2026-07-13 05:16:00,
+E001074,L00570,dropped,2026-07-17 07:16:00,dropped before discovery_call_attended
+E001075,L00571,dropped,2026-07-11 15:26:00,dropped before qualified
+E001076,L00572,dropped,2026-07-11 13:16:00,dropped before qualified
+E001077,L00573,qualified,2026-07-13 15:24:00,
+E001078,L00573,discovery_call_set,2026-07-14 21:24:00,
+E001079,L00573,discovery_call_attended,2026-07-19 22:24:00,
+E001080,L00573,ambition_interview_done,2026-07-23 06:24:00,
+E001081,L00573,architect_session_done,2026-07-31 06:24:00,
+E001082,L00573,converted,2026-08-03 13:24:00,
+E001083,L00574,qualified,2026-07-14 14:46:00,
+E001084,L00574,discovery_call_set,2026-07-16 20:46:00,
+E001085,L00574,discovery_call_attended,2026-07-22 01:46:00,
+E001086,L00574,ambition_interview_done,2026-07-24 07:46:00,
+E001087,L00574,architect_session_done,2026-07-29 11:46:00,
+E001088,L00574,dropped,2026-08-02 12:46:00,dropped before converted
+E001089,L00575,qualified,2026-07-16 18:21:00,
+E001090,L00575,discovery_call_set,2026-07-19 02:21:00,
+E001091,L00575,discovery_call_attended,2026-07-23 09:21:00,
+E001092,L00575,ambition_interview_done,2026-07-29 14:21:00,
+E001093,L00575,dropped,2026-08-05 22:21:00,dropped before architect_session_done
+E001094,L00576,dropped,2026-07-16 00:41:00,dropped before qualified
+E001095,L00577,dropped,2026-07-16 00:56:00,dropped before qualified
+E001096,L00578,dropped,2026-07-19 18:26:00,dropped before qualified
+E001097,L00579,qualified,2026-07-21 20:41:00,
+E001098,L00579,discovery_call_set,2026-07-24 03:41:00,
+E001099,L00579,discovery_call_attended,2026-07-28 09:41:00,
+E001100,L00579,ambition_interview_done,2026-08-02 14:41:00,
+E001101,L00579,architect_session_done,2026-08-11 15:41:00,
+E001102,L00579,converted,2026-08-14 15:41:00,
+E001103,L00580,qualified,2026-07-30 17:02:00,
+E001104,L00580,dropped,2026-07-31 22:02:00,dropped before discovery_call_set
+E001105,L00581,qualified,2026-08-01 03:04:00,
+E001106,L00581,discovery_call_set,2026-08-02 08:04:00,
+E001107,L00581,discovery_call_attended,2026-08-05 15:04:00,
+E001108,L00581,ambition_interview_done,2026-08-10 20:04:00,
+E001109,L00581,architect_session_done,2026-08-16 23:04:00,
+E001110,L00581,dropped,2026-08-21 02:04:00,dropped before converted
+E001111,L00582,dropped,2026-07-31 11:40:00,dropped before qualified
+E001112,L00583,qualified,2026-08-02 13:15:00,
+E001113,L00583,discovery_call_set,2026-08-04 15:15:00,
+E001114,L00583,discovery_call_attended,2026-08-07 16:15:00,
+E001115,L00583,dropped,2026-08-10 19:15:00,dropped before ambition_interview_done
+E001116,L00584,qualified,2026-07-31 08:24:00,
+E001117,L00584,discovery_call_set,2026-08-04 11:24:00,
+E001118,L00584,discovery_call_attended,2026-08-10 19:24:00,
+E001119,L00584,ambition_interview_done,2026-08-17 19:24:00,
+E001120,L00584,architect_session_done,2026-08-21 19:24:00,
+E001121,L00584,dropped,2026-08-28 02:24:00,dropped before converted
+E001122,L00585,dropped,2026-08-04 20:43:00,dropped before qualified
+E001123,L00586,dropped,2026-08-13 17:34:00,dropped before qualified
+E001124,L00587,qualified,2026-08-15 17:20:00,
+E001125,L00587,discovery_call_set,2026-08-17 00:20:00,
+E001126,L00587,discovery_call_attended,2026-08-21 02:20:00,
+E001127,L00587,ambition_interview_done,2026-08-24 04:20:00,
+E001128,L00587,architect_session_done,2026-08-30 07:20:00,
+E001129,L00587,dropped,2026-08-31 15:20:00,dropped before converted
+E001130,L00588,qualified,2026-08-22 15:52:00,
+E001131,L00588,discovery_call_set,2026-08-23 18:52:00,
+E001132,L00588,dropped,2026-08-26 22:52:00,dropped before discovery_call_attended
+E001133,L00589,dropped,2026-08-21 18:43:00,dropped before qualified
+E001134,L00590,dropped,2026-09-02 18:13:00,dropped before qualified
+E001135,L00591,dropped,2026-09-03 21:46:00,dropped before qualified
+E001136,L00592,dropped,2026-09-12 04:18:00,dropped before qualified
+E001137,L00593,dropped,2026-09-13 21:17:00,dropped before qualified
+E001138,L00594,dropped,2026-09-18 02:33:00,dropped before qualified
+E001139,L00595,dropped,2026-09-17 20:46:00,dropped before qualified
+E001140,L00596,dropped,2026-09-24 19:10:00,dropped before qualified
+E001141,L00597,dropped,2026-09-25 21:06:00,dropped before qualified
+E001142,L00598,dropped,2026-10-01 20:13:00,dropped before qualified
+E001143,L00599,qualified,2026-10-01 14:19:00,
+E001144,L00599,dropped,2026-10-05 16:19:00,dropped before discovery_call_set
+E001145,L00600,qualified,2026-10-06 13:22:00,
+E001146,L00600,discovery_call_set,2026-10-07 20:22:00,
+E001147,L00600,discovery_call_attended,2026-10-11 03:22:00,
+E001148,L00600,dropped,2026-10-15 11:22:00,dropped before ambition_interview_done
+E001149,L00601,qualified,2026-10-21 21:42:00,
+E001150,L00601,discovery_call_set,2026-10-22 21:42:00,
+E001151,L00602,qualified,2026-10-24 20:26:00,
+E001152,L00604,qualified,2026-05-20 12:48:00,
+E001153,L00604,discovery_call_set,2026-05-23 14:48:00,
+E001154,L00604,discovery_call_attended,2026-05-29 21:48:00,
+E001155,L00604,ambition_interview_done,2026-06-03 01:48:00,
+E001156,L00604,architect_session_done,2026-06-07 07:48:00,
+E001157,L00604,dropped,2026-06-11 14:48:00,dropped before converted
+E001158,L00605,qualified,2026-05-25 18:54:00,
+E001159,L00605,dropped,2026-05-26 22:54:00,dropped before discovery_call_set
+E001160,L00606,dropped,2026-05-28 15:30:00,dropped before qualified
+E001161,L00607,dropped,2026-06-01 00:52:00,dropped before qualified
+E001162,L00608,dropped,2026-06-03 13:44:00,dropped before qualified
+E001163,L00609,qualified,2026-06-15 22:33:00,
+E001164,L00609,discovery_call_set,2026-06-16 23:33:00,
+E001165,L00609,discovery_call_attended,2026-06-21 03:33:00,
+E001166,L00609,ambition_interview_done,2026-06-24 11:33:00,
+E001167,L00609,architect_session_done,2026-06-29 13:33:00,
+E001168,L00609,dropped,2026-07-01 19:33:00,dropped before converted
+E001169,L00610,dropped,2026-07-01 02:58:00,dropped before qualified
+E001170,L00611,dropped,2026-07-14 14:51:00,dropped before qualified
+E001171,L00612,dropped,2026-08-06 14:55:00,dropped before qualified
+E001172,L00613,qualified,2026-08-10 23:22:00,
+E001173,L00613,discovery_call_set,2026-08-13 00:22:00,
+E001174,L00613,dropped,2026-08-16 03:22:00,dropped before discovery_call_attended
+E001175,L00614,dropped,2026-08-13 14:55:00,dropped before qualified
+E001176,L00615,dropped,2026-08-20 07:00:00,dropped before qualified
+E001177,L00616,dropped,2026-08-27 07:16:00,dropped before qualified
+E001178,L00617,dropped,2026-08-27 16:07:00,dropped before qualified
+E001179,L00618,dropped,2026-08-28 13:41:00,dropped before qualified
+E001180,L00619,qualified,2026-08-29 18:13:00,
+E001181,L00619,discovery_call_set,2026-08-31 21:13:00,
+E001182,L00619,dropped,2026-09-03 01:13:00,dropped before discovery_call_attended
+E001183,L00620,qualified,2026-09-06 16:38:00,
+E001184,L00620,discovery_call_set,2026-09-08 23:38:00,
+E001185,L00620,discovery_call_attended,2026-09-11 03:38:00,
+E001186,L00620,ambition_interview_done,2026-09-15 03:38:00,
+E001187,L00620,architect_session_done,2026-09-24 03:38:00,
+E001188,L00620,dropped,2026-09-25 03:38:00,dropped before converted
+E001189,L00621,qualified,2026-09-06 20:50:00,
+E001190,L00621,dropped,2026-09-10 04:50:00,dropped before discovery_call_set
+E001191,L00622,qualified,2026-09-19 08:39:00,
+E001192,L00622,discovery_call_set,2026-09-23 11:39:00,
+E001193,L00622,discovery_call_attended,2026-09-26 12:39:00,
+E001194,L00622,ambition_interview_done,2026-10-02 15:39:00,
+E001195,L00622,dropped,2026-10-10 18:39:00,dropped before architect_session_done
+E001196,L00623,dropped,2026-09-22 22:07:00,dropped before qualified
+E001197,L00624,dropped,2026-10-09 15:38:00,dropped before qualified
+E001198,L00625,qualified,2026-10-20 03:05:00,
+E001199,L00625,discovery_call_set,2026-10-23 09:05:00,
+E001200,L00626,qualified,2026-05-17 01:57:00,
+E001201,L00626,discovery_call_set,2026-05-20 03:57:00,
+E001202,L00626,discovery_call_attended,2026-05-24 10:57:00,
+E001203,L00626,ambition_interview_done,2026-05-26 11:57:00,
+E001204,L00626,architect_session_done,2026-06-01 15:57:00,
+E001205,L00626,converted,2026-06-07 21:57:00,
+E001206,L00627,dropped,2026-05-17 14:01:00,dropped before qualified
+E001207,L00628,dropped,2026-05-18 14:15:00,dropped before qualified
+E001208,L00629,dropped,2026-05-17 12:24:00,dropped before qualified
+E001209,L00630,dropped,2026-05-21 14:39:00,dropped before qualified
+E001210,L00631,qualified,2026-05-24 21:04:00,
+E001211,L00631,discovery_call_set,2026-05-25 21:04:00,
+E001212,L00631,discovery_call_attended,2026-05-28 00:04:00,
+E001213,L00631,ambition_interview_done,2026-06-03 04:04:00,
+E001214,L00631,architect_session_done,2026-06-11 11:04:00,
+E001215,L00631,dropped,2026-06-12 19:04:00,dropped before converted
+E001216,L00632,qualified,2026-05-23 15:21:00,
+E001217,L00632,discovery_call_set,2026-05-26 23:21:00,
+E001218,L00632,dropped,2026-05-30 06:21:00,dropped before discovery_call_attended
+E001219,L00633,qualified,2026-05-29 09:51:00,
+E001220,L00633,discovery_call_set,2026-05-30 12:51:00,
+E001221,L00633,discovery_call_attended,2026-06-05 18:51:00,
+E001222,L00633,ambition_interview_done,2026-06-08 22:51:00,
+E001223,L00633,architect_session_done,2026-06-14 23:51:00,
+E001224,L00633,dropped,2026-06-17 07:51:00,dropped before converted
+E001225,L00634,dropped,2026-06-01 03:21:00,dropped before qualified
+E001226,L00635,qualified,2026-06-01 01:40:00,
+E001227,L00635,discovery_call_set,2026-06-04 01:40:00,
+E001228,L00635,discovery_call_attended,2026-06-09 02:40:00,
+E001229,L00635,ambition_interview_done,2026-06-14 04:40:00,
+E001230,L00635,architect_session_done,2026-06-22 05:40:00,
+E001231,L00635,dropped,2026-06-25 10:40:00,dropped before converted
+E001232,L00636,qualified,2026-06-06 21:39:00,
+E001233,L00636,discovery_call_set,2026-06-08 05:39:00,
+E001234,L00636,discovery_call_attended,2026-06-14 06:39:00,
+E001235,L00636,ambition_interview_done,2026-06-20 08:39:00,
+E001236,L00636,architect_session_done,2026-06-29 15:39:00,
+E001237,L00636,converted,2026-07-02 16:39:00,
+E001238,L00637,dropped,2026-06-04 16:52:00,dropped before qualified
+E001239,L00638,dropped,2026-06-08 23:50:00,dropped before qualified
+E001240,L00639,qualified,2026-06-08 12:13:00,
+E001241,L00639,discovery_call_set,2026-06-11 14:13:00,
+E001242,L00639,discovery_call_attended,2026-06-15 15:13:00,
+E001243,L00639,ambition_interview_done,2026-06-19 17:13:00,
+E001244,L00639,architect_session_done,2026-06-24 23:13:00,
+E001245,L00639,dropped,2026-06-28 03:13:00,dropped before converted
+E001246,L00640,dropped,2026-06-09 17:25:00,dropped before qualified
+E001247,L00641,dropped,2026-06-13 01:53:00,dropped before qualified
+E001248,L00642,qualified,2026-06-13 03:35:00,
+E001249,L00642,discovery_call_set,2026-06-17 05:35:00,
+E001250,L00642,discovery_call_attended,2026-06-20 08:35:00,
+E001251,L00642,ambition_interview_done,2026-06-27 13:35:00,
+E001252,L00642,dropped,2026-07-02 16:35:00,dropped before architect_session_done
+E001253,L00643,qualified,2026-06-17 02:57:00,
+E001254,L00643,discovery_call_set,2026-06-21 02:57:00,
+E001255,L00643,discovery_call_attended,2026-06-23 10:57:00,
+E001256,L00643,dropped,2026-06-30 10:57:00,dropped before ambition_interview_done
+E001257,L00644,qualified,2026-06-16 16:54:00,
+E001258,L00644,discovery_call_set,2026-06-17 23:54:00,
+E001259,L00644,discovery_call_attended,2026-06-24 05:54:00,
+E001260,L00644,dropped,2026-06-27 11:54:00,dropped before ambition_interview_done
+E001261,L00645,dropped,2026-06-20 20:20:00,dropped before qualified
+E001262,L00646,qualified,2026-06-22 19:04:00,
+E001263,L00646,discovery_call_set,2026-06-24 03:04:00,
+E001264,L00646,discovery_call_attended,2026-06-28 08:04:00,
+E001265,L00646,ambition_interview_done,2026-07-03 11:04:00,
+E001266,L00646,architect_session_done,2026-07-07 13:04:00,
+E001267,L00646,dropped,2026-07-08 19:04:00,dropped before converted
+E001268,L00647,dropped,2026-06-26 05:05:00,dropped before qualified
+E001269,L00648,qualified,2026-06-25 21:12:00,
+E001270,L00648,discovery_call_set,2026-06-28 04:12:00,
+E001271,L00648,discovery_call_attended,2026-07-02 08:12:00,
+E001272,L00648,dropped,2026-07-05 12:12:00,dropped before ambition_interview_done
+E001273,L00649,dropped,2026-06-26 20:49:00,dropped before qualified
+E001274,L00650,dropped,2026-06-26 13:27:00,dropped before qualified
+E001275,L00651,dropped,2026-06-28 02:26:00,dropped before qualified
+E001276,L00652,dropped,2026-06-28 20:14:00,dropped before qualified
+E001277,L00653,dropped,2026-07-01 13:18:00,dropped before qualified
+E001278,L00654,dropped,2026-07-03 15:53:00,dropped before qualified
+E001279,L00655,dropped,2026-07-03 01:34:00,dropped before qualified
+E001280,L00656,dropped,2026-07-04 11:13:00,dropped before qualified
+E001281,L00657,dropped,2026-07-09 01:02:00,dropped before qualified
+E001282,L00658,qualified,2026-07-15 13:40:00,
+E001283,L00658,discovery_call_set,2026-07-17 19:40:00,
+E001284,L00658,dropped,2026-07-24 03:40:00,dropped before discovery_call_attended
+E001285,L00659,qualified,2026-07-16 22:56:00,
+E001286,L00659,discovery_call_set,2026-07-19 03:56:00,
+E001287,L00659,discovery_call_attended,2026-07-24 05:56:00,
+E001288,L00659,ambition_interview_done,2026-07-28 05:56:00,
+E001289,L00659,architect_session_done,2026-08-02 10:56:00,
+E001290,L00659,dropped,2026-08-04 16:56:00,dropped before converted
+E001291,L00660,qualified,2026-07-17 23:16:00,
+E001292,L00660,discovery_call_set,2026-07-21 00:16:00,
+E001293,L00660,discovery_call_attended,2026-07-27 01:16:00,
+E001294,L00660,ambition_interview_done,2026-08-02 01:16:00,
+E001295,L00660,architect_session_done,2026-08-06 03:16:00,
+E001296,L00660,dropped,2026-08-09 09:16:00,dropped before converted
+E001297,L00661,qualified,2026-07-17 04:08:00,
+E001298,L00661,discovery_call_set,2026-07-19 06:08:00,
+E001299,L00661,dropped,2026-07-23 11:08:00,dropped before discovery_call_attended
+E001300,L00662,qualified,2026-07-19 02:42:00,
+E001301,L00662,discovery_call_set,2026-07-23 10:42:00,
+E001302,L00662,discovery_call_attended,2026-07-27 12:42:00,
+E001303,L00662,ambition_interview_done,2026-08-02 15:42:00,
+E001304,L00662,architect_session_done,2026-08-08 15:42:00,
+E001305,L00662,dropped,2026-08-10 18:42:00,dropped before converted
+E001306,L00663,dropped,2026-07-18 11:34:00,dropped before qualified
+E001307,L00664,dropped,2026-07-21 16:38:00,dropped before qualified
+E001308,L00665,dropped,2026-07-24 23:38:00,dropped before qualified
+E001309,L00666,dropped,2026-07-25 15:06:00,dropped before qualified
+E001310,L00667,qualified,2026-07-27 01:34:00,
+E001311,L00667,discovery_call_set,2026-07-31 08:34:00,
+E001312,L00667,discovery_call_attended,2026-08-02 15:34:00,
+E001313,L00667,ambition_interview_done,2026-08-08 21:34:00,
+E001314,L00667,architect_session_done,2026-08-15 00:34:00,
+E001315,L00667,dropped,2026-08-19 07:34:00,dropped before converted
+E001316,L00668,dropped,2026-07-27 12:59:00,dropped before qualified
+E001317,L00669,dropped,2026-07-27 00:56:00,dropped before qualified
+E001318,L00670,dropped,2026-08-01 01:58:00,dropped before qualified
+E001319,L00671,qualified,2026-08-04 05:35:00,
+E001320,L00671,discovery_call_set,2026-08-05 11:35:00,
+E001321,L00671,dropped,2026-08-07 16:35:00,dropped before discovery_call_attended
+E001322,L00672,dropped,2026-08-08 21:23:00,dropped before qualified
+E001323,L00673,dropped,2026-08-08 15:48:00,dropped before qualified
+E001324,L00674,dropped,2026-08-13 19:28:00,dropped before qualified
+E001325,L00675,qualified,2026-08-14 18:56:00,
+E001326,L00675,discovery_call_set,2026-08-17 20:56:00,
+E001327,L00675,discovery_call_attended,2026-08-20 00:56:00,
+E001328,L00675,ambition_interview_done,2026-08-26 05:56:00,
+E001329,L00675,architect_session_done,2026-09-03 07:56:00,
+E001330,L00675,dropped,2026-09-08 13:56:00,dropped before converted
+E001331,L00676,dropped,2026-08-13 15:05:00,dropped before qualified
+E001332,L00677,dropped,2026-08-14 10:44:00,dropped before qualified
+E001333,L00678,qualified,2026-08-13 23:13:00,
+E001334,L00678,discovery_call_set,2026-08-15 23:13:00,
+E001335,L00678,dropped,2026-08-20 03:13:00,dropped before discovery_call_attended
+E001336,L00679,dropped,2026-08-15 07:34:00,dropped before qualified
+E001337,L00680,qualified,2026-08-18 12:41:00,
+E001338,L00680,discovery_call_set,2026-08-19 17:41:00,
+E001339,L00680,discovery_call_attended,2026-08-25 21:41:00,
+E001340,L00680,ambition_interview_done,2026-08-28 21:41:00,
+E001341,L00680,architect_session_done,2026-09-01 00:41:00,
+E001342,L00680,dropped,2026-09-02 01:41:00,dropped before converted
+E001343,L00681,qualified,2026-08-17 11:13:00,
+E001344,L00681,discovery_call_set,2026-08-21 17:13:00,
+E001345,L00681,discovery_call_attended,2026-08-26 17:13:00,
+E001346,L00681,ambition_interview_done,2026-08-31 19:13:00,
+E001347,L00681,architect_session_done,2026-09-07 20:13:00,
+E001348,L00681,dropped,2026-09-09 00:13:00,dropped before converted
+E001349,L00682,dropped,2026-08-20 23:29:00,dropped before qualified
+E001350,L00683,qualified,2026-08-19 21:34:00,
+E001351,L00683,discovery_call_set,2026-08-24 00:34:00,
+E001352,L00683,discovery_call_attended,2026-08-27 08:34:00,
+E001353,L00683,ambition_interview_done,2026-08-29 09:34:00,
+E001354,L00683,dropped,2026-09-01 11:34:00,dropped before architect_session_done
+E001355,L00684,dropped,2026-08-22 18:45:00,dropped before qualified
+E001356,L00685,qualified,2026-08-23 22:58:00,
+E001357,L00685,discovery_call_set,2026-08-25 00:58:00,
+E001358,L00685,dropped,2026-08-28 08:58:00,dropped before discovery_call_attended
+E001359,L00686,qualified,2026-08-27 11:19:00,
+E001360,L00686,dropped,2026-08-28 12:19:00,dropped before discovery_call_set
+E001361,L00687,qualified,2026-08-31 18:52:00,
+E001362,L00687,discovery_call_set,2026-09-04 23:52:00,
+E001363,L00687,discovery_call_attended,2026-09-08 03:52:00,
+E001364,L00687,ambition_interview_done,2026-09-15 03:52:00,
+E001365,L00687,architect_session_done,2026-09-21 11:52:00,
+E001366,L00687,dropped,2026-09-24 17:52:00,dropped before converted
+E001367,L00688,qualified,2026-08-31 22:35:00,
+E001368,L00688,discovery_call_set,2026-09-01 23:35:00,
+E001369,L00688,discovery_call_attended,2026-09-05 07:35:00,
+E001370,L00688,ambition_interview_done,2026-09-08 09:35:00,
+E001371,L00688,architect_session_done,2026-09-14 13:35:00,
+E001372,L00688,converted,2026-09-18 17:35:00,
+E001373,L00689,dropped,2026-09-04 01:05:00,dropped before qualified
+E001374,L00690,qualified,2026-09-07 14:33:00,
+E001375,L00690,discovery_call_set,2026-09-09 14:33:00,
+E001376,L00690,dropped,2026-09-14 16:33:00,dropped before discovery_call_attended
+E001377,L00691,qualified,2026-09-09 00:07:00,
+E001378,L00691,discovery_call_set,2026-09-10 04:07:00,
+E001379,L00691,discovery_call_attended,2026-09-15 09:07:00,
+E001380,L00691,ambition_interview_done,2026-09-17 16:07:00,
+E001381,L00691,architect_session_done,2026-09-22 23:07:00,
+E001382,L00691,dropped,2026-09-25 01:07:00,dropped before converted
+E001383,L00692,qualified,2026-09-25 19:46:00,
+E001384,L00692,discovery_call_set,2026-09-28 01:46:00,
+E001385,L00692,discovery_call_attended,2026-10-03 07:46:00,
+E001386,L00692,ambition_interview_done,2026-10-05 10:46:00,
+E001387,L00692,architect_session_done,2026-10-09 15:46:00,
+E001388,L00692,converted,2026-10-10 20:46:00,
+E001389,L00693,qualified,2026-09-27 01:52:00,
+E001390,L00693,discovery_call_set,2026-09-28 06:52:00,
+E001391,L00693,discovery_call_attended,2026-10-01 10:52:00,
+E001392,L00693,ambition_interview_done,2026-10-08 17:52:00,
+E001393,L00693,dropped,2026-10-15 18:52:00,dropped before architect_session_done
+E001394,L00694,qualified,2026-10-08 09:58:00,
+E001395,L00694,discovery_call_set,2026-10-09 16:58:00,
+E001396,L00694,discovery_call_attended,2026-10-11 19:58:00,
+E001397,L00694,ambition_interview_done,2026-10-17 22:58:00,
+E001398,L00694,dropped,2026-10-22 02:58:00,dropped before architect_session_done
+E001399,L00695,qualified,2026-10-12 14:41:00,
+E001400,L00695,dropped,2026-10-16 15:41:00,dropped before discovery_call_set
+E001401,L00696,qualified,2026-10-16 01:22:00,
+E001402,L00696,discovery_call_set,2026-10-17 05:22:00,
+E001403,L00696,discovery_call_attended,2026-10-21 13:22:00,
+E001404,L00697,dropped,2026-10-17 01:55:00,dropped before qualified
+E001405,L00698,dropped,2026-10-22 18:31:00,dropped before qualified
+E001406,L00699,dropped,2026-10-22 23:29:00,dropped before qualified
+E001407,L00700,qualified,2026-05-18 17:43:00,
+E001408,L00700,discovery_call_set,2026-05-22 00:43:00,
+E001409,L00700,discovery_call_attended,2026-05-24 08:43:00,
+E001410,L00700,ambition_interview_done,2026-05-31 09:43:00,
+E001411,L00700,architect_session_done,2026-06-04 16:43:00,
+E001412,L00700,dropped,2026-06-09 17:43:00,dropped before converted
+E001413,L00701,dropped,2026-05-16 23:12:00,dropped before qualified
+E001414,L00702,dropped,2026-05-21 04:51:00,dropped before qualified
+E001415,L00703,dropped,2026-05-21 14:11:00,dropped before qualified
+E001416,L00704,dropped,2026-05-22 17:06:00,dropped before qualified
+E001417,L00705,dropped,2026-05-25 10:51:00,dropped before qualified
+E001418,L00706,dropped,2026-05-25 16:25:00,dropped before qualified
+E001419,L00707,qualified,2026-05-28 15:33:00,
+E001420,L00707,dropped,2026-05-29 18:33:00,dropped before discovery_call_set
+E001421,L00708,qualified,2026-06-01 05:06:00,
+E001422,L00708,discovery_call_set,2026-06-02 07:06:00,
+E001423,L00708,dropped,2026-06-05 14:06:00,dropped before discovery_call_attended
+E001424,L00709,dropped,2026-05-31 15:34:00,dropped before qualified
+E001425,L00710,dropped,2026-06-06 22:33:00,dropped before qualified
+E001426,L00711,qualified,2026-06-06 00:26:00,
+E001427,L00711,discovery_call_set,2026-06-10 03:26:00,
+E001428,L00711,discovery_call_attended,2026-06-13 10:26:00,
+E001429,L00711,ambition_interview_done,2026-06-20 15:26:00,
+E001430,L00711,architect_session_done,2026-06-29 23:26:00,
+E001431,L00711,converted,2026-07-03 03:26:00,
+E001432,L00712,dropped,2026-06-08 15:19:00,dropped before qualified
+E001433,L00713,qualified,2026-06-11 18:44:00,
+E001434,L00713,discovery_call_set,2026-06-12 22:44:00,
+E001435,L00713,discovery_call_attended,2026-06-18 03:44:00,
+E001436,L00713,ambition_interview_done,2026-06-25 04:44:00,
+E001437,L00713,dropped,2026-07-01 04:44:00,dropped before architect_session_done
+E001438,L00714,dropped,2026-06-10 17:19:00,dropped before qualified
+E001439,L00715,qualified,2026-06-14 18:55:00,
+E001440,L00715,dropped,2026-06-16 20:55:00,dropped before discovery_call_set
+E001441,L00716,qualified,2026-06-23 13:41:00,
+E001442,L00716,discovery_call_set,2026-06-27 20:41:00,
+E001443,L00716,discovery_call_attended,2026-07-04 03:41:00,
+E001444,L00716,ambition_interview_done,2026-07-10 08:41:00,
+E001445,L00716,architect_session_done,2026-07-16 08:41:00,
+E001446,L00716,dropped,2026-07-22 13:41:00,dropped before converted
+E001447,L00717,qualified,2026-06-27 18:53:00,
+E001448,L00717,discovery_call_set,2026-06-30 23:53:00,
+E001449,L00717,discovery_call_attended,2026-07-07 04:53:00,
+E001450,L00717,ambition_interview_done,2026-07-11 10:53:00,
+E001451,L00717,architect_session_done,2026-07-17 11:53:00,
+E001452,L00717,converted,2026-07-18 13:53:00,
+E001453,L00718,qualified,2026-06-29 03:11:00,
+E001454,L00718,discovery_call_set,2026-07-02 08:11:00,
+E001455,L00718,dropped,2026-07-04 16:11:00,dropped before discovery_call_attended
+E001456,L00719,dropped,2026-06-29 15:32:00,dropped before qualified
+E001457,L00720,dropped,2026-07-02 19:59:00,dropped before qualified
+E001458,L00721,dropped,2026-07-01 23:44:00,dropped before qualified
+E001459,L00722,dropped,2026-07-07 01:21:00,dropped before qualified
+E001460,L00723,dropped,2026-07-09 13:06:00,dropped before qualified
+E001461,L00724,dropped,2026-07-18 06:20:00,dropped before qualified
+E001462,L00725,dropped,2026-07-16 15:45:00,dropped before qualified
+E001463,L00726,qualified,2026-07-22 00:09:00,
+E001464,L00726,discovery_call_set,2026-07-26 02:09:00,
+E001465,L00726,discovery_call_attended,2026-07-31 09:09:00,
+E001466,L00726,ambition_interview_done,2026-08-06 12:09:00,
+E001467,L00726,architect_session_done,2026-08-14 12:09:00,
+E001468,L00726,converted,2026-08-20 20:09:00,
+E001469,L00727,dropped,2026-07-28 16:29:00,dropped before qualified
+E001470,L00728,dropped,2026-08-05 11:19:00,dropped before qualified
+E001471,L00729,qualified,2026-08-17 14:58:00,
+E001472,L00729,discovery_call_set,2026-08-21 15:58:00,
+E001473,L00729,dropped,2026-08-23 20:58:00,dropped before discovery_call_attended
+E001474,L00730,qualified,2026-08-19 07:41:00,
+E001475,L00730,discovery_call_set,2026-08-23 13:41:00,
+E001476,L00730,discovery_call_attended,2026-08-26 17:41:00,
+E001477,L00730,ambition_interview_done,2026-09-03 01:41:00,
+E001478,L00730,architect_session_done,2026-09-11 03:41:00,
+E001479,L00730,converted,2026-09-13 07:41:00,
+E001480,L00731,dropped,2026-08-20 15:55:00,dropped before qualified
+E001481,L00732,dropped,2026-08-25 12:40:00,dropped before qualified
+E001482,L00733,dropped,2026-08-25 16:00:00,dropped before qualified
+E001483,L00734,dropped,2026-09-06 19:18:00,dropped before qualified
+E001484,L00735,dropped,2026-09-06 18:50:00,dropped before qualified
+E001485,L00736,qualified,2026-09-13 20:20:00,
+E001486,L00736,dropped,2026-09-15 04:20:00,dropped before discovery_call_set
+E001487,L00737,qualified,2026-09-14 19:06:00,
+E001488,L00737,discovery_call_set,2026-09-18 19:06:00,
+E001489,L00737,discovery_call_attended,2026-09-21 01:06:00,
+E001490,L00737,ambition_interview_done,2026-09-28 01:06:00,
+E001491,L00737,architect_session_done,2026-10-04 04:06:00,
+E001492,L00737,dropped,2026-10-07 06:06:00,dropped before converted
+E001493,L00738,qualified,2026-09-26 20:03:00,
+E001494,L00738,discovery_call_set,2026-09-30 01:03:00,
+E001495,L00738,discovery_call_attended,2026-10-04 04:03:00,
+E001496,L00738,dropped,2026-10-10 12:03:00,dropped before ambition_interview_done
+E001497,L00739,dropped,2026-09-27 14:29:00,dropped before qualified
+E001498,L00740,dropped,2026-09-29 00:01:00,dropped before qualified
+E001499,L00741,dropped,2026-10-01 10:59:00,dropped before qualified
+E001500,L00742,dropped,2026-10-01 23:58:00,dropped before qualified
+E001501,L00743,qualified,2026-10-02 23:59:00,
+E001502,L00743,dropped,2026-10-07 06:59:00,dropped before discovery_call_set
+E001503,L00744,qualified,2026-10-03 02:56:00,
+E001504,L00744,discovery_call_set,2026-10-05 04:56:00,
+E001505,L00744,discovery_call_attended,2026-10-10 04:56:00,
+E001506,L00744,dropped,2026-10-16 08:56:00,dropped before ambition_interview_done
+E001507,L00745,dropped,2026-10-24 18:01:00,dropped before qualified
+E001508,L01153,dropped,2026-05-02 13:24:00,dropped before qualified
+E001509,L01154,dropped,2026-05-04 18:47:00,dropped before qualified
+E001510,L01155,qualified,2026-05-03 21:53:00,
+E001511,L01155,dropped,2026-05-07 03:53:00,dropped before discovery_call_set
+E001512,L01156,qualified,2026-05-04 23:36:00,
+E001513,L01156,dropped,2026-05-07 07:36:00,dropped before discovery_call_set
+E001514,L01157,dropped,2026-05-08 05:31:00,dropped before qualified
+E001515,L01158,dropped,2026-05-07 09:22:00,dropped before qualified
+E001516,L01159,qualified,2026-05-08 14:21:00,
+E001517,L01159,discovery_call_set,2026-05-10 19:21:00,
+E001518,L01159,discovery_call_attended,2026-05-16 00:21:00,
+E001519,L01159,ambition_interview_done,2026-05-19 05:21:00,
+E001520,L01159,architect_session_done,2026-05-26 07:21:00,
+E001521,L01159,converted,2026-05-30 09:21:00,
+E001522,L01160,qualified,2026-05-09 19:03:00,
+E001523,L01160,discovery_call_set,2026-05-13 01:03:00,
+E001524,L01160,discovery_call_attended,2026-05-16 02:03:00,
+E001525,L01160,ambition_interview_done,2026-05-22 06:03:00,
+E001526,L01160,architect_session_done,2026-05-29 07:03:00,
+E001527,L01160,dropped,2026-06-03 12:03:00,dropped before converted
+E001528,L01161,dropped,2026-05-10 22:40:00,dropped before qualified
+E001529,L01162,qualified,2026-05-11 21:12:00,
+E001530,L01162,discovery_call_set,2026-05-12 23:12:00,
+E001531,L01162,dropped,2026-05-17 06:12:00,dropped before discovery_call_attended
+E001532,L01163,qualified,2026-05-13 01:24:00,
+E001533,L01163,dropped,2026-05-14 07:24:00,dropped before discovery_call_set
+E001534,L01164,qualified,2026-05-14 18:52:00,
+E001535,L01164,discovery_call_set,2026-05-17 23:52:00,
+E001536,L01164,discovery_call_attended,2026-05-20 02:52:00,
+E001537,L01164,ambition_interview_done,2026-05-26 03:52:00,
+E001538,L01164,architect_session_done,2026-05-31 05:52:00,
+E001539,L01164,dropped,2026-06-01 05:52:00,dropped before converted
+E001540,L01165,dropped,2026-05-14 16:57:00,dropped before qualified
+E001541,L01166,qualified,2026-05-14 16:14:00,
+E001542,L01166,dropped,2026-05-18 21:14:00,dropped before discovery_call_set
+E001543,L01167,qualified,2026-05-16 20:54:00,
+E001544,L01167,discovery_call_set,2026-05-19 01:54:00,
+E001545,L01167,discovery_call_attended,2026-05-22 04:54:00,
+E001546,L01167,ambition_interview_done,2026-05-25 07:54:00,
+E001547,L01167,dropped,2026-06-02 14:54:00,dropped before architect_session_done
+E001548,L01168,qualified,2026-05-17 13:53:00,
+E001549,L01168,discovery_call_set,2026-05-18 19:53:00,
+E001550,L01168,discovery_call_attended,2026-05-21 22:53:00,
+E001551,L01168,ambition_interview_done,2026-05-25 04:53:00,
+E001552,L01168,architect_session_done,2026-05-31 07:53:00,
+E001553,L01168,converted,2026-06-05 08:53:00,
+E001554,L01169,qualified,2026-05-18 19:19:00,
+E001555,L01169,dropped,2026-05-21 03:19:00,dropped before discovery_call_set
+E001556,L01170,dropped,2026-05-19 15:14:00,dropped before qualified
+E001557,L01171,qualified,2026-05-21 00:11:00,
+E001558,L01171,discovery_call_set,2026-05-22 02:11:00,
+E001559,L01171,discovery_call_attended,2026-05-28 06:11:00,
+E001560,L01171,ambition_interview_done,2026-06-01 07:11:00,
+E001561,L01171,dropped,2026-06-05 08:11:00,dropped before architect_session_done
+E001562,L01172,dropped,2026-05-20 18:30:00,dropped before qualified
+E001563,L01173,dropped,2026-05-20 20:58:00,dropped before qualified
+E001564,L01174,qualified,2026-05-22 20:30:00,
+E001565,L01174,discovery_call_set,2026-05-26 00:30:00,
+E001566,L01174,discovery_call_attended,2026-05-29 05:30:00,
+E001567,L01174,ambition_interview_done,2026-06-05 06:30:00,
+E001568,L01174,architect_session_done,2026-06-10 09:30:00,
+E001569,L01174,dropped,2026-06-13 13:30:00,dropped before converted
+E001570,L01175,qualified,2026-05-22 16:18:00,
+E001571,L01175,discovery_call_set,2026-05-23 22:18:00,
+E001572,L01175,discovery_call_attended,2026-05-29 03:18:00,
+E001573,L01175,ambition_interview_done,2026-06-03 08:18:00,
+E001574,L01175,architect_session_done,2026-06-11 13:18:00,
+E001575,L01175,dropped,2026-06-14 18:18:00,dropped before converted
+E001576,L01176,dropped,2026-05-23 19:48:00,dropped before qualified
+E001577,L01177,dropped,2026-05-24 13:56:00,dropped before qualified
+E001578,L01178,dropped,2026-05-24 23:49:00,dropped before qualified
+E001579,L01179,qualified,2026-05-27 15:43:00,
+E001580,L01179,discovery_call_set,2026-05-30 21:43:00,
+E001581,L01179,discovery_call_attended,2026-06-05 00:43:00,
+E001582,L01179,ambition_interview_done,2026-06-09 01:43:00,
+E001583,L01179,architect_session_done,2026-06-13 06:43:00,
+E001584,L01179,dropped,2026-06-16 06:43:00,dropped before converted
+E001585,L01180,dropped,2026-05-26 00:37:00,dropped before qualified
+E001586,L01181,dropped,2026-05-27 17:58:00,dropped before qualified
+E001587,L01182,dropped,2026-05-28 10:33:00,dropped before qualified
+E001588,L01183,dropped,2026-05-29 03:21:00,dropped before qualified
+E001589,L01184,qualified,2026-05-29 13:08:00,
+E001590,L01184,dropped,2026-05-31 16:08:00,dropped before discovery_call_set
+E001591,L01185,dropped,2026-05-30 00:47:00,dropped before qualified
+E001592,L01186,dropped,2026-05-30 10:50:00,dropped before qualified
+E001593,L01187,dropped,2026-06-01 12:34:00,dropped before qualified
+E001594,L01188,dropped,2026-06-02 15:48:00,dropped before qualified
+E001595,L01189,dropped,2026-06-04 12:09:00,dropped before qualified
+E001596,L01190,qualified,2026-06-03 20:45:00,
+E001597,L01190,discovery_call_set,2026-06-05 21:45:00,
+E001598,L01190,discovery_call_attended,2026-06-12 01:45:00,
+E001599,L01190,ambition_interview_done,2026-06-15 08:45:00,
+E001600,L01190,dropped,2026-06-18 12:45:00,dropped before architect_session_done
+E001601,L01191,qualified,2026-06-03 21:05:00,
+E001602,L01191,discovery_call_set,2026-06-06 04:05:00,
+E001603,L01191,discovery_call_attended,2026-06-12 12:05:00,
+E001604,L01191,ambition_interview_done,2026-06-15 14:05:00,
+E001605,L01191,dropped,2026-06-22 19:05:00,dropped before architect_session_done
+E001606,L01192,dropped,2026-06-05 16:44:00,dropped before qualified
+E001607,L01193,dropped,2026-06-05 15:20:00,dropped before qualified
+E001608,L01194,qualified,2026-06-07 14:50:00,
+E001609,L01194,discovery_call_set,2026-06-09 17:50:00,
+E001610,L01194,discovery_call_attended,2026-06-12 17:50:00,
+E001611,L01194,ambition_interview_done,2026-06-19 00:50:00,
+E001612,L01194,architect_session_done,2026-06-26 07:50:00,
+E001613,L01194,dropped,2026-07-01 08:50:00,dropped before converted
+E001614,L01195,dropped,2026-06-08 16:07:00,dropped before qualified
+E001615,L01196,qualified,2026-06-09 23:05:00,
+E001616,L01196,discovery_call_set,2026-06-14 07:05:00,
+E001617,L01196,discovery_call_attended,2026-06-18 07:05:00,
+E001618,L01196,ambition_interview_done,2026-06-23 07:05:00,
+E001619,L01196,architect_session_done,2026-07-01 11:05:00,
+E001620,L01196,converted,2026-07-04 11:05:00,
+E001621,L01197,dropped,2026-06-08 10:54:00,dropped before qualified
+E001622,L01198,dropped,2026-06-12 02:58:00,dropped before qualified
+E001623,L01199,dropped,2026-06-10 19:12:00,dropped before qualified
+E001624,L01200,qualified,2026-06-11 12:08:00,
+E001625,L01200,discovery_call_set,2026-06-13 12:08:00,
+E001626,L01200,discovery_call_attended,2026-06-15 13:08:00,
+E001627,L01200,dropped,2026-06-22 16:08:00,dropped before ambition_interview_done
+E001628,L01201,dropped,2026-06-14 13:24:00,dropped before qualified
+E001629,L01202,dropped,2026-06-14 11:20:00,dropped before qualified
+E001630,L01203,dropped,2026-06-13 23:45:00,dropped before qualified
+E001631,L01204,dropped,2026-06-15 21:47:00,dropped before qualified
+E001632,L01205,qualified,2026-06-14 18:40:00,
+E001633,L01205,discovery_call_set,2026-06-19 02:40:00,
+E001634,L01205,dropped,2026-06-22 04:40:00,dropped before discovery_call_attended
+E001635,L01206,qualified,2026-06-15 22:46:00,
+E001636,L01206,discovery_call_set,2026-06-16 22:46:00,
+E001637,L01206,discovery_call_attended,2026-06-19 22:46:00,
+E001638,L01206,ambition_interview_done,2026-06-23 04:46:00,
+E001639,L01206,architect_session_done,2026-07-02 10:46:00,
+E001640,L01206,converted,2026-07-04 15:46:00,
+E001641,L01207,qualified,2026-06-18 09:35:00,
+E001642,L01207,discovery_call_set,2026-06-21 16:35:00,
+E001643,L01207,discovery_call_attended,2026-06-25 21:35:00,
+E001644,L01207,ambition_interview_done,2026-07-01 04:35:00,
+E001645,L01207,architect_session_done,2026-07-07 05:35:00,
+E001646,L01207,converted,2026-07-12 11:35:00,
+E001647,L01208,dropped,2026-06-16 17:51:00,dropped before qualified
+E001648,L01209,qualified,2026-06-18 02:26:00,
+E001649,L01209,discovery_call_set,2026-06-21 08:26:00,
+E001650,L01209,discovery_call_attended,2026-06-26 14:26:00,
+E001651,L01209,dropped,2026-07-01 21:26:00,dropped before ambition_interview_done
+E001652,L01210,dropped,2026-06-18 14:52:00,dropped before qualified
+E001653,L01211,qualified,2026-06-19 03:59:00,
+E001654,L01211,discovery_call_set,2026-06-21 06:59:00,
+E001655,L01211,dropped,2026-06-27 14:59:00,dropped before discovery_call_attended
+E001656,L01212,qualified,2026-06-19 22:18:00,
+E001657,L01212,discovery_call_set,2026-06-21 05:18:00,
+E001658,L01212,discovery_call_attended,2026-06-25 06:18:00,
+E001659,L01212,ambition_interview_done,2026-07-01 07:18:00,
+E001660,L01212,architect_session_done,2026-07-10 12:18:00,
+E001661,L01212,dropped,2026-07-14 13:18:00,dropped before converted
+E001662,L01213,dropped,2026-06-22 21:28:00,dropped before qualified
+E001663,L01214,dropped,2026-06-21 08:01:00,dropped before qualified
+E001664,L01215,dropped,2026-06-22 13:48:00,dropped before qualified
+E001665,L01216,dropped,2026-06-24 18:14:00,dropped before qualified
+E001666,L01217,dropped,2026-06-26 16:22:00,dropped before qualified
+E001667,L01218,qualified,2026-06-26 14:06:00,
+E001668,L01218,discovery_call_set,2026-06-28 21:06:00,
+E001669,L01218,discovery_call_attended,2026-07-05 05:06:00,
+E001670,L01218,ambition_interview_done,2026-07-08 07:06:00,
+E001671,L01218,architect_session_done,2026-07-12 08:06:00,
+E001672,L01218,dropped,2026-07-18 15:06:00,dropped before converted
+E001673,L01219,qualified,2026-06-28 21:07:00,
+E001674,L01219,discovery_call_set,2026-07-03 04:07:00,
+E001675,L01219,discovery_call_attended,2026-07-08 08:07:00,
+E001676,L01219,ambition_interview_done,2026-07-13 13:07:00,
+E001677,L01219,architect_session_done,2026-07-16 21:07:00,
+E001678,L01219,dropped,2026-07-22 21:07:00,dropped before converted
+E001679,L01220,qualified,2026-06-27 21:17:00,
+E001680,L01220,discovery_call_set,2026-06-29 22:17:00,
+E001681,L01220,discovery_call_attended,2026-07-05 00:17:00,
+E001682,L01220,ambition_interview_done,2026-07-07 04:17:00,
+E001683,L01220,architect_session_done,2026-07-16 04:17:00,
+E001684,L01220,dropped,2026-07-20 12:17:00,dropped before converted
+E001685,L01221,dropped,2026-07-01 20:00:00,dropped before qualified
+E001686,L01222,dropped,2026-06-30 21:53:00,dropped before qualified
+E001687,L01223,qualified,2026-07-03 02:08:00,
+E001688,L01223,dropped,2026-07-07 02:08:00,dropped before discovery_call_set
+E001689,L01224,qualified,2026-07-01 13:26:00,
+E001690,L01224,discovery_call_set,2026-07-02 16:26:00,
+E001691,L01224,discovery_call_attended,2026-07-06 20:26:00,
+E001692,L01224,dropped,2026-07-14 04:26:00,dropped before ambition_interview_done
+E001693,L01225,qualified,2026-07-03 14:52:00,
+E001694,L01225,discovery_call_set,2026-07-04 20:52:00,
+E001695,L01225,discovery_call_attended,2026-07-06 23:52:00,
+E001696,L01225,ambition_interview_done,2026-07-13 00:52:00,
+E001697,L01225,architect_session_done,2026-07-21 06:52:00,
+E001698,L01225,converted,2026-07-24 09:52:00,
+E001699,L01226,dropped,2026-07-03 21:01:00,dropped before qualified
+E001700,L01227,qualified,2026-07-03 11:14:00,
+E001701,L01227,discovery_call_set,2026-07-04 18:14:00,
+E001702,L01227,discovery_call_attended,2026-07-07 23:14:00,
+E001703,L01227,ambition_interview_done,2026-07-15 02:14:00,
+E001704,L01227,architect_session_done,2026-07-19 04:14:00,
+E001705,L01227,dropped,2026-07-23 08:14:00,dropped before converted
+E001706,L01228,dropped,2026-07-03 10:30:00,dropped before qualified
+E001707,L01229,qualified,2026-07-06 01:15:00,
+E001708,L01229,discovery_call_set,2026-07-09 08:15:00,
+E001709,L01229,dropped,2026-07-15 10:15:00,dropped before discovery_call_attended
+E001710,L01230,dropped,2026-07-07 16:02:00,dropped before qualified
+E001711,L01231,dropped,2026-07-06 17:30:00,dropped before qualified
+E001712,L01232,qualified,2026-07-09 20:27:00,
+E001713,L01232,discovery_call_set,2026-07-12 02:27:00,
+E001714,L01232,discovery_call_attended,2026-07-18 06:27:00,
+E001715,L01232,ambition_interview_done,2026-07-25 14:27:00,
+E001716,L01232,dropped,2026-07-28 20:27:00,dropped before architect_session_done
+E001717,L01233,qualified,2026-07-10 17:34:00,
+E001718,L01233,dropped,2026-07-14 22:34:00,dropped before discovery_call_set
+E001719,L01234,dropped,2026-07-11 00:13:00,dropped before qualified
+E001720,L01235,qualified,2026-07-12 11:10:00,
+E001721,L01235,discovery_call_set,2026-07-14 13:10:00,
+E001722,L01235,discovery_call_attended,2026-07-19 18:10:00,
+E001723,L01235,ambition_interview_done,2026-07-24 20:10:00,
+E001724,L01235,architect_session_done,2026-07-30 00:10:00,
+E001725,L01235,dropped,2026-08-03 05:10:00,dropped before converted
+E001726,L01236,qualified,2026-07-14 02:36:00,
+E001727,L01236,discovery_call_set,2026-07-18 09:36:00,
+E001728,L01236,discovery_call_attended,2026-07-22 09:36:00,
+E001729,L01236,dropped,2026-07-25 15:36:00,dropped before ambition_interview_done
+E001730,L01237,qualified,2026-07-13 15:18:00,
+E001731,L01237,discovery_call_set,2026-07-16 15:18:00,
+E001732,L01237,dropped,2026-07-18 20:18:00,dropped before discovery_call_attended
+E001733,L01238,qualified,2026-07-14 21:29:00,
+E001734,L01238,discovery_call_set,2026-07-16 05:29:00,
+E001735,L01238,dropped,2026-07-19 08:29:00,dropped before discovery_call_attended
+E001736,L01239,qualified,2026-07-17 03:37:00,
+E001737,L01239,dropped,2026-07-20 04:37:00,dropped before discovery_call_set
+E001738,L01240,dropped,2026-07-16 20:22:00,dropped before qualified
+E001739,L01241,qualified,2026-07-16 20:26:00,
+E001740,L01241,discovery_call_set,2026-07-18 01:26:00,
+E001741,L01241,discovery_call_attended,2026-07-24 03:26:00,
+E001742,L01241,ambition_interview_done,2026-07-26 04:26:00,
+E001743,L01241,architect_session_done,2026-08-03 09:26:00,
+E001744,L01241,dropped,2026-08-06 13:26:00,dropped before converted
+E001745,L01242,dropped,2026-07-16 01:03:00,dropped before qualified
+E001746,L01243,dropped,2026-07-18 01:45:00,dropped before qualified
+E001747,L01244,dropped,2026-07-17 03:44:00,dropped before qualified
+E001748,L01245,dropped,2026-07-19 20:22:00,dropped before qualified
+E001749,L01246,qualified,2026-07-20 21:25:00,
+E001750,L01246,discovery_call_set,2026-07-22 00:25:00,
+E001751,L01246,discovery_call_attended,2026-07-25 05:25:00,
+E001752,L01246,ambition_interview_done,2026-07-29 13:25:00,
+E001753,L01246,architect_session_done,2026-08-02 19:25:00,
+E001754,L01246,converted,2026-08-07 01:25:00,
+E001755,L01247,qualified,2026-07-21 01:07:00,
+E001756,L01247,discovery_call_set,2026-07-25 01:07:00,
+E001757,L01247,discovery_call_attended,2026-07-27 02:07:00,
+E001758,L01247,ambition_interview_done,2026-08-01 09:07:00,
+E001759,L01247,architect_session_done,2026-08-07 16:07:00,
+E001760,L01247,dropped,2026-08-12 22:07:00,dropped before converted
+E001761,L01248,qualified,2026-07-20 16:08:00,
+E001762,L01248,discovery_call_set,2026-07-22 22:08:00,
+E001763,L01248,dropped,2026-07-26 02:08:00,dropped before discovery_call_attended
+E001764,L01249,dropped,2026-07-20 17:51:00,dropped before qualified
+E001765,L01250,qualified,2026-07-21 17:26:00,
+E001766,L01250,dropped,2026-07-23 00:26:00,dropped before discovery_call_set
+E001767,L01251,qualified,2026-07-22 22:01:00,
+E001768,L01251,dropped,2026-07-23 23:01:00,dropped before discovery_call_set
+E001769,L01252,dropped,2026-07-24 21:17:00,dropped before qualified
+E001770,L01253,dropped,2026-07-23 22:39:00,dropped before qualified
+E001771,L01254,qualified,2026-07-27 00:28:00,
+E001772,L01254,discovery_call_set,2026-07-30 00:28:00,
+E001773,L01254,discovery_call_attended,2026-08-04 02:28:00,
+E001774,L01254,ambition_interview_done,2026-08-10 10:28:00,
+E001775,L01254,architect_session_done,2026-08-15 16:28:00,
+E001776,L01254,dropped,2026-08-17 19:28:00,dropped before converted
+E001777,L01255,qualified,2026-07-25 09:23:00,
+E001778,L01255,discovery_call_set,2026-07-27 10:23:00,
+E001779,L01255,discovery_call_attended,2026-07-31 18:23:00,
+E001780,L01255,ambition_interview_done,2026-08-03 02:23:00,
+E001781,L01255,architect_session_done,2026-08-09 02:23:00,
+E001782,L01255,dropped,2026-08-11 02:23:00,dropped before converted
+E001783,L01256,qualified,2026-07-26 15:30:00,
+E001784,L01256,discovery_call_set,2026-07-27 19:30:00,
+E001785,L01256,discovery_call_attended,2026-07-31 03:30:00,
+E001786,L01256,ambition_interview_done,2026-08-06 11:30:00,
+E001787,L01256,architect_session_done,2026-08-14 12:30:00,
+E001788,L01256,dropped,2026-08-15 12:30:00,dropped before converted
+E001789,L01257,qualified,2026-07-27 17:52:00,
+E001790,L01257,discovery_call_set,2026-07-28 23:52:00,
+E001791,L01257,discovery_call_attended,2026-07-31 03:52:00,
+E001792,L01257,ambition_interview_done,2026-08-07 04:52:00,
+E001793,L01257,architect_session_done,2026-08-13 05:52:00,
+E001794,L01257,dropped,2026-08-15 06:52:00,dropped before converted
+E001795,L01258,dropped,2026-07-29 21:50:00,dropped before qualified
+E001796,L01259,dropped,2026-07-27 10:13:00,dropped before qualified
+E001797,L01260,dropped,2026-07-31 04:57:00,dropped before qualified
+E001798,L01261,qualified,2026-07-29 20:55:00,
+E001799,L01261,discovery_call_set,2026-08-02 03:55:00,
+E001800,L01261,discovery_call_attended,2026-08-08 09:55:00,
+E001801,L01261,ambition_interview_done,2026-08-10 11:55:00,
+E001802,L01261,architect_session_done,2026-08-17 12:55:00,
+E001803,L01261,converted,2026-08-22 20:55:00,
+E001804,L01262,qualified,2026-07-30 19:58:00,
+E001805,L01262,discovery_call_set,2026-08-01 01:58:00,
+E001806,L01262,discovery_call_attended,2026-08-04 02:58:00,
+E001807,L01262,ambition_interview_done,2026-08-07 08:58:00,
+E001808,L01262,architect_session_done,2026-08-10 11:58:00,
+E001809,L01262,dropped,2026-08-15 15:58:00,dropped before converted
+E001810,L01263,dropped,2026-08-02 19:22:00,dropped before qualified
+E001811,L01264,qualified,2026-08-02 18:21:00,
+E001812,L01264,discovery_call_set,2026-08-04 22:21:00,
+E001813,L01264,discovery_call_attended,2026-08-08 00:21:00,
+E001814,L01264,ambition_interview_done,2026-08-11 05:21:00,
+E001815,L01264,architect_session_done,2026-08-17 06:21:00,
+E001816,L01264,dropped,2026-08-18 06:21:00,dropped before converted
+E001817,L01265,dropped,2026-08-04 00:13:00,dropped before qualified
+E001818,L01266,dropped,2026-08-04 01:56:00,dropped before qualified
+E001819,L01267,dropped,2026-08-04 14:00:00,dropped before qualified
+E001820,L01268,qualified,2026-08-06 03:57:00,
+E001821,L01268,discovery_call_set,2026-08-09 04:57:00,
+E001822,L01268,discovery_call_attended,2026-08-14 06:57:00,
+E001823,L01268,ambition_interview_done,2026-08-17 06:57:00,
+E001824,L01268,architect_session_done,2026-08-24 14:57:00,
+E001825,L01268,dropped,2026-08-26 21:57:00,dropped before converted
+E001826,L01269,qualified,2026-08-08 15:58:00,
+E001827,L01269,discovery_call_set,2026-08-12 19:58:00,
+E001828,L01269,discovery_call_attended,2026-08-15 23:58:00,
+E001829,L01269,ambition_interview_done,2026-08-18 00:58:00,
+E001830,L01269,architect_session_done,2026-08-25 07:58:00,
+E001831,L01269,dropped,2026-08-31 13:58:00,dropped before converted
+E001832,L01270,dropped,2026-08-09 17:49:00,dropped before qualified
+E001833,L01271,dropped,2026-08-09 01:02:00,dropped before qualified
+E001834,L01272,dropped,2026-08-10 22:43:00,dropped before qualified
+E001835,L01273,dropped,2026-08-12 02:05:00,dropped before qualified
+E001836,L01274,dropped,2026-08-11 22:12:00,dropped before qualified
+E001837,L01275,qualified,2026-08-11 18:57:00,
+E001838,L01275,dropped,2026-08-13 21:57:00,dropped before discovery_call_set
+E001839,L01276,qualified,2026-08-12 11:33:00,
+E001840,L01276,discovery_call_set,2026-08-14 15:33:00,
+E001841,L01276,discovery_call_attended,2026-08-18 15:33:00,
+E001842,L01276,ambition_interview_done,2026-08-22 18:33:00,
+E001843,L01276,architect_session_done,2026-08-29 00:33:00,
+E001844,L01276,dropped,2026-09-01 08:33:00,dropped before converted
+E001845,L01277,qualified,2026-08-13 19:34:00,
+E001846,L01277,dropped,2026-08-16 21:34:00,dropped before discovery_call_set
+E001847,L01278,dropped,2026-08-13 11:01:00,dropped before qualified
+E001848,L01279,dropped,2026-08-14 19:07:00,dropped before qualified
+E001849,L01280,qualified,2026-08-14 17:26:00,
+E001850,L01280,dropped,2026-08-17 17:26:00,dropped before discovery_call_set
+E001851,L01281,qualified,2026-08-18 00:45:00,
+E001852,L01281,discovery_call_set,2026-08-22 05:45:00,
+E001853,L01281,discovery_call_attended,2026-08-26 08:45:00,
+E001854,L01281,ambition_interview_done,2026-08-31 08:45:00,
+E001855,L01281,architect_session_done,2026-09-07 12:45:00,
+E001856,L01281,dropped,2026-09-13 20:45:00,dropped before converted
+E001857,L01282,dropped,2026-08-17 16:14:00,dropped before qualified
+E001858,L01283,dropped,2026-08-17 19:46:00,dropped before qualified
+E001859,L01284,dropped,2026-08-19 16:44:00,dropped before qualified
+E001860,L01285,dropped,2026-08-18 14:01:00,dropped before qualified
+E001861,L01286,dropped,2026-08-18 17:09:00,dropped before qualified
+E001862,L01287,dropped,2026-08-20 17:11:00,dropped before qualified
+E001863,L01288,qualified,2026-08-20 22:27:00,
+E001864,L01288,discovery_call_set,2026-08-22 22:27:00,
+E001865,L01288,dropped,2026-08-28 06:27:00,dropped before discovery_call_attended
+E001866,L01289,qualified,2026-08-22 02:43:00,
+E001867,L01289,dropped,2026-08-25 05:43:00,dropped before discovery_call_set
+E001868,L01290,qualified,2026-08-20 16:25:00,
+E001869,L01290,discovery_call_set,2026-08-22 23:25:00,
+E001870,L01290,discovery_call_attended,2026-08-26 05:25:00,
+E001871,L01290,ambition_interview_done,2026-08-30 10:25:00,
+E001872,L01290,dropped,2026-09-02 13:25:00,dropped before architect_session_done
+E001873,L01291,dropped,2026-08-23 20:32:00,dropped before qualified
+E001874,L01292,dropped,2026-08-24 22:55:00,dropped before qualified
+E001875,L01293,dropped,2026-08-23 11:12:00,dropped before qualified
+E001876,L01294,qualified,2026-08-25 17:16:00,
+E001877,L01294,discovery_call_set,2026-08-28 18:16:00,
+E001878,L01294,discovery_call_attended,2026-09-01 02:16:00,
+E001879,L01294,ambition_interview_done,2026-09-04 08:16:00,
+E001880,L01294,architect_session_done,2026-09-12 08:16:00,
+E001881,L01294,dropped,2026-09-14 10:16:00,dropped before converted
+E001882,L01295,dropped,2026-08-25 03:00:00,dropped before qualified
+E001883,L01296,dropped,2026-08-26 19:22:00,dropped before qualified
+E001884,L01297,qualified,2026-08-25 14:54:00,
+E001885,L01297,dropped,2026-08-28 19:54:00,dropped before discovery_call_set
+E001886,L01298,dropped,2026-08-27 15:55:00,dropped before qualified
+E001887,L01299,dropped,2026-08-26 18:48:00,dropped before qualified
+E001888,L01300,qualified,2026-08-26 22:01:00,
+E001889,L01300,discovery_call_set,2026-08-31 02:01:00,
+E001890,L01300,discovery_call_attended,2026-09-06 08:01:00,
+E001891,L01300,ambition_interview_done,2026-09-13 13:01:00,
+E001892,L01300,architect_session_done,2026-09-19 21:01:00,
+E001893,L01300,dropped,2026-09-25 03:01:00,dropped before converted
+E001894,L01301,qualified,2026-08-27 17:56:00,
+E001895,L01301,discovery_call_set,2026-08-30 17:56:00,
+E001896,L01301,discovery_call_attended,2026-09-04 00:56:00,
+E001897,L01301,ambition_interview_done,2026-09-07 06:56:00,
+E001898,L01301,architect_session_done,2026-09-13 12:56:00,
+E001899,L01301,dropped,2026-09-19 18:56:00,dropped before converted
+E001900,L01302,dropped,2026-08-27 21:30:00,dropped before qualified
+E001901,L01303,dropped,2026-08-28 15:11:00,dropped before qualified
+E001902,L01304,qualified,2026-08-29 19:23:00,
+E001903,L01304,discovery_call_set,2026-09-02 02:23:00,
+E001904,L01304,discovery_call_attended,2026-09-05 10:23:00,
+E001905,L01304,ambition_interview_done,2026-09-08 14:23:00,
+E001906,L01304,architect_session_done,2026-09-11 19:23:00,
+E001907,L01304,dropped,2026-09-12 20:23:00,dropped before converted
+E001908,L01305,qualified,2026-08-31 18:43:00,
+E001909,L01305,discovery_call_set,2026-09-04 01:43:00,
+E001910,L01305,discovery_call_attended,2026-09-06 06:43:00,
+E001911,L01305,dropped,2026-09-10 06:43:00,dropped before ambition_interview_done
+E001912,L01306,dropped,2026-09-01 12:19:00,dropped before qualified
+E001913,L01307,qualified,2026-09-02 14:39:00,
+E001914,L01307,dropped,2026-09-06 19:39:00,dropped before discovery_call_set
+E001915,L01308,qualified,2026-09-03 13:01:00,
+E001916,L01308,dropped,2026-09-04 20:01:00,dropped before discovery_call_set
+E001917,L01309,dropped,2026-09-03 11:51:00,dropped before qualified
+E001918,L01310,qualified,2026-09-04 13:27:00,
+E001919,L01310,discovery_call_set,2026-09-07 14:27:00,
+E001920,L01310,discovery_call_attended,2026-09-09 15:27:00,
+E001921,L01310,ambition_interview_done,2026-09-16 20:27:00,
+E001922,L01310,dropped,2026-09-21 03:27:00,dropped before architect_session_done
+E001923,L01311,dropped,2026-09-06 09:20:00,dropped before qualified
+E001924,L01312,qualified,2026-09-08 23:08:00,
+E001925,L01312,discovery_call_set,2026-09-10 04:08:00,
+E001926,L01312,discovery_call_attended,2026-09-16 09:08:00,
+E001927,L01312,ambition_interview_done,2026-09-18 09:08:00,
+E001928,L01312,dropped,2026-09-22 14:08:00,dropped before architect_session_done
+E001929,L01313,qualified,2026-09-08 14:54:00,
+E001930,L01313,dropped,2026-09-10 20:54:00,dropped before discovery_call_set
+E001931,L01314,dropped,2026-09-08 09:06:00,dropped before qualified
+E001932,L01315,qualified,2026-09-08 12:33:00,
+E001933,L01315,dropped,2026-09-12 16:33:00,dropped before discovery_call_set
+E001934,L01316,dropped,2026-09-10 15:44:00,dropped before qualified
+E001935,L01317,dropped,2026-09-12 20:37:00,dropped before qualified
+E001936,L01318,qualified,2026-09-10 22:21:00,
+E001937,L01318,dropped,2026-09-12 04:21:00,dropped before discovery_call_set
+E001938,L01319,qualified,2026-09-12 17:52:00,
+E001939,L01319,dropped,2026-09-14 20:52:00,dropped before discovery_call_set
+E001940,L01320,qualified,2026-09-13 16:40:00,
+E001941,L01320,discovery_call_set,2026-09-16 16:40:00,
+E001942,L01320,dropped,2026-09-21 21:40:00,dropped before discovery_call_attended
+E001943,L01321,dropped,2026-09-12 19:59:00,dropped before qualified
+E001944,L01322,qualified,2026-09-14 10:17:00,
+E001945,L01322,dropped,2026-09-17 10:17:00,dropped before discovery_call_set
+E001946,L01323,qualified,2026-09-16 10:37:00,
+E001947,L01323,discovery_call_set,2026-09-19 15:37:00,
+E001948,L01323,dropped,2026-09-24 20:37:00,dropped before discovery_call_attended
+E001949,L01324,qualified,2026-09-17 17:25:00,
+E001950,L01324,discovery_call_set,2026-09-20 21:25:00,
+E001951,L01324,discovery_call_attended,2026-09-24 01:25:00,
+E001952,L01324,ambition_interview_done,2026-10-01 08:25:00,
+E001953,L01324,architect_session_done,2026-10-08 13:25:00,
+E001954,L01324,dropped,2026-10-13 17:25:00,dropped before converted
+E001955,L01325,qualified,2026-09-15 17:51:00,
+E001956,L01325,dropped,2026-09-20 00:51:00,dropped before discovery_call_set
+E001957,L01326,qualified,2026-09-18 13:45:00,
+E001958,L01326,dropped,2026-09-21 18:45:00,dropped before discovery_call_set
+E001959,L01327,dropped,2026-09-18 19:29:00,dropped before qualified
+E001960,L01328,qualified,2026-09-21 05:35:00,
+E001961,L01328,discovery_call_set,2026-09-25 10:35:00,
+E001962,L01328,discovery_call_attended,2026-09-30 13:35:00,
+E001963,L01328,ambition_interview_done,2026-10-06 19:35:00,
+E001964,L01328,architect_session_done,2026-10-11 00:35:00,
+E001965,L01328,dropped,2026-10-14 05:35:00,dropped before converted
+E001966,L01329,dropped,2026-09-22 16:29:00,dropped before qualified
+E001967,L01330,dropped,2026-09-22 19:06:00,dropped before qualified
+E001968,L01331,dropped,2026-09-23 14:11:00,dropped before qualified
+E001969,L01332,qualified,2026-09-22 23:53:00,
+E001970,L01332,discovery_call_set,2026-09-27 05:53:00,
+E001971,L01332,discovery_call_attended,2026-09-29 12:53:00,
+E001972,L01332,ambition_interview_done,2026-10-06 18:53:00,
+E001973,L01332,architect_session_done,2026-10-12 22:53:00,
+E001974,L01332,converted,2026-10-16 00:53:00,
+E001975,L01333,dropped,2026-09-24 14:01:00,dropped before qualified
+E001976,L01334,qualified,2026-09-23 21:58:00,
+E001977,L01334,discovery_call_set,2026-09-27 02:58:00,
+E001978,L01334,discovery_call_attended,2026-10-02 08:58:00,
+E001979,L01334,dropped,2026-10-07 12:58:00,dropped before ambition_interview_done
+E001980,L01335,qualified,2026-09-26 18:25:00,
+E001981,L01335,discovery_call_set,2026-09-27 19:25:00,
+E001982,L01335,dropped,2026-10-01 00:25:00,dropped before discovery_call_attended
+E001983,L01336,qualified,2026-09-27 19:16:00,
+E001984,L01336,discovery_call_set,2026-10-01 02:16:00,
+E001985,L01336,dropped,2026-10-07 02:16:00,dropped before discovery_call_attended
+E001986,L01337,qualified,2026-09-28 11:45:00,
+E001987,L01337,dropped,2026-10-01 17:45:00,dropped before discovery_call_set
+E001988,L01338,qualified,2026-09-28 16:57:00,
+E001989,L01338,discovery_call_set,2026-10-01 17:57:00,
+E001990,L01338,discovery_call_attended,2026-10-06 18:57:00,
+E001991,L01338,ambition_interview_done,2026-10-08 21:57:00,
+E001992,L01338,dropped,2026-10-18 05:57:00,dropped before architect_session_done
+E001993,L01339,qualified,2026-09-28 03:13:00,
+E001994,L01339,dropped,2026-09-29 05:13:00,dropped before discovery_call_set
+E001995,L01340,dropped,2026-09-29 16:20:00,dropped before qualified
+E001996,L01341,qualified,2026-10-02 10:45:00,
+E001997,L01341,discovery_call_set,2026-10-05 17:45:00,
+E001998,L01341,dropped,2026-10-12 01:45:00,dropped before discovery_call_attended
+E001999,L01342,qualified,2026-10-01 19:44:00,
+E002000,L01342,discovery_call_set,2026-10-06 03:44:00,
+E002001,L01342,discovery_call_attended,2026-10-12 10:44:00,
+E002002,L01342,ambition_interview_done,2026-10-18 15:44:00,
+E002003,L01343,qualified,2026-10-03 03:35:00,
+E002004,L01343,dropped,2026-10-06 04:35:00,dropped before discovery_call_set
+E002005,L01344,qualified,2026-10-05 13:06:00,
+E002006,L01344,discovery_call_set,2026-10-08 17:06:00,
+E002007,L01344,discovery_call_attended,2026-10-12 20:06:00,
+E002008,L01344,ambition_interview_done,2026-10-15 02:06:00,
+E002009,L01344,dropped,2026-10-21 03:06:00,dropped before architect_session_done
+E002010,L01345,dropped,2026-10-06 22:22:00,dropped before qualified
+E002011,L01346,qualified,2026-10-07 21:32:00,
+E002012,L01346,dropped,2026-10-09 21:32:00,dropped before discovery_call_set
+E002013,L01347,qualified,2026-10-07 16:32:00,
+E002014,L01347,discovery_call_set,2026-10-11 21:32:00,
+E002015,L01347,discovery_call_attended,2026-10-17 22:32:00,
+E002016,L01347,ambition_interview_done,2026-10-23 01:32:00,
+E002017,L01348,qualified,2026-10-08 21:20:00,
+E002018,L01348,discovery_call_set,2026-10-13 00:20:00,
+E002019,L01348,discovery_call_attended,2026-10-19 07:20:00,
+E002020,L01348,ambition_interview_done,2026-10-21 13:20:00,
+E002021,L01349,qualified,2026-10-09 18:05:00,
+E002022,L01349,discovery_call_set,2026-10-10 21:05:00,
+E002023,L01349,dropped,2026-10-16 21:05:00,dropped before discovery_call_attended
+E002024,L01350,dropped,2026-10-08 16:08:00,dropped before qualified
+E002025,L01351,dropped,2026-10-11 10:00:00,dropped before qualified
+E002026,L01352,qualified,2026-10-12 04:55:00,
+E002027,L01352,discovery_call_set,2026-10-13 11:55:00,
+E002028,L01352,discovery_call_attended,2026-10-15 11:55:00,
+E002029,L01352,ambition_interview_done,2026-10-18 17:55:00,
+E002030,L01353,qualified,2026-10-11 17:08:00,
+E002031,L01353,discovery_call_set,2026-10-12 17:08:00,
+E002032,L01353,dropped,2026-10-19 01:08:00,dropped before discovery_call_attended
+E002033,L01354,qualified,2026-10-12 20:47:00,
+E002034,L01354,dropped,2026-10-15 02:47:00,dropped before discovery_call_set
+E002035,L01355,qualified,2026-10-13 19:38:00,
+E002036,L01355,dropped,2026-10-15 03:38:00,dropped before discovery_call_set
+E002037,L01356,dropped,2026-10-14 12:51:00,dropped before qualified
+E002038,L01357,qualified,2026-10-16 14:05:00,
+E002039,L01357,discovery_call_set,2026-10-18 17:05:00,
+E002040,L01357,discovery_call_attended,2026-10-22 20:05:00,
+E002041,L01358,qualified,2026-10-17 17:26:00,
+E002042,L01358,dropped,2026-10-20 21:26:00,dropped before discovery_call_set
+E002043,L01359,dropped,2026-10-18 17:17:00,dropped before qualified
+E002044,L01360,dropped,2026-10-19 15:13:00,dropped before qualified
+E002045,L01361,dropped,2026-10-20 15:11:00,dropped before qualified
+E002046,L01362,dropped,2026-10-21 01:16:00,dropped before qualified
+E002047,L01363,qualified,2026-10-21 16:55:00,
+E002048,L01364,dropped,2026-10-23 23:20:00,dropped before qualified
+E002049,L01365,qualified,2026-10-22 18:23:00,
+E002050,L01366,dropped,2026-10-22 21:40:00,dropped before qualified
+E002051,L01367,qualified,2026-10-24 21:57:00,

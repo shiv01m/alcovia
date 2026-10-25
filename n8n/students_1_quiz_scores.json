@@ -1,0 +1,114 @@
+{
+  "name": "Students 1 \u00b7 8 pm quiz scores to student_daily",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "45 20 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Every day 20:45",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": "={{$env.QUIZ_SHEET_ID}}",
+        "sheetName": "Form responses 1"
+      },
+      "name": "Read today's quiz responses",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        260,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4",
+          "name": "Google"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });\nreturn $input.all()\n  .filter(i => String(i.json.Timestamp).startsWith(today))\n  .map(i => ({ json: { metric_date: today, student_id: i.json['Alcovian ID'],\n     quiz_attempted: true, quiz_score_pct: Math.round(100 * Number(i.json.Score.split('/')[0]) / Number(i.json.Score.split('/')[1])) } }));"
+      },
+      "name": "Today only, score as %",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO student_daily (metric_date, student_id, timetable_planned, blocks_planned, blocks_done, quiz_attempted, quiz_score_pct, focus_minutes, app_minutes)\nVALUES ('{{$json.metric_date}}', '{{$json.student_id}}', false, 0, 0, true, {{$json.quiz_score_pct}}, 0, 0)\nON CONFLICT (metric_date, student_id) DO UPDATE SET quiz_attempted = true, quiz_score_pct = EXCLUDED.quiz_score_pct;"
+      },
+      "name": "Upsert quiz into student_daily",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        780,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "Supabase Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every day 20:45": {
+      "main": [
+        [
+          {
+            "node": "Read today's quiz responses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read today's quiz responses": {
+      "main": [
+        [
+          {
+            "node": "Today only, score as %",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Today only, score as %": {
+      "main": [
+        [
+          {
+            "node": "Upsert quiz into student_daily",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Kolkata"
+  },
+  "active": false
+}

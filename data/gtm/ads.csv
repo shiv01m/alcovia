@@ -1,0 +1,49 @@
+ad_id,ad_set_id,creative_name,creative_format,landing_page_id
+C01-AS1-AD1,C01-AS1,Reel: podcast clip with founder guest,reel,LP1
+C01-AS1-AD2,C01-AS1,Parent reel: 'my son finally has a plan',reel,LP1
+C01-AS1-AD3,C01-AS1,Static: board exams are not the whole story,static,LP1
+C01-AS2-AD1,C01-AS2,"Static: 3 roadmaps, 1 teen",static,LP2
+C01-AS2-AD2,C01-AS2,"Static: 3 roadmaps, 1 teen",static,LP2
+C01-AS2-AD3,C01-AS2,Parent reel: 'my son finally has a plan',reel,LP1
+C02-AS1-AD1,C02-AS1,Parent reel: 'my son finally has a plan',reel,LP2
+C02-AS1-AD2,C02-AS1,Carousel: day in an Alcovian's life,carousel,LP2
+C02-AS1-AD3,C02-AS1,Carousel: day in an Alcovian's life,carousel,LP1
+C02-AS2-AD1,C02-AS2,Reel: podcast clip with founder guest,reel,LP2
+C02-AS2-AD2,C02-AS2,Reel: podcast clip with founder guest,reel,LP1
+C02-AS2-AD3,C02-AS2,Reel: advisor explains the 90-day trial,reel,LP2
+C03-AS1-AD1,C03-AS1,Reel: podcast clip with founder guest,reel,LP2
+C03-AS1-AD2,C03-AS1,Carousel: day in an Alcovian's life,carousel,LP2
+C03-AS1-AD3,C03-AS1,Reel: podcast clip with founder guest,reel,LP2
+C03-AS2-AD1,C03-AS2,Reel: advisor explains the 90-day trial,reel,LP1
+C03-AS2-AD2,C03-AS2,Reel: podcast clip with founder guest,reel,LP2
+C03-AS2-AD3,C03-AS2,Static: board exams are not the whole story,static,LP2
+C04-AS1-AD1,C04-AS1,"Static: 3 roadmaps, 1 teen",static,LP2
+C04-AS1-AD2,C04-AS1,Static: board exams are not the whole story,static,LP2
+C04-AS1-AD3,C04-AS1,Parent reel: 'my son finally has a plan',reel,LP2
+C04-AS2-AD1,C04-AS2,Reel: advisor explains the 90-day trial,reel,LP1
+C04-AS2-AD2,C04-AS2,"Static: 3 roadmaps, 1 teen",static,LP1
+C04-AS2-AD3,C04-AS2,"Static: 3 roadmaps, 1 teen",static,LP1
+C05-AS1-AD1,C05-AS1,Parent reel: 'my son finally has a plan',reel,LP2
+C05-AS1-AD2,C05-AS1,Carousel: day in an Alcovian's life,carousel,LP1
+C05-AS1-AD3,C05-AS1,Reel: podcast clip with founder guest,reel,LP2
+C05-AS2-AD1,C05-AS2,"Static: 3 roadmaps, 1 teen",static,LP2
+C05-AS2-AD2,C05-AS2,Reel: advisor explains the 90-day trial,reel,LP1
+C05-AS2-AD3,C05-AS2,Carousel: day in an Alcovian's life,carousel,LP2
+C06-AS1-AD1,C06-AS1,Reel: teens solving a pilot's crisis sim,reel,LP3
+C06-AS1-AD2,C06-AS1,"Static: Rs 3,999 career day",static,LP3
+C06-AS1-AD3,C06-AS1,Reel: last workshop highlights,reel,LP4
+C06-AS2-AD1,C06-AS2,Static: 30 seats only,static,LP3
+C06-AS2-AD2,C06-AS2,Reel: teens solving a pilot's crisis sim,reel,LP4
+C06-AS2-AD3,C06-AS2,Reel: teens solving a pilot's crisis sim,reel,LP4
+C07-AS1-AD1,C07-AS1,Reel: last workshop highlights,reel,LP3
+C07-AS1-AD2,C07-AS1,"Static: Rs 3,999 career day",static,LP3
+C07-AS1-AD3,C07-AS1,"Static: Rs 3,999 career day",static,LP3
+C07-AS2-AD1,C07-AS2,Reel: parent quote after workshop,reel,LP3
+C07-AS2-AD2,C07-AS2,Reel: teens solving a pilot's crisis sim,reel,LP4
+C07-AS2-AD3,C07-AS2,Reel: teens solving a pilot's crisis sim,reel,LP3
+C08-AS1-AD1,C08-AS1,Carousel: meet this Saturday's guest,carousel,LP4
+C08-AS1-AD2,C08-AS1,Reel: parent quote after workshop,reel,LP4
+C08-AS1-AD3,C08-AS1,Reel: parent quote after workshop,reel,LP3
+C08-AS2-AD1,C08-AS2,Static: 30 seats only,static,LP3
+C08-AS2-AD2,C08-AS2,Static: 30 seats only,static,LP3
+C08-AS2-AD3,C08-AS2,Static: 30 seats only,static,LP3

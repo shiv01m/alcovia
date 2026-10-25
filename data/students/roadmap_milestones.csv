@@ -1,0 +1,201 @@
+student_id,roadmap,milestone_month,title,done
+S01,career,2026-10-01,Career roadmap signed off,1
+S01,personal,2026-08-01,Monthly personal milestone,1
+S01,personal,2026-08-01,Second personal milestone,0
+S01,academic,2026-08-01,Monthly score target met,0
+S01,personal,2026-09-01,Monthly personal milestone,0
+S01,personal,2026-09-01,Second personal milestone,1
+S01,academic,2026-09-01,Monthly score target met,0
+S01,personal,2026-10-01,Monthly personal milestone,0
+S01,personal,2026-10-01,Second personal milestone,0
+S01,academic,2026-10-01,Monthly score target met,0
+S02,career,2026-10-01,Career roadmap signed off,1
+S02,personal,2026-08-01,Monthly personal milestone,0
+S02,personal,2026-08-01,Second personal milestone,1
+S02,academic,2026-08-01,Monthly score target met,0
+S02,personal,2026-09-01,Monthly personal milestone,1
+S02,personal,2026-09-01,Second personal milestone,0
+S02,academic,2026-09-01,Monthly score target met,1
+S02,personal,2026-10-01,Monthly personal milestone,1
+S02,personal,2026-10-01,Second personal milestone,1
+S02,academic,2026-10-01,Monthly score target met,1
+S03,career,2026-10-01,Career roadmap signed off,0
+S03,personal,2026-08-01,Monthly personal milestone,1
+S03,personal,2026-08-01,Second personal milestone,1
+S03,academic,2026-08-01,Monthly score target met,0
+S03,personal,2026-09-01,Monthly personal milestone,1
+S03,personal,2026-09-01,Second personal milestone,0
+S03,academic,2026-09-01,Monthly score target met,1
+S03,personal,2026-10-01,Monthly personal milestone,0
+S03,personal,2026-10-01,Second personal milestone,1
+S03,academic,2026-10-01,Monthly score target met,0
+S04,career,2026-10-01,Career roadmap signed off,1
+S04,personal,2026-08-01,Monthly personal milestone,0
+S04,personal,2026-08-01,Second personal milestone,1
+S04,academic,2026-08-01,Monthly score target met,0
+S04,personal,2026-09-01,Monthly personal milestone,0
+S04,personal,2026-09-01,Second personal milestone,0
+S04,academic,2026-09-01,Monthly score target met,0
+S04,personal,2026-10-01,Monthly personal milestone,0
+S04,personal,2026-10-01,Second personal milestone,0
+S04,academic,2026-10-01,Monthly score target met,0
+S05,career,2026-10-01,Career roadmap signed off,0
+S05,personal,2026-08-01,Monthly personal milestone,0
+S05,personal,2026-08-01,Second personal milestone,0
+S05,academic,2026-08-01,Monthly score target met,0
+S05,personal,2026-09-01,Monthly personal milestone,0
+S05,personal,2026-09-01,Second personal milestone,1
+S05,academic,2026-09-01,Monthly score target met,1
+S05,personal,2026-10-01,Monthly personal milestone,0
+S05,personal,2026-10-01,Second personal milestone,0
+S05,academic,2026-10-01,Monthly score target met,0
+S06,career,2026-10-01,Career roadmap signed off,1
+S06,personal,2026-08-01,Monthly personal milestone,1
+S06,personal,2026-08-01,Second personal milestone,1
+S06,academic,2026-08-01,Monthly score target met,1
+S06,personal,2026-09-01,Monthly personal milestone,1
+S06,personal,2026-09-01,Second personal milestone,0
+S06,academic,2026-09-01,Monthly score target met,1
+S06,personal,2026-10-01,Monthly personal milestone,0
+S06,personal,2026-10-01,Second personal milestone,1
+S06,academic,2026-10-01,Monthly score target met,1
+S07,career,2026-10-01,Career roadmap signed off,1
+S07,personal,2026-08-01,Monthly personal milestone,1
+S07,personal,2026-08-01,Second personal milestone,0
+S07,academic,2026-08-01,Monthly score target met,0
+S07,personal,2026-09-01,Monthly personal milestone,1
+S07,personal,2026-09-01,Second personal milestone,0
+S07,academic,2026-09-01,Monthly score target met,1
+S07,personal,2026-10-01,Monthly personal milestone,1
+S07,personal,2026-10-01,Second personal milestone,0
+S07,academic,2026-10-01,Monthly score target met,1
+S08,career,2026-10-01,Career roadmap signed off,0
+S08,personal,2026-08-01,Monthly personal milestone,1
+S08,personal,2026-08-01,Second personal milestone,0
+S08,academic,2026-08-01,Monthly score target met,1
+S08,personal,2026-09-01,Monthly personal milestone,1
+S08,personal,2026-09-01,Second personal milestone,1
+S08,academic,2026-09-01,Monthly score target met,1
+S08,personal,2026-10-01,Monthly personal milestone,1
+S08,personal,2026-10-01,Second personal milestone,0
+S08,academic,2026-10-01,Monthly score target met,0
+S09,career,2026-10-01,Career roadmap signed off,0
+S09,personal,2026-08-01,Monthly personal milestone,1
+S09,personal,2026-08-01,Second personal milestone,1
+S09,academic,2026-08-01,Monthly score target met,0
+S09,personal,2026-09-01,Monthly personal milestone,0
+S09,personal,2026-09-01,Second personal milestone,1
+S09,academic,2026-09-01,Monthly score target met,1
+S09,personal,2026-10-01,Monthly personal milestone,0
+S09,personal,2026-10-01,Second personal milestone,1
+S09,academic,2026-10-01,Monthly score target met,1
+S10,career,2026-10-01,Career roadmap signed off,0
+S10,personal,2026-08-01,Monthly personal milestone,1
+S10,personal,2026-08-01,Second personal milestone,0
+S10,academic,2026-08-01,Monthly score target met,0
+S10,personal,2026-09-01,Monthly personal milestone,1
+S10,personal,2026-09-01,Second personal milestone,0
+S10,academic,2026-09-01,Monthly score target met,0
+S10,personal,2026-10-01,Monthly personal milestone,1
+S10,personal,2026-10-01,Second personal milestone,0
+S10,academic,2026-10-01,Monthly score target met,0
+S11,career,2026-10-01,Career roadmap signed off,1
+S11,personal,2026-08-01,Monthly personal milestone,0
+S11,personal,2026-08-01,Second personal milestone,1
+S11,academic,2026-08-01,Monthly score target met,1
+S11,personal,2026-09-01,Monthly personal milestone,1
+S11,personal,2026-09-01,Second personal milestone,0
+S11,academic,2026-09-01,Monthly score target met,1
+S11,personal,2026-10-01,Monthly personal milestone,0
+S11,personal,2026-10-01,Second personal milestone,0
+S11,academic,2026-10-01,Monthly score target met,0
+S12,career,2026-10-01,Career roadmap signed off,1
+S12,personal,2026-08-01,Monthly personal milestone,1
+S12,personal,2026-08-01,Second personal milestone,0
+S12,academic,2026-08-01,Monthly score target met,0
+S12,personal,2026-09-01,Monthly personal milestone,1
+S12,personal,2026-09-01,Second personal milestone,1
+S12,academic,2026-09-01,Monthly score target met,0
+S12,personal,2026-10-01,Monthly personal milestone,0
+S12,personal,2026-10-01,Second personal milestone,0
+S12,academic,2026-10-01,Monthly score target met,0
+S13,career,2026-10-01,Career roadmap signed off,1
+S13,personal,2026-08-01,Monthly personal milestone,1
+S13,personal,2026-08-01,Second personal milestone,1
+S13,academic,2026-08-01,Monthly score target met,1
+S13,personal,2026-09-01,Monthly personal milestone,1
+S13,personal,2026-09-01,Second personal milestone,1
+S13,academic,2026-09-01,Monthly score target met,1
+S13,personal,2026-10-01,Monthly personal milestone,1
+S13,personal,2026-10-01,Second personal milestone,1
+S13,academic,2026-10-01,Monthly score target met,1
+S14,career,2026-10-01,Career roadmap signed off,1
+S14,personal,2026-08-01,Monthly personal milestone,1
+S14,personal,2026-08-01,Second personal milestone,1
+S14,academic,2026-08-01,Monthly score target met,1
+S14,personal,2026-09-01,Monthly personal milestone,0
+S14,personal,2026-09-01,Second personal milestone,1
+S14,academic,2026-09-01,Monthly score target met,1
+S14,personal,2026-10-01,Monthly personal milestone,0
+S14,personal,2026-10-01,Second personal milestone,0
+S14,academic,2026-10-01,Monthly score target met,0
+S15,career,2026-10-01,Career roadmap signed off,1
+S15,personal,2026-08-01,Monthly personal milestone,1
+S15,personal,2026-08-01,Second personal milestone,1
+S15,academic,2026-08-01,Monthly score target met,1
+S15,personal,2026-09-01,Monthly personal milestone,0
+S15,personal,2026-09-01,Second personal milestone,1
+S15,academic,2026-09-01,Monthly score target met,1
+S15,personal,2026-10-01,Monthly personal milestone,1
+S15,personal,2026-10-01,Second personal milestone,1
+S15,academic,2026-10-01,Monthly score target met,1
+S16,career,2026-10-01,Career roadmap signed off,1
+S16,personal,2026-08-01,Monthly personal milestone,0
+S16,personal,2026-08-01,Second personal milestone,0
+S16,academic,2026-08-01,Monthly score target met,1
+S16,personal,2026-09-01,Monthly personal milestone,0
+S16,personal,2026-09-01,Second personal milestone,0
+S16,academic,2026-09-01,Monthly score target met,1
+S16,personal,2026-10-01,Monthly personal milestone,1
+S16,personal,2026-10-01,Second personal milestone,1
+S16,academic,2026-10-01,Monthly score target met,0
+S17,career,2026-10-01,Career roadmap signed off,1
+S17,personal,2026-08-01,Monthly personal milestone,1
+S17,personal,2026-08-01,Second personal milestone,0
+S17,academic,2026-08-01,Monthly score target met,0
+S17,personal,2026-09-01,Monthly personal milestone,1
+S17,personal,2026-09-01,Second personal milestone,1
+S17,academic,2026-09-01,Monthly score target met,0
+S17,personal,2026-10-01,Monthly personal milestone,0
+S17,personal,2026-10-01,Second personal milestone,1
+S17,academic,2026-10-01,Monthly score target met,0
+S18,career,2026-10-01,Career roadmap signed off,1
+S18,personal,2026-08-01,Monthly personal milestone,1
+S18,personal,2026-08-01,Second personal milestone,1
+S18,academic,2026-08-01,Monthly score target met,0
+S18,personal,2026-09-01,Monthly personal milestone,0
+S18,personal,2026-09-01,Second personal milestone,1
+S18,academic,2026-09-01,Monthly score target met,1
+S18,personal,2026-10-01,Monthly personal milestone,1
+S18,personal,2026-10-01,Second personal milestone,1
+S18,academic,2026-10-01,Monthly score target met,1
+S19,career,2026-10-01,Career roadmap signed off,1
+S19,personal,2026-08-01,Monthly personal milestone,1
+S19,personal,2026-08-01,Second personal milestone,1
+S19,academic,2026-08-01,Monthly score target met,1
+S19,personal,2026-09-01,Monthly personal milestone,0
+S19,personal,2026-09-01,Second personal milestone,0
+S19,academic,2026-09-01,Monthly score target met,1
+S19,personal,2026-10-01,Monthly personal milestone,1
+S19,personal,2026-10-01,Second personal milestone,1
+S19,academic,2026-10-01,Monthly score target met,1
+S20,career,2026-10-01,Career roadmap signed off,1
+S20,personal,2026-08-01,Monthly personal milestone,0
+S20,personal,2026-08-01,Second personal milestone,0
+S20,academic,2026-08-01,Monthly score target met,1
+S20,personal,2026-09-01,Monthly personal milestone,0
+S20,personal,2026-09-01,Second personal milestone,1
+S20,academic,2026-09-01,Monthly score target met,0
+S20,personal,2026-10-01,Monthly personal milestone,1
+S20,personal,2026-10-01,Second personal milestone,0
+S20,academic,2026-10-01,Monthly score target met,0

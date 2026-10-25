@@ -1,0 +1,9 @@
+campaign_id,campaign_name,objective,start_date,end_date,status
+C01,Program | Future-ready teen | Delhi NCR,program,2026-05-01,2026-08-15,ended
+C02,Program | Parent testimonial reels,program,2026-06-01,,active
+C03,Program | Board exam anxiety,program,2026-07-10,,active
+C04,Program | Career clarity 13-17,program,2026-08-20,,active
+C05,Program | Retarget site visitors,program,2026-05-15,,active
+C06,Workshop | Career discovery Saturdays,workshop,2026-05-01,,active
+C07,Workshop | Meet a pilot / doctor / founder,workshop,2026-07-01,,active
+C08,Workshop | Summer special,workshop,2026-05-10,2026-07-05,ended
