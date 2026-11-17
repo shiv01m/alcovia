@@ -116,3 +116,27 @@ SELECT f.*, s.name AS student_name, s.advisor
 FROM flags f JOIN students s USING (student_id);
 
 SELECT rule, sent_to, COUNT(*) AS students FROM v_student_alerts_today GROUP BY 1, 2 ORDER BY 1, 2;
+
+-- Q7. App adoption by week vs the 30-minute goal (cohort view)
+-- Weeks are 7-day bins from start_date, the same bins the dashboard draws.
+-- "Active" = opened the app for more than 1 minute or ran focus mode that day.
+WITH params AS (SELECT DATE '2026-09-25' AS start_date, DATE '2026-10-24' AS end_date, 30.0 AS goal_min),
+weekly AS (
+    SELECT p.start_date + 7 * CAST(FLOOR((d.metric_date - p.start_date) / 7.0) AS INTEGER) AS week_start,
+           COUNT(DISTINCT d.metric_date)                                                   AS days_in_week,
+           AVG(d.app_minutes)                                                              AS app_min_per_day,
+           COUNT(DISTINCT d.student_id) FILTER (WHERE d.app_minutes > 1 OR d.focus_minutes > 0) AS active_students,
+           COUNT(DISTINCT d.student_id)                                                    AS students
+    FROM student_daily d, params p
+    WHERE d.metric_date BETWEEN p.start_date AND p.end_date
+    GROUP BY 1
+)
+SELECT week_start,
+       days_in_week,                                                                       -- 7 = full week; fewer = partial
+       ROUND(app_min_per_day, 1)                                                           AS app_min_per_day,   -- focus mode excluded
+       ROUND(100.0 * app_min_per_day / p.goal_min, 0)                                      AS pct_of_goal,
+       ROUND(app_min_per_day - LAG(app_min_per_day) OVER (ORDER BY week_start), 1)         AS change_vs_prev_week,
+       active_students,
+       students
+FROM weekly, params p
+ORDER BY week_start;
