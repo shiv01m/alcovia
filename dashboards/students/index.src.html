@@ -178,6 +178,13 @@ tr.group td { background: var(--surface-2); color: var(--ink-2); font-size: 11px
       </div>
       <div class="tw" id="alertTable"></div>
     </article>
+    <article class="card">
+      <header><h2>App adoption by week vs the 30-minute goal</h2><button class="tbtn" data-table="adoptChart">Table</button></header>
+      <div class="legend" id="adoptLegend"></div>
+      <p class="hint" id="adoptHint"></p>
+      <div class="plot"><canvas id="adoptChart" aria-label="Average app minutes per student per day, by week, against the 30-minute goal"></canvas></div>
+      <div class="tw" id="adoptChart-table" hidden></div>
+    </article>
     <div class="grid2">
       <article class="card">
         <header><h2>Exam readiness by week</h2><button class="tbtn" data-table="readChart">Table</button></header>
@@ -379,6 +386,25 @@ tr.group td { background: var(--surface-2); color: var(--ink-2); font-size: 11px
         borderColor: T.s1, backgroundColor: T.s1, borderWidth: 2, pointRadius: 3, pointHoverRadius: 6, tension: 0.25, spanGaps: true }] },
       options: { scales: xy(T, { max: 100, ticks: { color: T.muted, callback: v => v + "%" } }), plugins: { tooltip: { callbacks: { label: c => ` ${c.raw}% exam-ready` } } } } },
       [{ h: "Week of" }, { h: "Readiness", n: 1 }], wk.map((w, i) => [nice(w), Number.isFinite(rd[i]) ? rd[i].toFixed(1) + "%" : "–"]));
+
+    // ---- app adoption vs 30-minute goal ----
+    const GOAL = 30;
+    const ad = wk.map(w => { const wr = rows.filter(r => r[0] >= w && r[0] < add(w, 7));
+      const act = new Set(wr.filter(r => r[11] > 1 || r[7] > 0).map(r => r[1]));
+      return { min: avg(wr, r => r[11]), act: act.size }; });
+    const delta = i => i > 0 && Number.isFinite(ad[i].min) && Number.isFinite(ad[i - 1].min) ? ad[i].min - ad[i - 1].min : NaN;
+    const sgn = v => { if (!Number.isFinite(v)) return "–"; const r = Math.round(v * 10) / 10; return r === 0 ? "0.0" : (r > 0 ? "+" : "−") + Math.abs(r).toFixed(1); };
+    legend("adoptLegend", [["Average app minutes per day", T.s1, true], ["30-minute goal", T.critical, true]]);
+    let li = ad.length - 1; while (li > 0 && add(wk[li], 6) > state.to) li--;   // latest full 7-day week
+    $("adoptHint").textContent = li >= 0 && Number.isFinite(ad[li].min)
+      ? `Latest week: ${f1(ad[li].min)} min a day, ${pct(ad[li].min / GOAL)} of the goal${li > 0 && Number.isFinite(delta(li)) ? `, ${sgn(delta(li))} min vs the week before` : ""}. ${ad[li].act} of ${stu.length} Alcovians active. Focus mode excluded.`
+      : "No app activity in this range.";
+    draw("adoptChart", { type: "line", data: { labels: wk.map(nice), datasets: [
+        { label: "Average app minutes per day", data: ad.map(x => Number.isFinite(x.min) ? +x.min.toFixed(1) : null), borderColor: T.s1, backgroundColor: T.s1, borderWidth: 2, pointRadius: 3, pointHoverRadius: 6, tension: 0.25, spanGaps: true },
+        { label: "30-minute goal", data: wk.map(() => GOAL), borderColor: T.critical, backgroundColor: T.critical, borderWidth: 2, borderDash: [6, 4], pointRadius: 0, pointHoverRadius: 0 }] },
+      options: { scales: xy(T, { max: 35, ticks: { color: T.muted, callback: v => v + " min" } }), plugins: { tooltip: { callbacks: { label: c => c.datasetIndex ? ` Goal: ${GOAL} min` : ` ${c.raw} min a day (${pct(c.raw / GOAL)} of goal)` } } } } },
+      [{ h: "Week of" }, { h: "App min/day", n: 1 }, { h: "% of goal", n: 1 }, { h: "Change vs last week", n: 1 }, { h: "Active Alcovians", n: 1 }],
+      wk.map((w, i) => [nice(w), f1(ad[i].min), pct(ad[i].min / GOAL), sgn(delta(i)), `${ad[i].act} of ${stu.length}`]));
 
     const hb = wk.map(w => habit(rows.filter(r => r[0] >= w && r[0] < add(w, 7))));
     legend("habitLegend", [["Planned the day", T.s1, true], ["Took the quiz", T.s2, true], ["Used focus mode", T.s3, true]]);
